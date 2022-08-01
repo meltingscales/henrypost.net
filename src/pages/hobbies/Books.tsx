@@ -1,17 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {Card, Col, Container, Row} from "react-bootstrap";
+import BookReview from '../../model/BookReview'
 
-let bookData: any[] = [];
+
+let bookData: BookReview[] = [];
 
 for (let i = 0; i < 10; i++) {
     bookData.push(
-        {
-            title: "Coding for Aardvarks",
-            isbn9: null,
-            review: "9/10",
-            thoughts: "A solid beginner book for Aardvark programming. Don't buy new, it's useful to have as a reference manual though.",
-            tags: ['programming', 'aarvark', 'beginner-programming']
-        }
+        BookReview.example()
     )
 }
 
@@ -23,7 +19,7 @@ const BookReviewLibrary = (props: { books: Array<any> }) => {
                 {props.books.map((book) => {
                     return <>
                         <Col>
-                            <BookReview {...book}/>
+                            <EltBookReview {...book}/>
                         </Col>
                     </>
                 })}
@@ -32,7 +28,7 @@ const BookReviewLibrary = (props: { books: Array<any> }) => {
     </>
 }
 
-const BookReview = (props: any) => {
+const EltBookReview = (props: BookReview) => {
     return <>
         <Card style={{width: '18rem'}}>
             <Card.Body>
