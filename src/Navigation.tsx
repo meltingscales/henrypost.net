@@ -24,19 +24,30 @@ const NavigationItem = (props: any) => {
     )
 }
 
+const SubNavigationItem = (props: { subpath: string, path: string }) => {
+    return (
+        <NavigationItem
+            href={TextFmtService.absDirs(props.path, props.subpath)}
+            customName={TextFmtService.dirFmt(props.subpath)}/>
+    )
+}
+
 const Navigation = () =>
 
     (
         <>
             <Navbar bg={'light'} expand={'sm'}>
                 <Container>
-                    <Navbar.Brand href={"/"}>/home/{Config.OWNER_NAME_NO_SPACE}</Navbar.Brand>
+                    <Navbar.Brand href={"/"}>
+                        {TextFmtService.homeDirAbsFmt(Config.OWNER_NAME_NO_SPACE)}
+                    </Navbar.Brand>
+
                     <Navbar.Toggle aria-controls={"basic-navbar-nav"}/>
                     <Navbar.Collapse id={'basic-navbar-nav'}>
                         <Nav className={'me-auto'}>
 
                             <NavigationItem href={"/"}
-                                            name={"home"}/>
+                                            customName={"~/"}/>
 
                             <NavigationItem href={"/blog"}
                                             name={"blog"}/>
@@ -46,15 +57,15 @@ const Navigation = () =>
 
                             <NavigationItem href={"/about"}
                                             name={"about"}/>
-                            
+
                             <Dropdown>
-                                <Dropdown.Toggle id={'dropdown-basic'}>
+                                <Dropdown.Toggle>
                                     {TextFmtService.homeDirFmt('demoApps')}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <NavigationItem
-                                        href={"/demoApps/githubApp/"}
-                                        customName={TextFmtService.dirFmt('githubApp')}/>
+                                    <SubNavigationItem
+                                        path={'demoApps'}
+                                        subpath={'githubApp'}/>
                                 </Dropdown.Menu>
                             </Dropdown>
 
@@ -63,10 +74,15 @@ const Navigation = () =>
                                     {TextFmtService.homeDirFmt('hobbies')}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <NavigationItem
-                                        href={'/hobbies/books/'}
-                                        customName={TextFmtService.dirFmt('books')}>
-                                    </NavigationItem>
+                                    <SubNavigationItem
+                                        path={'hobbies'}
+                                        subpath={'books'}/>
+                                    <SubNavigationItem
+                                        path={'hobbies'}
+                                        subpath={'music'}/>
+                                    <SubNavigationItem
+                                        path={'hobbies'}
+                                        subpath={'videogames'}/>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Nav>
