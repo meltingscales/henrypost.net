@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container} from "react-bootstrap";
+import {Config} from "../Config";
 
 function About() {
     return <>
@@ -7,8 +8,8 @@ function About() {
         <Container>
             <p>
                 Made with ReactJS.
-                </p>
-            <a href={'https://github.com/HenryFBP/examples/tree/master/react/personal-website-demo'}>
+            </p>
+            <a href={Config.SITE_CODE_URL}>
                 See this link for project files.</a>
         </Container>
     </>;

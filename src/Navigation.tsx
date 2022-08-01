@@ -3,19 +3,21 @@ import {Link} from "react-router-dom";
 
 import {Container, Dropdown, Nav, Navbar} from "react-bootstrap";
 import {Config} from "./Config";
+import {TextFmtService} from "./service/TextFmtService";
 
 const NavigationItem = (props: any) => {
 
     var text;
-    if (props.customText) {
-        text = props.customText
+    if (props.customName) {
+        text = props.customName
     } else {
-        text = `~/${props.name}/`
+        text = TextFmtService.homeDirFmt(props.name)
     }
 
     return (
         <>
             <Link replace={true} to={props.href} className={"nav-link"}>
+                {/*We need className here for Bootstrap themes*/}
                 {text}
             </Link>
         </>
@@ -44,14 +46,27 @@ const Navigation = () =>
 
                             <NavigationItem href={"/about"}
                                             name={"about"}/>
+                            
                             <Dropdown>
                                 <Dropdown.Toggle id={'dropdown-basic'}>
-                                    ~/demoApps/
+                                    {TextFmtService.homeDirFmt('demoApps')}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <NavigationItem href={"/demoApps/githubApp/"}
-                                                    name={"githubApp"}
-                                                    customName={'githubApp/'}/>
+                                    <NavigationItem
+                                        href={"/demoApps/githubApp/"}
+                                        customName={TextFmtService.dirFmt('githubApp')}/>
+                                </Dropdown.Menu>
+                            </Dropdown>
+
+                            <Dropdown>
+                                <Dropdown.Toggle>
+                                    {TextFmtService.homeDirFmt('hobbies')}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <NavigationItem
+                                        href={'/hobbies/books/'}
+                                        customName={TextFmtService.dirFmt('books')}>
+                                    </NavigationItem>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Nav>
