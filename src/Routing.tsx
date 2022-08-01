@@ -7,6 +7,8 @@ import About from "./pages/About";
 import GithubApp from "./pages/demoApps/GithubApp";
 import Books from "./pages/hobbies/Books";
 import React from "react";
+import Music from "./pages/hobbies/Music";
+import Videogames from "./pages/hobbies/Videogames";
 
 function NoPage() {
     return <div>nopage!</div>;
@@ -35,6 +37,12 @@ export default function Routing() {
 
                 <Route path={"hobbies/books"}
                        element={<Books/>}/>
+
+                <Route path={"hobbies/music"}
+                       element={<Music/>}/>
+
+                <Route path={"hobbies/videogames"}
+                       element={<Videogames/>}/>
 
                 <Route
                     element={<NoPage/>}/>
