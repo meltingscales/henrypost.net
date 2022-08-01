@@ -2,7 +2,8 @@ class BookReview {
 
     title: string;
     review: string;
-    isbn9: string;
+    isbn9: string | never;
+    isbn13: string | never;
     thoughts: string;
     tags: Array<string>;
 
@@ -11,13 +12,15 @@ class BookReview {
     constructor(
         title: string,
         review: string,
-        isbn9: string,
+        isbn9: string | never,
+        isbn13: string | never,
         thoughts: string,
         tags: Array<string>
     ) {
         this.title = title;
         this.review = review;
         this.isbn9 = isbn9;
+        this.isbn13 = isbn13;
         this.thoughts = thoughts;
         this.tags = tags;
     }
@@ -29,15 +32,17 @@ class BookReview {
             param.title,
             param.review,
             param.isbn9,
+            param.isbn13,
             param.thoughts,
             param.tags
         )
     }
 
-    static example(): BookReview {
+    static exampleObject(): BookReview {
         return BookReview.from_json({
             title: "Coding for Llamas",
-            isbn9: null,
+            isbn9: '123456789',
+            isbn13: '123456789012',
             review: "9/10",
             thoughts: "A solid beginner book for Llama programming. Don't buy new, it's useful to have as a reference manual though.",
             tags: ['programming', 'aarvark', 'beginner-programming']
