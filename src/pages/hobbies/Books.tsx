@@ -33,17 +33,17 @@ const EltBookReview = (props: BookReview) => {
     var isbnLinks: JSX.Element[] = [];
 
 
-    if (props.isbn9) {
+    if (props.data.isbn9) {
         isbnLinks.push(
             <>
-                <Card.Link href="#">ISBN-9: {props.isbn9}</Card.Link>
+                <Card.Link href="#">ISBN-9: {props.data.isbn9}</Card.Link>
             </>
         )
     }
-    if (props.isbn13) {
+    if (props.data.isbn13) {
         isbnLinks.push(
             <>
-                <Card.Link href="#">ISBN-13: {props.isbn13}</Card.Link>
+                <Card.Link href="#">ISBN-13: {props.data.isbn13}</Card.Link>
             </>
         )
     }
@@ -57,12 +57,12 @@ const EltBookReview = (props: BookReview) => {
     return <>
         <Card style={{width: '18rem'}}>
             <Card.Body>
-                <Card.Title>{props.title}</Card.Title>
+                <Card.Title>{props.data.title}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                    Review: {props.review}
+                    Review: {props.data.review}
                 </Card.Subtitle>
-                <aside>{props.thoughts}</aside>
-                <aside>Tags: {(props.tags.join(', '))}</aside>
+                <aside>{props.data.thoughts}</aside>
+                <aside>Tags: {(props.data.tags.join(', '))}</aside>
                 {isbnLinks}
             </Card.Body>
         </Card>

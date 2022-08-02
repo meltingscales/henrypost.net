@@ -1,41 +1,24 @@
-class BookReview {
-
+type TBookReview = {
     title: string;
     review: string;
     isbn9: string | never;
     isbn13: string | never;
     thoughts: string;
     tags: Array<string>;
+}
+
+class BookReview {
+
+    data: TBookReview;
 
     //TODO this is boilerplate, can we use something like Lombok except for TS?
     // TODO see TODO below... :(
-    constructor(
-        title: string,
-        review: string,
-        isbn9: string | never,
-        isbn13: string | never,
-        thoughts: string,
-        tags: Array<string>
-    ) {
-        this.title = title;
-        this.review = review;
-        this.isbn9 = isbn9;
-        this.isbn13 = isbn13;
-        this.thoughts = thoughts;
-        this.tags = tags;
+    constructor(data: TBookReview) {
+        this.data = data;
     }
 
-    static from_json(param: any) {
-        //Wow! THIS SUCKS! There's no way this is the right way to do JSON-POJO mapping.
-        // TODO: Google the correct way to do JSON-POJO mapping in TypeScript
-        return new BookReview(
-            param.title,
-            param.review,
-            param.isbn9,
-            param.isbn13,
-            param.thoughts,
-            param.tags
-        )
+    static from_json(param: TBookReview) {
+        return new BookReview(param)
     }
 
     static exampleObject(): BookReview {
