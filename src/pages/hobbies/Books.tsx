@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {Card, Col, Container, Row} from "react-bootstrap";
 import BookReview from '../../model/BookReview'
+import {Config} from '../../Config'
 
 
 let bookData: BookReview[] = [];
@@ -12,14 +13,14 @@ for (let i = 0; i < 10; i++) {
 }
 
 
-const BookReviewLibrary = (props: { books: Array<any> }) => {
+const BookReviewLibrary = (props: { books: Array<BookReview> }) => {
     return <>
         <Container>
             <Row>
-                {props.books.map((book) => {
+                {props.books.map((bookReview) => {
                     return <>
                         <Col>
-                            <EltBookReview {...book}/>
+                            <EltBookReview bookReview={bookReview}/>
                         </Col>
                     </>
                 })}
@@ -28,42 +29,65 @@ const BookReviewLibrary = (props: { books: Array<any> }) => {
     </>
 }
 
-const EltBookReview = (props: BookReview) => {
+interface EltBookReviewProps {
+    bookReview: BookReview
+}
 
-    var isbnLinks: JSX.Element[] = [];
+const EltBookReview = ({bookReview}: EltBookReviewProps) => {
 
+    var eltISBNLinks: JSX.Element[] = [];
 
-    if (props.data.isbn9) {
-        isbnLinks.push(
+    if (bookReview.data.isbn9) {
+        eltISBNLinks.push(
             <>
-                <Card.Link href="#">ISBN-9: {props.data.isbn9}</Card.Link>
+                <Card.Link href={Config.ISBN_URL + bookReview.data.isbn9}>ISBN-9: {bookReview.data.isbn9}</Card.Link>
             </>
         )
     }
-    if (props.data.isbn13) {
-        isbnLinks.push(
+    if (bookReview.data.isbn13) {
+        if (bookReview.hasBothISBNs()) {
+            eltISBNLinks.push(<br/>)
+        }
+        eltISBNLinks.push(
             <>
-                <Card.Link href="#">ISBN-13: {props.data.isbn13}</Card.Link>
+                <Card.Link href="#">ISBN-13: {bookReview.data.isbn13}</Card.Link>
             </>
         )
     }
 
-    if (isbnLinks.length === 0) {
-        isbnLinks.push(<>
+    if (eltISBNLinks.length === 0) {
+        eltISBNLinks.push(<>
             <p className={'text-muted'}>No ISBN.</p>
         </>)
+    }
+
+    var eltReview = <></>;
+    if (bookReview.data.review) {
+        eltReview = (
+            <Card.Subtitle className="mb-2 text-muted">
+                Review: {bookReview.data.review}
+            </Card.Subtitle>
+        )
+    }
+
+    var eltTags = <></>;
+    if (bookReview.data.tags) {
+        eltTags = (
+            <aside>
+                Tags: <i>{(bookReview.data.tags?.join(', '))}</i>
+            </aside>
+        )
+
     }
 
     return <>
         <Card style={{width: '18rem'}}>
             <Card.Body>
-                <Card.Title>{props.data.title}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                    Review: {props.data.review}
-                </Card.Subtitle>
-                <aside>{props.data.thoughts}</aside>
-                <aside>Tags: {(props.data.tags.join(', '))}</aside>
-                {isbnLinks}
+                <Card.Title>{bookReview.data.title}</Card.Title>
+                {eltReview}
+                <aside>{bookReview.data.thoughts}</aside>
+                {eltTags}
+                {eltISBNLinks}
             </Card.Body>
         </Card>
     </>
