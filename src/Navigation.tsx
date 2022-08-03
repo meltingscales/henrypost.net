@@ -39,6 +39,14 @@ const Navigation = () =>
             <Navbar bg={'light'} expand={'sm'}>
                 <Container>
                     <Navbar.Brand href={"/"}>
+                        <img
+                            src={'hp.svg'}
+                            width="30"
+                            height="30"
+                            style={{marginRight: '1rem'}}
+                            className="d-inline-block align-top"
+                            alt="React Bootstrap logo"
+                        />
                         {TextFmtService.homeDirAbsFmt(Config.OWNER_NAME_NO_SPACE)}
                     </Navbar.Brand>
 
