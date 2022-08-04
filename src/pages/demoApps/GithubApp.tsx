@@ -6,7 +6,13 @@ import GithubProfileApplet from "../../component/GithubProfileApplet";
 import {Config} from "../../Config";
 import PrettyJSON from "../../component/PrettyJSON";
 import {TextFmtService} from "../../service/TextFmtService";
+// import _ from "lodash"
 
+function sleep(ms: number) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}
 
 type GithubBlogFileState = {
     shown: boolean;
@@ -29,14 +35,27 @@ class GithubBlogFile extends React.Component<any> {
             return
         }
 
-        console.log("Loading file "+this.state.fileResponse.name+", please wait...")
+        console.log("Loading file " + this.state.fileResponse.name + ", please wait...")
 
-        //update only fileContents
         this.setState({
             shown: this.state.shown,
             fileResponse: this.state.fileResponse,
-            fileContents: 'dummy file content'
+            fileContents: 'Loading, please wait!'
+        }, () => {
+            sleep(5000)
+            //update only fileContents
+            this.setState({
+                shown: this.state.shown,
+                fileResponse: this.state.fileResponse,
+                fileContents: 'dummy file content'
+            })
+
+            // this.setState({
+            //     fileContents: 'dummy file content',
+            //     ..._.pick(this.state, ['shown', 'fileResponse'])
+            // })
         })
+
 
     }
 
@@ -59,7 +78,6 @@ class GithubBlogFile extends React.Component<any> {
                 this.loadFileContent()
             }
         })
-
     }
 
     render() {

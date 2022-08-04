@@ -10,6 +10,11 @@ Created to learn ReactJS.
 - https://react-bootstrap.github.io/components/cards/
 - https://www.primefaces.org/primereact/
 - https://github.com/gitname/react-gh-pages
+- https://rxjs.dev/guide/overview
+
+## Angular notes (not reactjs)
+
+- https://www.primefaces.org/primeng/
 
 ## Running
 
