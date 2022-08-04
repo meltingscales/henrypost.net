@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import {Container, Dropdown, Nav, Navbar} from "react-bootstrap";
+import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {Config} from "./Config";
 import {TextFmtService} from "./service/TextFmtService";
 
@@ -24,11 +24,23 @@ const NavigationItem = (props: any) => {
     )
 }
 
-const SubNavigationItem = (props: { subpath: string, path: string }) => {
+// /**
+//  * @deprecated
+//  */
+// const SubNavigationItem = (props: { subpath: string, path: string }) => {
+//     return (
+//         <NavigationItem
+//             href={TextFmtService.absDirs(props.path, props.subpath)}
+//             customName={TextFmtService.dirFmt(props.subpath)}/>
+//     )
+// }
+
+const NavDropdownItem = (props: any) => {
     return (
-        <NavigationItem
-            href={TextFmtService.absDirs(props.path, props.subpath)}
-            customName={TextFmtService.dirFmt(props.subpath)}/>
+        <NavDropdown.Item
+            href={TextFmtService.absDirs(props.path, props.subpath)}>
+            {TextFmtService.dirFmt(props.subpath)}
+        </NavDropdown.Item>
     )
 }
 
@@ -40,7 +52,7 @@ const Navigation = () =>
                 <Container>
                     <Navbar.Brand href={"/"}>
                         <img
-                            src={'hp.svg'}
+                            src={'/hp.svg'}
                             width="30"
                             height="30"
                             style={{marginRight: '1rem'}}
@@ -66,33 +78,35 @@ const Navigation = () =>
                             <NavigationItem href={"/about"}
                                             name={"about"}/>
 
-                            <Dropdown>
-                                <Dropdown.Toggle>
-                                    {TextFmtService.homeDirFmt('demoApps')}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    <SubNavigationItem
-                                        path={'demoApps'}
-                                        subpath={'githubApp'}/>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <NavDropdown
+                                title={TextFmtService.homeDirFmt('demoApps')}
+                                id={'basic-nav-dropdown'}>
 
-                            <Dropdown>
-                                <Dropdown.Toggle>
-                                    {TextFmtService.homeDirFmt('hobbies')}
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    <SubNavigationItem
-                                        path={'hobbies'}
-                                        subpath={'books'}/>
-                                    <SubNavigationItem
-                                        path={'hobbies'}
-                                        subpath={'music'}/>
-                                    <SubNavigationItem
-                                        path={'hobbies'}
-                                        subpath={'videogames'}/>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                                <NavDropdownItem
+                                    path={'demoApps'}
+                                    subpath={'githubApp'}/>
+
+                            </NavDropdown>
+
+
+                            <NavDropdown
+                                title={TextFmtService.homeDirFmt('hobbies')}
+                                id={'basic-nav-dropdown'}>
+
+                                <NavDropdownItem
+                                    path={'hobbies'}
+                                    subpath={'books'}/>
+
+                                <NavDropdownItem
+                                    path={'hobbies'}
+                                    subpath={'music'}/>
+
+                                <NavDropdownItem
+                                    path={'hobbies'}
+                                    subpath={'videogames'}/>
+
+                            </NavDropdown>
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

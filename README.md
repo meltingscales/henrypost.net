@@ -8,6 +8,7 @@ Created to learn ReactJS.
 - https://medium.com/how-to-react/use-react-router-link-with-bootstrap-315a8b88e129
 - https://getbootstrap.com/docs/4.0/components/card/
 - https://react-bootstrap.github.io/components/cards/
+- https://www.primefaces.org/primereact/
 
 ## Running
 

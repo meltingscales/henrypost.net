@@ -84,12 +84,17 @@ const EltBookReview = ({bookReview}: EltBookReviewProps) => {
 
     }
 
+    var eltThoughts = <></>
+    if (bookReview.data.thoughts) {
+        eltThoughts = <aside>{bookReview.data.thoughts}</aside>
+    }
+
     return <>
         <Card style={{width: '18rem'}}>
             <Card.Body>
                 <Card.Title>{bookReview.data.title}</Card.Title>
                 {eltReview}
-                <aside>{bookReview.data.thoughts}</aside>
+                {eltThoughts}
                 {eltTags}
                 {eltISBNLinks}
             </Card.Body>

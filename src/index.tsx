@@ -17,8 +17,8 @@ const root = ReactDOM.createRoot(
 document.title = OWNER_NAME
 
 root.render(
-    <React.StrictMode>
+    // <React.StrictMode>
         <App/>
-    </React.StrictMode>
+    // </React.StrictMode>
 );
 
