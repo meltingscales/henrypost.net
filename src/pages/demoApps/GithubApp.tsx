@@ -29,16 +29,13 @@ class GithubBlogFile extends React.Component<any> {
             return
         }
 
-        console.log("this.state.fileContents === undefined")
+        console.log("Loading file "+this.state.fileResponse.name+", please wait...")
 
         //update only fileContents
         this.setState({
             shown: this.state.shown,
             fileResponse: this.state.fileResponse,
             fileContents: 'dummy file content'
-        }, () => {
-            console.log("state:")
-            console.log(this.state)
         })
 
     }
@@ -49,14 +46,20 @@ class GithubBlogFile extends React.Component<any> {
             console.log(`we should hide this blog post (file "${this.state.fileResponse.name}")...`)
         } else {
             console.log(`we should show you the file "${this.state.fileResponse.name}"`)
-            this.loadFileContent()
         }
 
         this.setState({
             shown: (!this.state.shown),
             fileResponse: this.state.fileResponse,
             fileContents: this.state.fileContents
+        }, () => {
+            //this HAS to be inside this block - setState is asynchronous!
+            // If we don't put this here, we won't be using the updated state.fileContent, and it'll get clobbered.
+            if (this.state.shown) {
+                this.loadFileContent()
+            }
         })
+
     }
 
     render() {
@@ -149,52 +152,53 @@ function GithubBlogFiles(props: any) {
     </>
 }
 
-const GithubApp = () => {
+class GithubApp extends React.Component {
+    render() {
+        return <>
+            <h1>{GithubApp.name}</h1>
 
-    return <>
-        <h1>{GithubApp.name}</h1>
+            <Container>
+                <h2>Github Health Alert</h2>
+                <GithubHealthAlert/>
+            </Container>
 
-        <Container>
-            <h2>Github Health Alert</h2>
-            <GithubHealthAlert/>
-        </Container>
+            <hr/>
 
-        <hr/>
+            <Container>
+                <Row>
+                    <Col>
+                        <h2>Github Profile Applet</h2>
+                        <GithubProfileApplet
+                            username={Config.OWNER_GH_USERNAME}
+                        />
+                    </Col>
+                    <Col>
+                        <h2>Github Repos Applet</h2>
 
-        <Container>
-            <Row>
-                <Col>
-                    <h2>Github Profile Applet</h2>
-                    <GithubProfileApplet
-                        username={Config.OWNER_GH_USERNAME}
-                    />
-                </Col>
-                <Col>
-                    <h2>Github Repos Applet</h2>
+                        TODO
+                        {/*<GithubReposApplet*/}
+                        {/*    username={OWNER_GH_USERNAME}*/}
+                        {/*/>*/}
 
-                    TODO
-                    {/*<GithubReposApplet*/}
-                    {/*    username={OWNER_GH_USERNAME}*/}
-                    {/*/>*/}
+                    </Col>
+                </Row>
+            </Container>
 
-                </Col>
-            </Row>
-        </Container>
+            <hr/>
 
-        <hr/>
+            <Container>
+                <h2>Github Blog Files</h2>
 
-        <Container>
-            <h2>Github Blog Files</h2>
+                <GithubBlogFiles
+                    username={'henryfbp'}
+                    repo={'henryfbp.github.io'}
+                    branch={'master'}
+                    path={'content/posts'}
+                />
 
-            <GithubBlogFiles
-                username={'henryfbp'}
-                repo={'henryfbp.github.io'}
-                branch={'master'}
-                path={'content/posts'}
-            />
-
-        </Container>
-    </>;
+            </Container>
+        </>;
+    }
 }
 
 export default GithubApp
