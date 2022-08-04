@@ -12,9 +12,15 @@ export async function fetchGithubZenResponse(): Promise<GithubZenResponse> {
     return new GithubZenResponse(response, data)
 }
 
-
-export async function fetchGithubProfile(uname: String): Promise<Response> {
+export async function fetchGithubProfile(uname: string): Promise<Response> {
     return await fetch(`${GH_BASE_API_URL}/users/${uname}`)
+}
+
+export async function fetchGithubRepoContents(owner: string, repo: string, path?: string) {
+    if (path) {
+        return await fetch(`${GH_BASE_API_URL}/repos/${owner}/${repo}/contents/${path}`)
+    }
+    return await fetch(`${GH_BASE_API_URL}/repos/${owner}/${repo}/contents/`)
 }
 
 
