@@ -1,10 +1,11 @@
-import {Col, Container, Row} from "react-bootstrap";
+import {Button, Col, Container, Row} from "react-bootstrap";
 import {ReactNode, useEffect, useState} from "react";
 import {GithubService} from "../../service/GithubService";
 import GithubHealthAlert from "../../component/GithubHealthAlert";
 import GithubProfileApplet from "../../component/GithubProfileApplet";
 import {Config} from "../../Config";
 import PrettyJSON from "../../component/PrettyJSON";
+import {githubFileURLfmt, TextFmtService} from "../../service/TextFmtService";
 
 function GithubBlogFile(file: any) {
 
@@ -15,8 +16,9 @@ function GithubBlogFile(file: any) {
         <Container>
             <p>{file.name}</p>
             <aside>
-                <a href={file.download_url}>Download</a>
+                <Button href={file.download_url}>Download</Button>
             </aside>
+            <Button>Expand blog post</Button>
         </Container>
     </>
 }
@@ -59,9 +61,16 @@ function GithubBlogFiles(props: any) {
     return <>
         <Container>
 
+            <a href={TextFmtService.githubFileURLfmt(props.username, props.repo, props.branch, props.path)}>
+                <h3>Viewing {props.repo} @{props.username} in /{props.path}</h3>
+            </a>
+
             {fileList}
 
-            <PrettyJSON name={GithubBlogFiles.name} data={repoContents}/>
+            <PrettyJSON
+                name={GithubBlogFiles.name}
+                data={repoContents}
+            />
 
         </Container>
     </>
@@ -107,6 +116,7 @@ const GithubApp = () => {
             <GithubBlogFiles
                 username={'henryfbp'}
                 repo={'henryfbp.github.io'}
+                branch={'master'}
                 path={'content/posts'}
             />
 

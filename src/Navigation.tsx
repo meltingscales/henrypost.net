@@ -38,7 +38,7 @@ const NavigationItem = (props: any) => {
 const NavDropdownItem = (props: any) => {
     return (
         <NavDropdown.Item
-            href={TextFmtService.absDirs(props.path, props.subpath)}>
+            href={TextFmtService.absDirsFmt(props.path, props.subpath)}>
             {TextFmtService.dirFmt(props.subpath)}
         </NavDropdown.Item>
     )
