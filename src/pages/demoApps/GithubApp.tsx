@@ -1,4 +1,4 @@
-import {Container} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import {useEffect, useState} from "react";
 import {GithubService} from "../../service/GithubService";
 import GithubHealthAlert from "../../component/GithubHealthAlert";
@@ -31,7 +31,7 @@ function GithubBlogFiles(props: any) {
 
     return <>
         <Container>
-            todo lol. {GithubBlogFiles.name}
+            <p>{GithubBlogFiles.name} TODO</p>
 
             <PrettyJSON name={GithubBlogFiles.name} data={repoContents}/>
 
@@ -42,9 +42,32 @@ function GithubBlogFiles(props: any) {
 const GithubApp = () => {
 
     return <>
-        <h1>{GithubApp.name} wip</h1>
+        <h1>{GithubApp.name}</h1>
+
         <GithubHealthAlert/>
-        <GithubProfileApplet username={OWNER_GH_USERNAME}/>
+
+        <hr/>
+
+        <Container>
+            <Row>
+                <Col>
+                    <GithubProfileApplet
+                        username={OWNER_GH_USERNAME}
+                    />
+                </Col>
+                <Col>
+                    GithubReposApplet TODO
+
+                    {/*<GithubReposApplet*/}
+                    {/*    username={OWNER_GH_USERNAME}*/}
+                    {/*/>*/}
+
+                </Col>
+            </Row>
+        </Container>
+
+        <hr/>
+
         <GithubBlogFiles
             username={OWNER_GH_USERNAME}
             repo={'henryfbp.github.io'}
