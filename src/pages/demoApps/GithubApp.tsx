@@ -5,20 +5,34 @@ import GithubHealthAlert from "../../component/GithubHealthAlert";
 import GithubProfileApplet from "../../component/GithubProfileApplet";
 import {Config} from "../../Config";
 import PrettyJSON from "../../component/PrettyJSON";
-import {githubFileURLfmt, TextFmtService} from "../../service/TextFmtService";
+import {TextFmtService} from "../../service/TextFmtService";
 
 function GithubBlogFile(file: any) {
 
     console.log("We got passed:")
     console.log(file)
 
+    //TODO add state
+
+    function expandBlogPost() {
+        window.alert(`we should show you the file "${file.name}"`)
+        //TODO change state
+    }
+
     return <>
         <Container>
             <p>{file.name}</p>
             <aside>
                 <Button href={file.download_url}>Download</Button>
+                <Button href={file.html_url}>View on Github</Button>
             </aside>
-            <Button>Expand blog post</Button>
+            <Button
+                onClick={expandBlogPost}>
+                [+] Expand blog post
+            </Button>
+            <main>
+                todo, blog post content goes here.
+            </main>
         </Container>
     </>
 }
