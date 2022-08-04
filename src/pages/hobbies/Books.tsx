@@ -40,7 +40,9 @@ const EltBookReview = ({bookReview}: EltBookReviewProps) => {
     if (bookReview.data.isbn9) {
         eltISBNLinks.push(
             <>
-                <Card.Link href={Config.ISBN_URL + bookReview.data.isbn9}>ISBN-9: {bookReview.data.isbn9}</Card.Link>
+                <Card.Link href={Config.ISBN_URL + bookReview.data.isbn9}>
+                    ISBN-9: {bookReview.data.isbn9}
+                </Card.Link>
             </>
         )
     }
@@ -50,7 +52,9 @@ const EltBookReview = ({bookReview}: EltBookReviewProps) => {
         }
         eltISBNLinks.push(
             <>
-                <Card.Link href="#">ISBN-13: {bookReview.data.isbn13}</Card.Link>
+                <Card.Link href={Config.ISBN_URL + bookReview.data.isbn13}>
+                    ISBN-13: {bookReview.data.isbn13}
+                </Card.Link>
             </>
         )
     }
@@ -98,25 +102,6 @@ const Books = () => {
     return <>
         <h1>books</h1>
         <BookReviewLibrary books={bookData}/>
-        <Container>
-
-            <p>example stuff:</p>
-
-            <Card style={{width: '18rem'}}>
-                <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Card.Link href="#">Card Link</Card.Link>
-                    <Card.Link href="#">Another Link</Card.Link>
-                </Card.Body>
-            </Card>
-
-
-        </Container>
     </>;
 }
 

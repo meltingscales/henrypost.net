@@ -43,6 +43,7 @@ class BookReview {
                 author: "Spiky J Aardvark",
                 isbn13: '123456789012',
                 review: "8/10",
+                tags: ['programming']
             },
             {
                 title: "Coding for Iguanas",
