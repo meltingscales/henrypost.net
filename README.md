@@ -9,6 +9,7 @@ Created to learn ReactJS.
 - https://getbootstrap.com/docs/4.0/components/card/
 - https://react-bootstrap.github.io/components/cards/
 - https://www.primefaces.org/primereact/
+- https://github.com/gitname/react-gh-pages
 
 ## Running
 
