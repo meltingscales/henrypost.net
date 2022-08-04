@@ -23,33 +23,58 @@ class GithubBlogFile extends React.Component<any> {
         fileContents: undefined
     };
 
+    loadFileContent = () => {
+        if (this.state.fileContents !== undefined) {
+            console.log("Already loaded file content for " + this.state.fileResponse.name)
+            return
+        }
+
+        console.log("this.state.fileContents === undefined")
+
+        //update only fileContents
+        this.setState({
+            shown: this.state.shown,
+            fileResponse: this.state.fileResponse,
+            fileContents: 'dummy file content'
+        }, () => {
+            console.log("state:")
+            console.log(this.state)
+        })
+
+    }
+
     toggleBlogPostVisible = () => {
 
         if (this.state.shown) {
-            window.alert(`we should hide this blog post...`)
+            console.log(`we should hide this blog post (file "${this.state.fileResponse.name}")...`)
         } else {
-            window.alert(`we should show you the file "${this.state.fileResponse.name}"`)
+            console.log(`we should show you the file "${this.state.fileResponse.name}"`)
+            this.loadFileContent()
         }
 
-        this.setState(
-            {
-                shown: (!this.state.shown),
-                fileResponse: this.state.fileResponse,
-                fileContents: this.state.fileContents
-            }
-        )
-        //TODO change state
+        this.setState({
+            shown: (!this.state.shown),
+            fileResponse: this.state.fileResponse,
+            fileContents: this.state.fileContents
+        })
     }
 
     render() {
 
-        console.log("We got passed:")
-        console.log(this.props)
-
+        // console.log("We got passed:")
+        // console.log(this.props)
 
         var visibleButtonText = '[+] Expand blog post'
+        var blogContent = '...'
         if (this.state.shown) {
             visibleButtonText = '[-] Hide blog post'
+
+            if (this.state.fileContents === undefined) {
+                blogContent = "Uh oh! fileContents is `undefined`!"
+            } else {
+                blogContent = this.state.fileContents
+            }
+
         }
 
         return <>
@@ -64,7 +89,7 @@ class GithubBlogFile extends React.Component<any> {
                     {visibleButtonText}
                 </Button>
                 <main>
-                    todo, blog post content goes here.
+                    {blogContent}
                 </main>
             </Container>
         </>
@@ -99,7 +124,7 @@ function GithubBlogFiles(props: any) {
     for (var idx in repoContents) {
         var file = repoContents[idx]
         fileList.push(
-            <Container>
+            <Container key={idx}>
                 <GithubBlogFile {...file}/>
                 <hr/>
             </Container>
