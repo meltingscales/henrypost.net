@@ -41,8 +41,8 @@ class GithubBlogFile extends React.Component<any> {
             shown: this.state.shown,
             fileResponse: this.state.fileResponse,
             fileContents: 'Loading, please wait!'
-        }, () => {
-            sleep(5000)
+        }, async () => {
+            await sleep(2000)
             //update only fileContents
             this.setState({
                 shown: this.state.shown,
