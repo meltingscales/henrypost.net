@@ -1,14 +1,29 @@
 import {Col, Container, Row} from "react-bootstrap";
-import {useEffect, useState} from "react";
+import {ReactNode, useEffect, useState} from "react";
 import {GithubService} from "../../service/GithubService";
 import GithubHealthAlert from "../../component/GithubHealthAlert";
 import GithubProfileApplet from "../../component/GithubProfileApplet";
-import {OWNER_GH_USERNAME} from "../../Config";
+import {Config} from "../../Config";
 import PrettyJSON from "../../component/PrettyJSON";
+
+function GithubBlogFile(file: any) {
+
+    console.log("We got passed:")
+    console.log(file)
+
+    return <>
+        <Container>
+            <p>{file.name}</p>
+            <aside>
+                <a href={file.download_url}>Download</a>
+            </aside>
+        </Container>
+    </>
+}
 
 function GithubBlogFiles(props: any) {
 
-    const [repoContents, setRepoContents] = useState<any | null>(null);
+    const [repoContents, setRepoContents] = useState<Array<any>>([]);
 
     useEffect(() => {
 
@@ -24,14 +39,27 @@ function GithubBlogFiles(props: any) {
             setRepoContents(fileListJSON)
         }
 
-
         fetchFileList()
 
-    }, [])
+    }, [props])
+
+
+    var fileList: Array<ReactNode> = [];
+
+    for (var idx in repoContents) {
+        var file = repoContents[idx]
+        fileList.push(
+            <Container>
+                <GithubBlogFile {...file}/>
+                <hr/>
+            </Container>
+        )
+    }
 
     return <>
         <Container>
-            <p>{GithubBlogFiles.name} TODO</p>
+
+            {fileList}
 
             <PrettyJSON name={GithubBlogFiles.name} data={repoContents}/>
 
@@ -44,20 +72,25 @@ const GithubApp = () => {
     return <>
         <h1>{GithubApp.name}</h1>
 
-        <GithubHealthAlert/>
+        <Container>
+            <h2>Github Health Alert</h2>
+            <GithubHealthAlert/>
+        </Container>
 
         <hr/>
 
         <Container>
             <Row>
                 <Col>
+                    <h2>Github Profile Applet</h2>
                     <GithubProfileApplet
-                        username={OWNER_GH_USERNAME}
+                        username={Config.OWNER_GH_USERNAME}
                     />
                 </Col>
                 <Col>
-                    GithubReposApplet TODO
+                    <h2>Github Repos Applet</h2>
 
+                    TODO
                     {/*<GithubReposApplet*/}
                     {/*    username={OWNER_GH_USERNAME}*/}
                     {/*/>*/}
@@ -68,11 +101,16 @@ const GithubApp = () => {
 
         <hr/>
 
-        <GithubBlogFiles
-            username={OWNER_GH_USERNAME}
-            repo={'henryfbp.github.io'}
-            path={'content/posts'}
-        />
+        <Container>
+            <h2>Github Blog Files</h2>
+
+            <GithubBlogFiles
+                username={'henryfbp'}
+                repo={'henryfbp.github.io'}
+                path={'content/posts'}
+            />
+
+        </Container>
     </>;
 }
 
