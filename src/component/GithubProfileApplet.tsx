@@ -7,7 +7,7 @@ function GithubProfileCard(props: any) {
     return <>
         <Card style={{width: '200px'}}>
             <Card.Img src={props.avatar_url}></Card.Img>
-            <p>{props.bio}</p>
+            {!props.bio ? <i>"No biography."</i> : <p>{props.bio}</p>}
         </Card>
     </>
 }
