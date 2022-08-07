@@ -6,6 +6,7 @@ import GithubProfileApplet from "../../component/GithubProfileApplet";
 import {Config} from "../../Config";
 import PrettyJSON from "../../component/PrettyJSON";
 import {TextFmtService} from "../../service/TextFmtService";
+
 // import _ from "lodash"
 
 function sleep(ms: number) {
@@ -42,12 +43,19 @@ class GithubBlogFile extends React.Component<any> {
             fileResponse: this.state.fileResponse,
             fileContents: 'Loading, please wait!'
         }, async () => {
-            await sleep(2000)
+
+            //fetch file content
+            const fileResponse = await GithubService.fetchGithubFile(this.state.fileResponse.git_url)
+            const fileContent = atob(fileResponse.content)
+
+            console.log("File content:")
+            console.log(fileContent)
+
             //update only fileContents
             this.setState({
                 shown: this.state.shown,
                 fileResponse: this.state.fileResponse,
-                fileContents: 'dummy file content'
+                fileContents: fileContent
             })
 
             // this.setState({

@@ -1,5 +1,11 @@
 import GithubZenResponse from "../model/GithubZenResponse";
 
+export async function fetchGithubFile(git_url: string) {
+    const response = await fetch(git_url)
+    return await response.json()
+}
+
+
 const SAMPLE_URL = 'https://github.com/HenryFBP/henryfbp.github.io/tree/master/content/posts'
 const GH_BASE_API_URL = 'https://api.github.com'
 
