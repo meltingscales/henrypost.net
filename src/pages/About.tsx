@@ -11,6 +11,12 @@ function About() {
             </p>
             <a href={Config.SITE_CODE_URL}>
                 See this link for project files.</a>
+            <Container>
+                <h2>Bio</h2>
+                <p>
+                    My name is Henry Post and XYZ ABC
+                </p>
+            </Container>
         </Container>
     </>;
 }

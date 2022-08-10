@@ -19,7 +19,9 @@ export async function fetchGithubZenResponse(): Promise<GithubZenResponse> {
 }
 
 export async function fetchGithubProfile(uname: string): Promise<Response> {
-    return await fetch(`${GH_BASE_API_URL}/users/${uname}`)
+    const url = `${GH_BASE_API_URL}/users/${uname}`
+    console.log("GET " + url)
+    return await fetch(url)
 }
 
 export async function fetchGithubRepoContents(owner: string, repo: string, path?: string) {

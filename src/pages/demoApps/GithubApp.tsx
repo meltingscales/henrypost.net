@@ -6,6 +6,8 @@ import GithubProfileApplet from "../../component/GithubProfileApplet";
 import {Config} from "../../Config";
 import PrettyJSON from "../../component/PrettyJSON";
 import {TextFmtService} from "../../service/TextFmtService";
+import {MarkdownFmtService} from "../../service/MarkdownFmtService";
+import ReactMarkdown from "react-markdown";
 
 // import _ from "lodash"
 
@@ -46,16 +48,21 @@ class GithubBlogFile extends React.Component<any> {
 
             //fetch file content
             const fileResponse = await GithubService.fetchGithubFile(this.state.fileResponse.git_url)
-            const fileContent = atob(fileResponse.content)
+            const fileContent = atob(fileResponse.content)//TODO what do i use if not `atob`? :|
 
             console.log("File content:")
             console.log(fileContent)
+
+            const splitFileContent = MarkdownFmtService.splitHugoBlogPost(fileContent)
+
+            console.log("Split file content:")
+            console.log(splitFileContent)
 
             //update only fileContents
             this.setState({
                 shown: this.state.shown,
                 fileResponse: this.state.fileResponse,
-                fileContents: fileContent
+                fileContents: splitFileContent[1]
             })
 
             // this.setState({
@@ -117,9 +124,11 @@ class GithubBlogFile extends React.Component<any> {
                     onClick={this.toggleBlogPostVisible}>
                     {visibleButtonText}
                 </Button>
-                <main>
-                    {blogContent}
-                </main>
+                <Container>
+                    <ReactMarkdown>
+                        {blogContent}
+                    </ReactMarkdown>
+                </Container>
             </Container>
         </>
     }
