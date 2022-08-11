@@ -66,10 +66,10 @@ const EltBookReview = ({bookReview}: EltBookReviewProps) => {
     }
 
     var eltReview = <></>;
-    if (bookReview.data.review) {
+    if (bookReview.data.shortReview) {
         eltReview = (
             <Card.Subtitle className="mb-2 text-muted">
-                Review: {bookReview.data.review}
+                Short Review: {bookReview.data.shortReview}
             </Card.Subtitle>
         )
     }
@@ -85,8 +85,8 @@ const EltBookReview = ({bookReview}: EltBookReviewProps) => {
     }
 
     var eltThoughts = <></>
-    if (bookReview.data.thoughts) {
-        eltThoughts = <aside>{bookReview.data.thoughts}</aside>
+    if (bookReview.data.shortReview) {
+        eltThoughts = <aside>{bookReview.data.shortReview}</aside>
     }
 
     return <>

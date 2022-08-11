@@ -1,11 +1,8 @@
-type TBookReview = {
-    title: string;
-    author?: string;
-    review?: string;
+import {TGenericMediaReview} from "./GenericMediaReview";
+
+type TBookReview = TGenericMediaReview & {
     isbn9?: string;
     isbn13?: string;
-    thoughts?: string;
-    tags?: Array<string>;
 }
 
 class BookReview {

@@ -134,7 +134,7 @@ class GithubBlogFile extends React.Component<any> {
     }
 }
 
-function GithubBlogFiles(props: any) {
+function GithubMarkdownFiles(props: any) {
 
     const [repoContents, setRepoContents] = useState<Array<any>>([]);
 
@@ -146,8 +146,6 @@ function GithubBlogFiles(props: any) {
             )
 
             const fileListJSON = await fileList.json()
-
-            console.log(fileListJSON)
 
             setRepoContents(fileListJSON)
         }
@@ -179,7 +177,7 @@ function GithubBlogFiles(props: any) {
             {fileList}
 
             <PrettyJSON
-                name={GithubBlogFiles.name}
+                name={GithubMarkdownFiles.name}
                 data={repoContents}
             />
 
@@ -222,9 +220,9 @@ class GithubApp extends React.Component {
             <hr/>
 
             <Container>
-                <h2>Github Blog Files</h2>
+                <h2>Github Markdown Files</h2>
 
-                <GithubBlogFiles
+                <GithubMarkdownFiles
                     username={'henryfbp'}
                     repo={'henryfbp.github.io'}
                     branch={'master'}
