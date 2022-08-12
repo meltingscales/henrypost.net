@@ -1,16 +1,16 @@
-import {TGenericMediaReview} from "./GenericMediaReview";
+import {GenericMediaReview, IGeneralMediaReview} from "./GenericMediaReview";
 
-type TBookReview = TGenericMediaReview & {
+import {SAMPLE_BOOKS} from "../data/sampleBooks";
+
+export type TBookReview = IGeneralMediaReview & {
     isbn9?: string;
     isbn13?: string;
 }
 
-class BookReview {
+export class BookReview {
 
     data: TBookReview;
 
-    //TODO this is boilerplate, can we use something like Lombok except for TS?
-    // TODO see TODO below... :(
     constructor(data: TBookReview) {
         this.data = data;
     }
@@ -23,36 +23,16 @@ class BookReview {
         return new BookReview(param)
     }
 
-    static exampleObject(): BookReview {
+    static loadExampleObjects(): BookReview[] {
 
-        var bookList = [
-            {
-                title: "Coding for Llamas",
-                author: "Harry J Llama",
-                isbn9: '123456789',
-                isbn13: '123456789012',
-                review: "9/10",
-                thoughts: "A solid beginner book for Llama programming. Don't buy new, it's useful to have as a reference manual though.",
-                tags: ['programming', 'llama', 'beginner-programming'],
-            },
-            {
-                title: "Coding for Aardvarks",
-                author: "Spiky J Aardvark",
-                isbn13: '123456789012',
-                review: "8/10",
-                tags: ['programming']
-            },
-            {
-                title: "Coding for Iguanas",
-            },
-        ]
+        let books: BookReview[] = []
 
-        var randElement = bookList[Math.floor(Math.random() * bookList.length)]
+        for (let index in SAMPLE_BOOKS) {
+            var x = SAMPLE_BOOKS[index]
 
-        return BookReview.from_json(randElement)
+            books.push(this.from_json(x))
+        }
 
+        return books
     }
-
 }
-
-export default BookReview

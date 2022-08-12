@@ -1,16 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {Card, Col, Container, Row} from "react-bootstrap";
-import BookReview from '../../model/BookReview'
 import {Config} from '../../Config'
+import {BookReview} from "../../model/BookReview";
 
 
-let bookData: BookReview[] = [];
-
-for (let i = 0; i < 10; i++) {
-    bookData.push(
-        BookReview.exampleObject()
-    )
-}
+let bookData: BookReview[] = BookReview.loadExampleObjects()
 
 
 const BookReviewLibrary = (props: { books: Array<BookReview> }) => {
