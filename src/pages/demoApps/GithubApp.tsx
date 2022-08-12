@@ -1,10 +1,10 @@
 import {Button, Col, Container, Row} from "react-bootstrap";
 import React, {ReactNode, useEffect, useState} from "react";
 import {GithubService} from "../../service/GithubService";
-import GithubHealthAlert from "../../component/GithubHealthAlert";
-import GithubProfileApplet from "../../component/GithubProfileApplet";
+import CGithubHealthAlert from "../../component/CGithubHealthAlert";
+import CGithubProfileApplet from "../../component/CGithubProfileApplet";
 import {Config} from "../../Config";
-import PrettyJSON from "../../component/PrettyJSON";
+import CPrettyJSON from "../../component/CPrettyJSON";
 import {TextFmtService} from "../../service/TextFmtService";
 import {MarkdownFmtService} from "../../service/MarkdownFmtService";
 import ReactMarkdown from "react-markdown";
@@ -178,7 +178,7 @@ function GithubMarkdownFiles(props: any) {
 
             {fileList}
 
-            <PrettyJSON
+            <CPrettyJSON
                 name={GithubMarkdownFiles.name}
                 data={repoContents}
             />
@@ -194,7 +194,7 @@ class GithubApp extends React.Component {
 
             <Container>
                 <h2>Github Health Alert</h2>
-                <GithubHealthAlert/>
+                <CGithubHealthAlert/>
             </Container>
 
             <hr/>
@@ -203,7 +203,7 @@ class GithubApp extends React.Component {
                 <Row>
                     <Col>
                         <h2>Github Profile Applet</h2>
-                        <GithubProfileApplet
+                        <CGithubProfileApplet
                             username={Config.OWNER_GH_USERNAME}
                         />
                     </Col>

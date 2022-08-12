@@ -12,7 +12,7 @@ function GithubProfileCard(props: any) {
     </>
 }
 
-const GithubProfileApplet = (props: { username: string }) => {
+const CGithubProfileApplet = (props: { username: string }) => {
 
     const [ghProfileData, setGhProfileData] = useState<any | null>(null)
 
@@ -35,7 +35,7 @@ const GithubProfileApplet = (props: { username: string }) => {
     )
 
     if (!ghProfileData) {
-        return <div>{GithubProfileApplet.name} not loaded.</div>
+        return <div>{CGithubProfileApplet.name} not loaded.</div>
     }
 
     return <>
@@ -43,4 +43,4 @@ const GithubProfileApplet = (props: { username: string }) => {
     </>
 }
 
-export default GithubProfileApplet
+export default CGithubProfileApplet

@@ -1,5 +1,5 @@
 import {Container} from "react-bootstrap";
-import PrettyJSON from "../component/PrettyJSON";
+import CPrettyJSON from "../component/CPrettyJSON";
 
 class GithubZenResponse {
     response: Response
@@ -24,7 +24,7 @@ class GithubZenResponse {
 
         return <Container>
             <p>Status code: {this.statusCode}</p>
-            <PrettyJSON data={respObject} name={"/zen"}/>
+            <CPrettyJSON data={respObject} name={"/zen"}/>
         </Container>
     }
 

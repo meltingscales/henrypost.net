@@ -3,7 +3,7 @@ import GithubZenResponse from "../model/GithubZenResponse";
 import {GithubService} from "../service/GithubService";
 import {Alert} from "react-bootstrap";
 
-const GithubHealthAlert = () => {
+const CGithubHealthAlert = () => {
 
     const [zenResponse, setZenResponse] = useState<GithubZenResponse | null>(null)
 
@@ -38,4 +38,4 @@ const GithubHealthAlert = () => {
 
 }
 
-export default GithubHealthAlert
+export default CGithubHealthAlert
