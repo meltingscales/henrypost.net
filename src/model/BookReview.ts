@@ -28,9 +28,9 @@ export class BookReview {
         let books: BookReview[] = []
 
         for (let index in SAMPLE_BOOKS) {
-            var x = SAMPLE_BOOKS[index]
+            const samplebook = SAMPLE_BOOKS[index];
 
-            books.push(this.from_json(x))
+            books.push(BookReview.from_json(samplebook))
         }
 
         return books

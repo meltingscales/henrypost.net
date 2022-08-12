@@ -8,8 +8,8 @@ import PrettyJSON from "../../component/PrettyJSON";
 import {TextFmtService} from "../../service/TextFmtService";
 import {MarkdownFmtService} from "../../service/MarkdownFmtService";
 import ReactMarkdown from "react-markdown";
+import {SomeCrappyUtilitiesClass} from "../../service/SomeCrappyUtilitiesClass"
 
-// import _ from "lodash"
 
 function sleep(ms: number) {
     return new Promise((resolve) => {
@@ -22,7 +22,6 @@ type GithubBlogFileState = {
     fileResponse: any;
     fileContents: any;
 }
-
 
 class GithubBlogFile extends React.Component<any> {
 
@@ -40,38 +39,38 @@ class GithubBlogFile extends React.Component<any> {
 
         console.log("Loading file " + this.state.fileResponse.name + ", please wait...")
 
-        this.setState({
-            shown: this.state.shown,
-            fileResponse: this.state.fileResponse,
-            fileContents: 'Loading, please wait!'
-        }, async () => {
+        this.setState(
+            SomeCrappyUtilitiesClass.mergeProperties(
+                this.state,
+                {
+                    fileContents: 'Loading, please wait!'
+                }
+            )
+            , async () => {
 
-            //fetch file content
-            const fileResponse = await GithubService.fetchGithubFile(this.state.fileResponse.git_url)
-            const fileContent = atob(fileResponse.content)//TODO what do i use if not `atob`? :|
+                //fetch file content
+                const fileResponse = await GithubService.fetchGithubFile(this.state.fileResponse.git_url)
+                const fileContent = atob(fileResponse.content)//TODO what do i use if not `atob`? :|
 
-            console.log("File content:")
-            console.log(fileContent)
+                console.log("File content:")
+                console.log(fileContent)
 
-            const splitFileContent = MarkdownFmtService.splitHugoBlogPost(fileContent)
+                const splitFileContent = MarkdownFmtService.splitHugoBlogPost(fileContent)
 
-            console.log("Split file content:")
-            console.log(splitFileContent)
+                console.log("Split file content:")
+                console.log(splitFileContent)
 
-            //update only fileContents
-            this.setState({
-                shown: this.state.shown,
-                fileResponse: this.state.fileResponse,
-                fileContents: splitFileContent[1]
-            })
-
-            // this.setState({
-            //     fileContents: 'dummy file content',
-            //     ..._.pick(this.state, ['shown', 'fileResponse'])
-            // })
-        })
-
-
+                //update only fileContents
+                this.setState(
+                    SomeCrappyUtilitiesClass.mergeProperties(
+                        this.state,
+                        {
+                            fileContents: splitFileContent[1]
+                        }
+                    )
+                )
+            }
+        )
     }
 
     toggleBlogPostVisible = () => {
@@ -82,17 +81,20 @@ class GithubBlogFile extends React.Component<any> {
             console.log(`we should show you the file "${this.state.fileResponse.name}"`)
         }
 
-        this.setState({
-            shown: (!this.state.shown),
-            fileResponse: this.state.fileResponse,
-            fileContents: this.state.fileContents
-        }, () => {
-            //this HAS to be inside this block - setState is asynchronous!
-            // If we don't put this here, we won't be using the updated state.fileContent, and it'll get clobbered.
-            if (this.state.shown) {
-                this.loadFileContent()
-            }
-        })
+        this.setState(
+            SomeCrappyUtilitiesClass.mergeProperties(
+                this.state,
+                {
+                    shown: (!this.state.shown),
+                }
+            ),
+            () => {
+                //this HAS to be inside this block - setState is asynchronous!
+                // If we don't put this here, we won't be using the updated state.fileContent, and it'll get clobbered.
+                if (this.state.shown) {
+                    this.loadFileContent()
+                }
+            })
     }
 
     render() {
