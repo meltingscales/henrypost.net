@@ -11,6 +11,8 @@ Created to learn ReactJS.
 - https://www.primefaces.org/primereact/
 - https://github.com/gitname/react-gh-pages
 - https://rxjs.dev/guide/overview
+- https://www.codingdeft.com/posts/react-deploy-google-cloud-app-engine/#deploying-using-google-cloud-sdk
+- mocha js
 
 ## Angular notes (not reactjs)
 
