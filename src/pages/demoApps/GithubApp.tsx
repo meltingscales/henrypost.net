@@ -27,7 +27,7 @@ class GithubBlogFile extends React.Component<any> {
 
     state: GithubBlogFileState = {
         shown: false,
-        fileResponse: this.props,
+        fileResponse: this.props, //TODO is this bad practice? does my state management suck?
         fileContents: undefined
     };
 

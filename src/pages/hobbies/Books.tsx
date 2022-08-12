@@ -31,26 +31,17 @@ const EltBookReview = ({bookReview}: EltBookReviewProps) => {
 
     var eltISBNLinks: JSX.Element[] = [];
 
-    if (bookReview.data.isbn9) {
-        eltISBNLinks.push(
-            <>
-                <Card.Link href={Config.ISBN_URL + bookReview.data.isbn9}>
-                    ISBN-9: {bookReview.data.isbn9}
-                </Card.Link>
-            </>
-        )
+    if (bookReview.hasIsbn9()) {
+        eltISBNLinks.push(bookReview.renderISBN9())
     }
-    if (bookReview.data.isbn13) {
+
+    if (bookReview.hasIsbn13()) {
+
         if (bookReview.hasBothISBNs()) {
-            eltISBNLinks.push(<br/>)
+            eltISBNLinks.push(<br/>) //add spacing if 2 ISBNs
         }
-        eltISBNLinks.push(
-            <>
-                <Card.Link href={Config.ISBN_URL + bookReview.data.isbn13}>
-                    ISBN-13: {bookReview.data.isbn13}
-                </Card.Link>
-            </>
-        )
+
+        eltISBNLinks.push(bookReview.renderISBN13())
     }
 
     if (eltISBNLinks.length === 0) {
@@ -60,7 +51,7 @@ const EltBookReview = ({bookReview}: EltBookReviewProps) => {
     }
 
     var eltReview = <></>;
-    if (bookReview.data.shortReview) {
+    if (bookReview.hasShortReview()) {
         eltReview = (
             <Card.Subtitle className="mb-2 text-muted">
                 Short Review: {bookReview.data.shortReview}

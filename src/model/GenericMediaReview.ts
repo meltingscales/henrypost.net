@@ -12,7 +12,7 @@ export class TRatingUtil {
      *
      * '9/10' -> some TRating object
      */
-    static toRating(s: string): TRating {
+    static toTRating(s: string): TRating {
         var split = s.split('/')
 
         return {
@@ -40,6 +40,10 @@ export class GenericMediaReview {
 
     constructor(data: IGeneralMediaReview) {
         this.data = data;
+    }
+
+    hasShortReview() {
+        return !!this.data.shortReview;
     }
 }
 
