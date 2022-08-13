@@ -1,3 +1,3 @@
 npm run build
 
-gcloud app deploy
+gcloud app deploy --version=$(Get-Content ./VERSION)
