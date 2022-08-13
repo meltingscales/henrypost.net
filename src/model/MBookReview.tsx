@@ -10,7 +10,6 @@ export type TBookReview = TGeneralMediaReview & {
 }
 
 export class MBookReview extends MGenericMediaReview {
-
     data: TBookReview = null;
 
     constructor(data: TBookReview) {
@@ -35,11 +34,15 @@ export class MBookReview extends MGenericMediaReview {
         return books
     }
 
+    renderShortReview() {
+        return super.renderShortReview()
+    }
+
     hasBothISBNs(): boolean {
         return (this.hasIsbn9() && this.hasIsbn13())
     }
 
-    hasNoISBNs():boolean{
+    hasNoISBNs(): boolean {
         return ((!this.hasIsbn9()) && (!this.hasIsbn13()))
     }
 

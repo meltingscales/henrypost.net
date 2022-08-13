@@ -3,18 +3,7 @@ import {EltBookReviewProps} from "../pages/hobbies/Books";
 
 export const CBookReview = ({bookReview}: EltBookReviewProps) => {
 
-    var eltShortReview = null;
-    if (bookReview.hasShortReview()) {
-        eltShortReview = (
-
-            <Card.Text className="mb-2">
-                <p>Short Review:</p>
-                <Container>
-                    <i>{bookReview.data.shortReview}</i>
-                </Container>
-            </Card.Text>
-        )
-    }
+    var eltShortReview = bookReview.renderShortReview()
 
     var eltTags: JSX.Element = null;
     if (bookReview.data.tags) {
