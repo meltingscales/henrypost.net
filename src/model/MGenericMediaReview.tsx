@@ -1,5 +1,4 @@
 import {Card, Container} from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
 
 export type TRating = {
     lowerBound: any

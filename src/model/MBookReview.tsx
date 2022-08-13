@@ -85,4 +85,20 @@ export class MBookReview extends MGenericMediaReview {
         return !!this.data.isbn13;
     }
 
+    renderTags() {
+
+        if(!this.hasTags()){
+            return null
+        }
+
+        return (
+            <aside>
+                Tags: <i>{(this.data.tags?.join(', '))}</i>
+            </aside>
+        )
+    }
+
+     hasTags() {
+        return !!this.data.tags;
+    }
 }
