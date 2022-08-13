@@ -1,4 +1,4 @@
-import {GithubService} from "../service/GithubService";
+import {GithubService} from "../service/ServiceGithub";
 import {useEffect, useState} from "react";
 import {Card} from "react-bootstrap";
 

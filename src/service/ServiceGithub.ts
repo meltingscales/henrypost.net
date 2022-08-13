@@ -1,4 +1,4 @@
-import GithubZenResponse from "../model/GithubZenResponse";
+import MGithubZenResponse from "../model/MGithubZenResponse";
 
 export async function fetchGithubFile(git_url: string) {
     const response = await fetch(git_url)
@@ -11,11 +11,11 @@ const GH_BASE_API_URL = 'https://api.github.com'
 
 
 //https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api
-export async function fetchGithubZenResponse(): Promise<GithubZenResponse> {
+export async function fetchGithubZenResponse(): Promise<MGithubZenResponse> {
     const response = await fetch(GH_BASE_API_URL + '/zen')
     const data = await response.text()
 
-    return new GithubZenResponse(response, data)
+    return new MGithubZenResponse(response, data)
 }
 
 export async function fetchGithubProfile(uname: string): Promise<Response> {
@@ -32,4 +32,4 @@ export async function fetchGithubRepoContents(owner: string, repo: string, path?
 }
 
 
-export * as GithubService from './GithubService';
+export * as GithubService from './ServiceGithub';

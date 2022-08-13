@@ -1,7 +1,7 @@
 import {Container} from "react-bootstrap";
 import CPrettyJSON from "../component/CPrettyJSON";
 
-class GithubZenResponse {
+class MGithubZenResponse {
     response: Response
     statusCode: number;
     responseText: string;
@@ -39,4 +39,4 @@ class GithubZenResponse {
 }
 
 
-export default GithubZenResponse;
+export default MGithubZenResponse;

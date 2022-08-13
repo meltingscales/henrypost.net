@@ -24,7 +24,7 @@ export class TRatingUtil {
 
 }
 
-export type IGeneralMediaReview = {
+export type TGeneralMediaReview = {
     title: string
     author?: string
     url?: string
@@ -35,10 +35,10 @@ export type IGeneralMediaReview = {
     tags?: Array<string>;
 }
 
-export class GenericMediaReview {
-    data: IGeneralMediaReview
+export class MGenericMediaReview {
+    data: TGeneralMediaReview
 
-    constructor(data: IGeneralMediaReview) {
+    constructor(data: TGeneralMediaReview) {
         this.data = data;
     }
 

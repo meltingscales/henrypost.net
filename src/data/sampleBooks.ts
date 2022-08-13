@@ -1,5 +1,5 @@
-import {TBookReview} from "../model/BookReview";
-import {TRatingUtil} from '../model/GenericMediaReview'
+import {TBookReview} from "../model/MBookReview";
+import {TRatingUtil} from '../model/MGenericMediaReview'
 
 export let SAMPLE_BOOKS: TBookReview[] = [
     {

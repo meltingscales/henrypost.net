@@ -1,10 +1,10 @@
-import {BookReview} from "../model/BookReview";
+import {MBookReview} from "../model/MBookReview";
 import {Col, Container, Row} from "react-bootstrap";
 import {Component} from "react";
 import {CBookReview} from "./CBookReview";
 
 
-export class CBookReviewLibrary extends Component<{ books: Array<BookReview> }> {
+export class CBookReviewLibrary extends Component<{ books: Array<MBookReview> }> {
     render() {
 
         //TODO: Fix the "unique key prop" error. I forget how to do this.

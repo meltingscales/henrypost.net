@@ -1,15 +1,15 @@
-import {GenericMediaReview, IGeneralMediaReview} from "./GenericMediaReview";
+import {MGenericMediaReview, TGeneralMediaReview} from "./MGenericMediaReview";
 
 import {SAMPLE_BOOKS} from "../data/sampleBooks";
 import {Card, Container} from "react-bootstrap";
 import {Config} from "../Config";
 
-export type TBookReview = IGeneralMediaReview & {
+export type TBookReview = TGeneralMediaReview & {
     isbn9?: string;
     isbn13?: string;
 }
 
-export class BookReview extends GenericMediaReview {
+export class MBookReview extends MGenericMediaReview {
 
     data: TBookReview;
 
@@ -23,17 +23,17 @@ export class BookReview extends GenericMediaReview {
     }
 
     static from_json(param: TBookReview) {
-        return new BookReview(param)
+        return new MBookReview(param)
     }
 
-    static loadExampleObjects(): BookReview[] {
+    static loadExampleObjects(): MBookReview[] {
 
-        let books: BookReview[] = []
+        let books: MBookReview[] = []
 
         for (let index in SAMPLE_BOOKS) {
             const samplebook = SAMPLE_BOOKS[index];
 
-            books.push(BookReview.from_json(samplebook))
+            books.push(MBookReview.from_json(samplebook))
         }
 
         return books

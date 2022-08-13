@@ -1,14 +1,14 @@
 import {Button, Col, Container, Row} from "react-bootstrap";
 import React, {ReactNode, useEffect, useState} from "react";
-import {GithubService} from "../../service/GithubService";
+import {GithubService} from "../../service/ServiceGithub";
 import CGithubHealthAlert from "../../component/CGithubHealthAlert";
 import CGithubProfileApplet from "../../component/CGithubProfileApplet";
 import {Config} from "../../Config";
 import CPrettyJSON from "../../component/CPrettyJSON";
-import {TextFmtService} from "../../service/TextFmtService";
-import {MarkdownFmtService} from "../../service/MarkdownFmtService";
+import {TextFmtService} from "../../service/ServiceTextFmt";
+import {MarkdownFmtService} from "../../service/ServiceMarkdownFmt";
 import ReactMarkdown from "react-markdown";
-import {SomeCrappyUtilitiesClass} from "../../service/SomeCrappyUtilitiesClass"
+import {SomeCrappyUtilitiesClass} from "../../service/ServiceCrappyUtilities"
 
 
 function sleep(ms: number) {

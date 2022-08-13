@@ -18,4 +18,4 @@ export function githubFileURLfmt(username: string, repo: string, branch: string,
     return `https://github.com/${username}/${repo}/tree/${branch}/${path}`
 }
 
-export * as TextFmtService from './TextFmtService';
+export * as TextFmtService from './ServiceTextFmt';

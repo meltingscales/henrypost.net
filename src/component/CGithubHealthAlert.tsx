@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
-import GithubZenResponse from "../model/GithubZenResponse";
-import {GithubService} from "../service/GithubService";
+import MGithubZenResponse from "../model/MGithubZenResponse";
+import {GithubService} from "../service/ServiceGithub";
 import {Alert} from "react-bootstrap";
 
 const CGithubHealthAlert = () => {
 
-    const [zenResponse, setZenResponse] = useState<GithubZenResponse | null>(null)
+    const [zenResponse, setZenResponse] = useState<MGithubZenResponse | null>(null)
 
     useEffect(() => {
 

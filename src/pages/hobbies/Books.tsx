@@ -1,15 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import {BookReview} from "../../model/BookReview";
+import {MBookReview} from "../../model/MBookReview";
 import {CBookReviewLibrary} from "../../component/CBookReviewLibrary";
 
 
 export interface EltBookReviewProps {
-    bookReview: BookReview
+    bookReview: MBookReview
 }
 
 const Books = () => {
 
-    let bookData: BookReview[] = BookReview.loadExampleObjects()
+    let bookData: MBookReview[] = MBookReview.loadExampleObjects()
 
     return <>
         <h1>books</h1>

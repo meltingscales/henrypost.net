@@ -26,4 +26,4 @@ export function splitHugoBlogPost(postContent: string): Array<String> {
 }
 
 
-export * as MarkdownFmtService from './MarkdownFmtService';
+export * as MarkdownFmtService from './ServiceMarkdownFmt';

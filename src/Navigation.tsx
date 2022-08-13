@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {Config} from "./Config";
-import {TextFmtService} from "./service/TextFmtService";
+import {TextFmtService} from "./service/ServiceTextFmt";
 
 const NavigationItem = (props: any) => {
 
