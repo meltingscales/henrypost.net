@@ -18,10 +18,6 @@ export class MBookReview extends MGenericMediaReview {
         this.data = data;
     }
 
-    hasBothISBNs(): boolean {
-        return (this.hasIsbn9() && this.hasIsbn13())
-    }
-
     static from_json(param: TBookReview) {
         return new MBookReview(param)
     }
@@ -39,8 +35,24 @@ export class MBookReview extends MGenericMediaReview {
         return books
     }
 
+    hasBothISBNs(): boolean {
+        return (this.hasIsbn9() && this.hasIsbn13())
+    }
+
+    hasNoISBNs():boolean{
+        return ((!this.hasIsbn9()) && (!this.hasIsbn13()))
+    }
+
     renderBothISBNs() {
+
+        if (this.hasNoISBNs()) {
+            return <>
+                <p className={'text-muted'}>No ISBN.</p>
+            </>
+        }
+
         return <Container>
+            <p className={'text-muted'}>ISBNs:</p>
             {this.hasIsbn9() ? this.renderISBN9() : <></>}
             {this.hasIsbn13() ? this.renderISBN13() : <></>}
         </Container>
