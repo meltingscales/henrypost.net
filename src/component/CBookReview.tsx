@@ -3,7 +3,7 @@ import {EltBookReviewProps} from "../pages/hobbies/Books";
 
 export const CBookReview = ({bookReview}: EltBookReviewProps) => {
 
-    var eltShortReview = <></>;
+    var eltShortReview = null;
     if (bookReview.hasShortReview()) {
         eltShortReview = (
 
@@ -16,7 +16,7 @@ export const CBookReview = ({bookReview}: EltBookReviewProps) => {
         )
     }
 
-    var eltTags: JSX.Element = <></>;
+    var eltTags: JSX.Element = null;
     if (bookReview.data.tags) {
         eltTags = (
             <aside>
@@ -26,9 +26,27 @@ export const CBookReview = ({bookReview}: EltBookReviewProps) => {
 
     }
 
-    var eltLongReview: JSX.Element = <></>
+    var eltLongReview: JSX.Element = null
     if (bookReview.data.longReview) {
         eltLongReview = <aside>{bookReview.data.longReview}</aside>
+    }
+
+
+    console.log(eltShortReview)
+    console.log(eltLongReview)
+    console.log(eltTags)
+
+
+    if (eltShortReview === null) {
+        eltShortReview = null
+    }
+
+    if (eltLongReview === null) {
+        eltLongReview = null
+    }
+
+    if (eltTags === null) {
+        eltTags = null
     }
 
 
@@ -36,10 +54,10 @@ export const CBookReview = ({bookReview}: EltBookReviewProps) => {
         <Card style={{width: '18rem'}}>
             <Card.Body>
                 <Card.Title>{bookReview.data.title}</Card.Title>
-                <hr/>
-                {eltShortReview ? eltShortReview : <hr/>}
-                {eltLongReview ? eltLongReview : <hr/>}
-                {eltTags === <></> ? eltTags : <hr/>}
+                <hr id={'belowTitle'}/>
+                {eltShortReview}
+                {eltLongReview}
+                {eltTags}
                 {bookReview.renderBothISBNs()}
             </Card.Body>
         </Card>

@@ -11,7 +11,7 @@ export type TBookReview = TGeneralMediaReview & {
 
 export class MBookReview extends MGenericMediaReview {
 
-    data: TBookReview;
+    data: TBookReview = null;
 
     constructor(data: TBookReview) {
         super(data);
