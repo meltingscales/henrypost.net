@@ -1,4 +1,4 @@
-import {Card} from "react-bootstrap";
+import {Card, Container} from "react-bootstrap";
 import {EltBookReviewProps} from "../pages/hobbies/Books";
 
 export const CBookReview = ({bookReview}: EltBookReviewProps) => {
@@ -24,12 +24,16 @@ export const CBookReview = ({bookReview}: EltBookReviewProps) => {
         </>)
     }
 
-    var eltReview = <></>;
+    var eltShortReview = <></>;
     if (bookReview.hasShortReview()) {
-        eltReview = (
-            <Card.Subtitle className="mb-2 text-muted">
-                Short Review: {bookReview.data.shortReview}
-            </Card.Subtitle>
+        eltShortReview = (
+
+            <Card.Text className="mb-2">
+                <p>Short Review:</p>
+                <Container>
+                    <i>{bookReview.data.shortReview}</i>
+                </Container>
+            </Card.Text>
         )
     }
 
@@ -43,17 +47,17 @@ export const CBookReview = ({bookReview}: EltBookReviewProps) => {
 
     }
 
-    var eltThoughts = <></>
-    if (bookReview.data.shortReview) {
-        eltThoughts = <aside>{bookReview.data.shortReview}</aside>
+    var eltLongReview = <></>
+    if (bookReview.data.longReview) {
+        eltLongReview = <aside>{bookReview.data.longReview}</aside>
     }
 
     return <>
         <Card style={{width: '18rem'}}>
             <Card.Body>
                 <Card.Title>{bookReview.data.title}</Card.Title>
-                {eltReview}
-                {eltThoughts}
+                {eltShortReview}
+                {eltLongReview}
                 {eltTags}
                 {eltISBNLinks}
             </Card.Body>
