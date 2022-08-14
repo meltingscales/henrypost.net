@@ -1,3 +1,5 @@
+import {Container} from "react-bootstrap";
+
 type TJobWorked = {
     title: string
     startDate: Date
@@ -53,6 +55,25 @@ export class MResume {
 
     constructor(data: TResume) {
         this.data = data
+    }
+
+    public static henryResumeData(): TResume {
+        return {
+            name: "Henry Post",
+            certifications: [],
+            education: [],
+            jobsWorked: [],
+            projects: [],
+            skills: [],
+        };
+    }
+
+    renderResume() {
+        return <>
+            <Container>
+                <p>this iz a resume for {this.data.name} :3c</p>
+            </Container>
+        </>;
     }
 
 }
