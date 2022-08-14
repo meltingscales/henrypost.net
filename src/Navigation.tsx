@@ -24,17 +24,6 @@ const NavigationItem = (props: any) => {
     )
 }
 
-// /**
-//  * @deprecated
-//  */
-// const SubNavigationItem = (props: { subpath: string, path: string }) => {
-//     return (
-//         <NavigationItem
-//             href={TextFmtService.absDirs(props.path, props.subpath)}
-//             customName={TextFmtService.dirFmt(props.subpath)}/>
-//     )
-// }
-
 const NavDropdownItem = (props: any) => {
     return (
         <NavDropdown.Item

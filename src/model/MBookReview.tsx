@@ -10,16 +10,11 @@ export type TBookReview = TGeneralMediaReview & {
 }
 
 export class MBookReview extends MGenericMediaReview {
-
-    data: TBookReview;
+    data: TBookReview = null;
 
     constructor(data: TBookReview) {
         super(data);
         this.data = data;
-    }
-
-    hasBothISBNs(): boolean {
-        return (this.hasIsbn9() && this.hasIsbn13())
     }
 
     static from_json(param: TBookReview) {
@@ -39,8 +34,28 @@ export class MBookReview extends MGenericMediaReview {
         return books
     }
 
+    renderShortReview() {
+        return super.renderShortReview()
+    }
+
+    hasBothISBNs(): boolean {
+        return (this.hasIsbn9() && this.hasIsbn13())
+    }
+
+    hasNoISBNs(): boolean {
+        return ((!this.hasIsbn9()) && (!this.hasIsbn13()))
+    }
+
     renderBothISBNs() {
+
+        if (this.hasNoISBNs()) {
+            return <>
+                <p className={'text-muted'}>No ISBN.</p>
+            </>
+        }
+
         return <Container>
+            <p className={'text-muted'}>ISBNs:</p>
             {this.hasIsbn9() ? this.renderISBN9() : <></>}
             {this.hasIsbn13() ? this.renderISBN13() : <></>}
         </Container>
@@ -70,4 +85,20 @@ export class MBookReview extends MGenericMediaReview {
         return !!this.data.isbn13;
     }
 
+    renderTags() {
+
+        if(!this.hasTags()){
+            return null
+        }
+
+        return (
+            <aside>
+                Tags: <i>{(this.data.tags?.join(', '))}</i>
+            </aside>
+        )
+    }
+
+     hasTags() {
+        return !!this.data.tags;
+    }
 }

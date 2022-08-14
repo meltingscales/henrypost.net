@@ -1,3 +1,5 @@
+import {Card, Container} from "react-bootstrap";
+
 export type TRating = {
     lowerBound: any
     upperBound: any
@@ -45,5 +47,26 @@ export class MGenericMediaReview {
     hasShortReview() {
         return !!this.data.shortReview;
     }
+
+    hasLongReview(): boolean {
+        return !!this.data.longReview;
+    }
+
+    renderShortReview(): JSX.Element {
+
+        if (!this.hasShortReview()) {
+            return null;
+        }
+
+        return (
+            <Card.Text className="mb-2">
+                <p>Short Review:</p>
+                <Container>
+                    <i>{this.data.shortReview}</i>
+                </Container>
+            </Card.Text>
+        )
+    }
+
 }
 
