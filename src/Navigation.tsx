@@ -69,14 +69,17 @@ const Navigation = () =>
                             <NavigationItem href={"/"}
                                             customName={"~/"}/>
 
-                            <NavigationItem href={"/blog"}
-                                            name={"blog"}/>
+                            <NavigationItem href={"/resume"}
+                                            name={"resume"}/>
 
                             <NavigationItem href={"/contact"}
                                             name={"contact"}/>
 
                             <NavigationItem href={"/about"}
                                             name={"about"}/>
+
+                            <NavigationItem href={"/blog"}
+                                            name={"blog"}/>
 
                             <NavDropdown
                                 title={TextFmtService.homeDirFmt('demoApps')}
