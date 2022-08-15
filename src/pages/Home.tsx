@@ -8,7 +8,7 @@ const Home = () => {
         <h1>{OWNER_NAME}</h1>
         <Container>
             <p>Hello, welcome to {OWNER_NAME}'s website.</p>
-            <p>I am learning ReactJS :3c</p>
+            <p>I am learning ReactJS, which this website is written in.</p>
             <Alert variant={'danger'}>
                 <a href={'http://henrypost.net'}>
                     <h2>This is an extremely in-development website. <br/><br/>

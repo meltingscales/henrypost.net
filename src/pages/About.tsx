@@ -7,16 +7,10 @@ function About() {
         <h1>About Website</h1>
         <Container>
             <p>
-                Made with ReactJS.
+                Made with ReactJS and deployed with Google Cloud Platform.
             </p>
             <a href={Config.SITE_CODE_URL}>
-                See this link for project files.</a>
-            <Container>
-                <h2>Bio</h2>
-                <p>
-                    My name is Henry Post and XYZ ABC
-                </p>
-            </Container>
+                Please click this link for this website's source code.</a>
         </Container>
     </>;
 }

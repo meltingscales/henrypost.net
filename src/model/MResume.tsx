@@ -134,7 +134,7 @@ Kubernetes (1y), Helm (1y), Groovy (2y), Programming (10y), Linux (4y), IT Admin
     renderResume() {
         return <>
             <Container>
-                <p>this iz a resume for {this.data.name} :3c</p>
+                <h1>{this.data.name}</h1>
             </Container>
             {this.renderJobs()}
             {this.renderSkills()}
@@ -168,7 +168,7 @@ Kubernetes (1y), Helm (1y), Groovy (2y), Programming (10y), Linux (4y), IT Admin
     private renderJobs() {
         return <Container id={'jobs'}>
             <h2>Employment History</h2>
-            todo lol
+            TODO
         </Container>
     }
 }
