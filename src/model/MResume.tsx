@@ -15,56 +15,6 @@ type TSkill = {
     timeStudied: string
 }
 
-class MSkill {
-    data: TSkill
-
-    constructor(data: TSkill) {
-        this.data = data;
-    }
-
-    static parseStringToMSKillList(s: string): MSkill[] {
-        var split: string[] = s.split(',')
-        split.forEach(it => it.trim())
-
-        const skills: MSkill[] = []
-
-        for (const someRawSkill in split) {
-            skills.push(MSkill.parseStringToMSKill(someRawSkill))
-        }
-
-        return skills
-    }
-
-    public static parseStringToMSKill(someRawSkill: string): MSkill {
-        const someSplitRawSkill: string[] = someRawSkill.split('(')
-        const skillName = someSplitRawSkill[0]
-            .replace('(', '')
-            .replace(')', '')
-
-        const timeStr = someSplitRawSkill[1]
-            .replace('(', '')
-            .replace(')', '')
-
-        const theSkill: TSkill = {
-            name: skillName,
-            timeStudied: timeStr,
-            // category: undefined
-        };
-
-        return new MSkill(theSkill);
-    }
-
-    static parseStringToTSKillList(thing: string): TSkill[] {
-        var mskilllist = this.parseStringToMSKillList(thing)
-
-        var tskillList = []
-
-        mskilllist.forEach(it => tskillList.push(it.data))
-
-        return tskillList
-    }
-}
-
 type TProject = {
     title: string
     date: Date
@@ -80,7 +30,6 @@ type TEducation = {
     extraDescription: string
 }
 
-//TODO build out cert type...
 type TCertification = {
     institutionName: string
     startDate: Date
@@ -99,6 +48,68 @@ type TResume = {
     certifications: TCertification[]
 }
 
+class MSkill {
+    data: TSkill
+
+    constructor(data: TSkill) {
+        this.data = data;
+    }
+
+    static parseStringToMSKillList(rawData: string): MSkill[] {
+        var split: string[] = rawData.split(',')
+        split = split.map(it => it.trim())
+
+        console.log(split)
+
+        const skills: MSkill[] = []
+
+        for (const i in split) {
+            var someRawSkill = split[i]
+
+            skills.push(MSkill.parseStringToMSKill(someRawSkill))
+        }
+
+        return skills
+    }
+
+    public static parseStringToMSKill(someRawSkill: string): MSkill {
+        const someSplitRawSkill: string[] = someRawSkill.split('(')
+
+        console.log(someSplitRawSkill)
+
+        console.assert(someSplitRawSkill.length === 2)
+
+        const skillName = someSplitRawSkill[0]
+            .replace('(', '')
+            .replace(')', '')
+            .trim()
+
+        const timeStr = someSplitRawSkill[1]
+            .replace('(', '')
+            .replace(')', '')
+            .trim()
+
+        const theSkill: TSkill = {
+            name: skillName,
+            timeStudied: timeStr,
+            // category: undefined
+        };
+
+        return new MSkill(theSkill);
+    }
+
+    static parseStringToTSKillList(rawData: string): TSkill[] {
+        var mskilllist = this.parseStringToMSKillList(rawData)
+
+        var tskillList = []
+
+        //just extract data property
+        mskilllist.forEach(it => tskillList.push(it.data))
+
+        return tskillList
+    }
+}
+
 export class MResume {
 
     data: TResume
@@ -114,7 +125,9 @@ export class MResume {
             education: [],
             jobsWorked: [],
             projects: [],
-            skills: MSkill.parseStringToTSKillList('Kubernetes (1y), Helm (1y), Groovy (2y), Programming (10y), Linux (4y), IT Administration (3y)Software Design (5y), Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)'),
+            skills: MSkill.parseStringToTSKillList(`
+Kubernetes (1y), Helm (1y), Groovy (2y), Programming (10y), Linux (4y), IT Administration (3y), Software Design (5y), Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
+            `),
         };
     }
 
@@ -123,24 +136,39 @@ export class MResume {
             <Container>
                 <p>this iz a resume for {this.data.name} :3c</p>
             </Container>
-            <Container id={'skills'}>
-                {this.renderSkills()}
-            </Container>
+            {this.renderJobs()}
+            {this.renderSkills()}
         </>;
     }
 
     private renderSkills() {
-        var daList = []
+        var skillsElts = []
 
         for (const i in this.data.skills) {
-            const daSkill = this.data.skills[i]
-            daList.push(<>
-                    {daSkill.name}
-                </>
+            const skill = this.data.skills[i]
+            skillsElts.push(
+                <li>
+                    <p>{skill.name}&nbsp;
+                        <i>({skill.timeStudied})</i>
+                    </p>
+                </li>
             )
         }
 
 
-        return undefined;
+        return <Container id={'skills'}>
+            <h2>Skills</h2>
+            <ul>
+                {skillsElts}
+            </ul>
+        </Container>
+            ;
+    }
+
+    private renderJobs() {
+        return <Container id={'jobs'}>
+            <h2>Employment History</h2>
+            todo lol
+        </Container>
     }
 }

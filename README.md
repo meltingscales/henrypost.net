@@ -17,6 +17,7 @@ Created to learn ReactJS.
 - https://rxjs.dev/guide/overview
 - https://www.codingdeft.com/posts/react-deploy-google-cloud-app-engine/#deploying-using-google-cloud-sdk
 - mocha js
+- https://www.npmjs.com/package/resume-react
 
 ## Angular notes (not reactjs)
 
