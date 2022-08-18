@@ -380,14 +380,17 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
     }
 
     private renderContactMe() {
-        return <Card>
-            <Card.Text style={{textAlign: 'center'}}>
-                <a href={'http://henrypost.net'}>henrypost.net</a> ◈ <a
-                href={'https://github.com/HenryFBP'}>github.com/HenryFBP</a> <br/>
-                Chicago, IL ◈ Martha's Vineyard, MA<br/>
-                resplendent • falconeer ﹫ gmail • com
-            </Card.Text>
-        </Card>
+        return <>
+            <div className="col d-flex justify-content-center">
+                <Card style={{padding:'1em'}}>
+                    <Card.Text style={{textAlign: 'center'}}>
+                        <a href={'http://henrypost.net'}>henrypost.net</a> ◈ <a
+                        href={'https://github.com/HenryFBP'}>github.com/HenryFBP</a> <hr/>
+                        Chicago, IL ◈ Martha's Vineyard, MA<hr/>
+                        resplendent • falconeer ﹫ gmail • com
+                    </Card.Text>
+                </Card></div>
+        </>
     }
 
     private renderEducation() {
