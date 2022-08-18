@@ -1,4 +1,5 @@
 import {Card, Container} from "react-bootstrap";
+import {SomeCrappyUtilitiesClass} from "../service/ServiceCrappyUtilities";
 
 type TJobWorked = {
     title: string
@@ -246,11 +247,16 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
         for (const i in this.data.education) {
             const eduData: TEducation = this.data.education[i];
 
-            var dateRangeStr: string = eduData.startDate
-                .toLocaleDateString()
 
-            if (!eduData.endDate) {
+            let sdate = eduData.startDate
+            let edate = eduData.endDate
+            let dateRangeStr = SomeCrappyUtilitiesClass.yearMonthFmt(sdate)
+
+
+            if (!edate) {
                 dateRangeStr += ' - In Progress'
+            } else {
+                dateRangeStr += ' - ' +SomeCrappyUtilitiesClass.yearMonthFmt(edate)
             }
 
             eduElts.push(
@@ -262,7 +268,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
                             left={
                                 <b>{eduData.institutionName}, {eduData.institutionLocation}</b>
                             }
-                            right={dateRangeStr}/>
+                            right={<i>{dateRangeStr}</i>}/>
                         <p>{eduData.degreeName}</p>
                     </Card.Header>
 
