@@ -1,4 +1,5 @@
 import {Card, Container} from "react-bootstrap";
+import {DataBoundClass} from "./DataBoundClass";
 
 export type TRating = {
     lowerBound: any
@@ -37,12 +38,7 @@ export type TGeneralMediaReview = {
     tags?: Array<string>;
 }
 
-export class MGenericMediaReview {
-    data: TGeneralMediaReview
-
-    constructor(data: TGeneralMediaReview) {
-        this.data = data;
-    }
+export class MGenericMediaReview extends DataBoundClass<TGeneralMediaReview> {
 
     hasShortReview() {
         return !!this.data.shortReview;

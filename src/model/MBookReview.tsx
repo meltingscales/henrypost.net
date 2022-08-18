@@ -10,12 +10,8 @@ export type TBookReview = TGeneralMediaReview & {
 }
 
 export class MBookReview extends MGenericMediaReview {
-    data: TBookReview = null;
 
-    constructor(data: TBookReview) {
-        super(data);
-        this.data = data;
-    }
+    data: TBookReview = null;
 
     static from_json(param: TBookReview) {
         return new MBookReview(param)
@@ -87,7 +83,7 @@ export class MBookReview extends MGenericMediaReview {
 
     renderTags() {
 
-        if(!this.hasTags()){
+        if (!this.hasTags()) {
             return null
         }
 
@@ -98,7 +94,7 @@ export class MBookReview extends MGenericMediaReview {
         )
     }
 
-     hasTags() {
+    hasTags() {
         return !!this.data.tags;
     }
 }
