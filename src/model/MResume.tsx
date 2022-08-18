@@ -1,5 +1,5 @@
 import {Card, Container} from "react-bootstrap";
-import {SomeCrappyUtilitiesClass} from "../service/ServiceCrappyUtilities";
+import {dateRangeYearMonthFmt, SomeCrappyUtilitiesClass} from "../service/ServiceCrappyUtilities";
 import {ReactNode} from "react";
 
 type TJobWorked = {
@@ -284,14 +284,14 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
             <h2>Education</h2>
             {this.renderEducation()}
 
+            <h2>Work Experience</h2>
+            {this.renderJobs()}
+
             <h2>Projects</h2>
             {this.renderProjects()}
 
             <h2>Technical Strengths</h2>
             {this.renderSkills()}
-
-            <h2>Work Experience</h2>
-            {this.renderJobs()}
 
             <h2>Extra-curricular</h2>
             {this.renderExtracurricular()}
@@ -342,7 +342,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
             jobElts.push(
                 <Card>
                     <Card.Header>
-                        {job.title} {SomeCrappyUtilitiesClass.yearMonthFmt(job.startDate)} for {job.employerName}
+                        {job.title} {SomeCrappyUtilitiesClass.yearMMMonthFmt(job.startDate)} for {job.employerName}
                     </Card.Header>
                     <Card.Body>
                         <ul>
@@ -394,20 +394,17 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
 
             let sdate = education.startDate
             let edate = education.endDate
-            let dateRangeStr = SomeCrappyUtilitiesClass.yearMonthFmt(sdate)
-
+            let dateRangeStr = SomeCrappyUtilitiesClass.dateRangeYearMMMonthFmt(sdate,edate)
 
             if (!edate) {
                 dateRangeStr += ' - In Progress'
-            } else {
-                dateRangeStr += ' - ' + SomeCrappyUtilitiesClass.yearMonthFmt(edate)
             }
 
             eduElts.push(
                 <Card>
                     <Card.Header>
                         <LeftRightText
-                            left={<b>{education.institutionName}, {education.institutionLocation}</b>}
+                            left={<h3>{education.institutionName}, {education.institutionLocation}</h3>}
                             right={<i>{dateRangeStr}</i>}/>
                         <p>{education.degreeName}</p>
                     </Card.Header>
@@ -439,7 +436,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
 
     private renderProjects() {
 
-        const someList = []
+        const eltsProjects = []
 
         //sort proj by date
         var projects = this.data.projects
@@ -450,7 +447,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
         for (const idx in projects) {
             var project = projects[idx]
 
-            someList.push(<>
+            eltsProjects.push(<>
                 <Card>
                     <Card.Header>
                         <LeftRightText
@@ -458,7 +455,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
                                 <h3>{project.title}</h3>
                             }
                             right={
-                                SomeCrappyUtilitiesClass.yearMonthFmt(project.date)
+                                SomeCrappyUtilitiesClass.yearMMMonthFmt(project.date)
                             }
                         />
 
@@ -471,12 +468,12 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
                 </Card>
             </>)
 
-            someList.push(<br/>)
+            eltsProjects.push(<br/>)
         }
 
 
         return <Container>
-            {someList}
+            {eltsProjects}
         </Container>
 
     }
