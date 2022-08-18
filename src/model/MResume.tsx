@@ -420,9 +420,9 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
                 <Card>
                     <Card.Header>
                         <LeftRightText
-                            left={<h3>{education.institutionName}, {education.institutionLocation}</h3>}
+                            left={<h3>{education.degreeName}</h3>}
                             right={<i>{dateRangeStr}</i>}/>
-                        <p>{education.degreeName}</p>
+                        <i>{education.institutionName}, {education.institutionLocation}</i>
                     </Card.Header>
 
                     {
