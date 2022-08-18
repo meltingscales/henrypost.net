@@ -205,6 +205,11 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
 
 
     renderResume() {
+
+        console.log("WE RENDERING THE BIG ONE!!!!")
+
+        console.log(this.data)
+
         return <>
             <Container>
                 <h1 style={{textAlign: "center"}}>{this.data.name}</h1>
@@ -259,9 +264,40 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
     }
 
     private renderJobs() {
+        const jobElts = []
+
+        var jobs = this.data.jobsWorked
+        jobs = jobs.sort((a, b) => {
+            return -1 * (a.startDate.getTime() - b.startDate.getTime())
+        })
+
+        for (const idx in jobs) {
+            var job = jobs[idx]
+
+            jobElts.push(
+                <Card>
+                    <Card.Header>
+                        {job.title} {SomeCrappyUtilitiesClass.yearMonthFmt(job.startDate)} for {job.companyName}
+                    </Card.Header>
+                    <Card.Body>
+                        <ul>
+                            {job.responsibilities.map(
+                                (resp => {
+                                    return <li>
+                                        {resp}
+                                    </li>
+                                })
+                            )}
+                        </ul>
+                    </Card.Body>
+
+                </Card>
+            )
+
+        }
+
         return <Container id={'jobs'}>
-            <h2>Employment History</h2>
-            TODO
+            {jobElts}
         </Container>
     }
 
