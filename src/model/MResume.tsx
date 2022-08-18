@@ -4,11 +4,11 @@ import {ReactNode} from "react";
 
 type TJobWorked = {
     title: string
-    companyName?: string
+    employerName?: string
     startDate: Date
     endDate?: Date
     description?: string
-    responsibilities?: string[]
+    responsibilities: string[]
     location?: string
 }
 
@@ -162,7 +162,7 @@ export class MResume {
                 {
                     title: "Tutor",
                     location: "Chicago",
-                    companyName: "Illinois Institute of Chicago",
+                    employerName: "Illinois Institute of Chicago",
                     startDate: new Date('February 2017'),
                     endDate: new Date('September 2017'),
                     responsibilities: [
@@ -170,6 +170,71 @@ export class MResume {
                         'Teaching data structures such as linked lists, binary trees, heaps, skip lists, etc.',
                         'Responsible for managing multiple tutees at once, often switching rapidly between different languages and subjects.',
                         'Drawing diagrams, creating pieces of example code to illustrate a point, aiding in test prep by quizzing students.'
+                    ],
+                },
+                {
+                    title: "Librarian & IT Contractor",
+                    location: "Martha's Vineyard",
+                    employerName: "Oak Bluffs Public Library",
+                    startDate: new Date('July 2018'),
+                    endDate: new Date('August 2018'),
+                    responsibilities: [
+                        'Day-to-day technological operations such as setting up/turning off PCs.',
+                        'Troubleshooting IT issues such as connection, computer operation, and printers.',
+                        'Answering patrons’ questions regarding printing, word processing software, phones, and all other technological questions.',
+                        'Documenting procedures, protocols, and troubleshooting regarding the custom Raspberry Pi hardware solution.',
+                    ],
+                },
+                {
+                    title: 'Private Tutor',
+                    location: "Chicago",
+                    employerName: "Wyzant",
+                    startDate: new Date("Oct 2017"),
+                    endDate: new Date("May 2017"),
+                    responsibilities: [
+                        'Teaching tutees online and in-person about various programming languages, technologies, and concepts.',
+                        'Teaching in Python, Java, HTML, CSS, and JavaScript.',
+                        'Drawing diagrams',
+                        'Scheduling online or in-person tutoring lessons',
+                        'Creating lesson plans and exercises, creating interactive programming challenges, doing pair programming',
+                        'Creating pieces of example code to illustrate a point',
+                        'Demonstrating underlying programming concepts'
+                    ],
+                },
+                {
+                    title: 'Security Analyst',
+                    location: "Chicago",
+                    employerName: "U.S. Bank",
+                    startDate: new Date("May 2019"),
+                    endDate: new Date("Jan 2022"),
+                    responsibilities: [
+                        'Analyzing C#, Java, ASP.NET, PHP, and JS source code',
+                        'Discussing implementation and security vulnerabilities with developers',
+                        'Managing workload between multiple co-workers and prioritizing work items',
+                        'Creating, disseminating, and maintaining documentation'
+                    ],
+                },
+                {
+                    title: 'Senior Security Engineer',
+                    location: "Chicago",
+                    employerName: "U.S. Bank",
+                    startDate: new Date("Jan 2022"),
+                    endDate: new Date("Aug 2022"),
+                    responsibilities: [
+                        'Implementing Kubernetes and Helm applications to production',
+                        'Creating and deploying Application Security Code Scanning Pipelines for developers to self-integrate with',
+                        'Teaching my team members and coworkers about Helm and containerization',
+                        'Writing high-quality documentation for deployed systems for L1 support',
+                        'Maintaining and diagnosing infrastructure integration issues and challenges'
+                    ],
+                },
+                {
+                    title: 'Assistant Vice President - Info Security Engineer',
+                    location: "Chicago",
+                    employerName: "U.S. Bank",
+                    startDate: new Date("August 2022"),
+                    responsibilities: [
+                        'TBD'
                     ],
                 },
             ],
@@ -277,7 +342,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
             jobElts.push(
                 <Card>
                     <Card.Header>
-                        {job.title} {SomeCrappyUtilitiesClass.yearMonthFmt(job.startDate)} for {job.companyName}
+                        {job.title} {SomeCrappyUtilitiesClass.yearMonthFmt(job.startDate)} for {job.employerName}
                     </Card.Header>
                     <Card.Body>
                         <ul>
