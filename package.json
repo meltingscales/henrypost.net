@@ -1,6 +1,6 @@
 {
   "name": "henryfbp-personal-website-react",
-  "version": "110",
+  "version": "111",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
