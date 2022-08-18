@@ -1,6 +1,7 @@
 import {Card, Container} from "react-bootstrap";
-import {dateRangeYearMonthFmt, SomeCrappyUtilitiesClass} from "../service/ServiceCrappyUtilities";
+import {SomeCrappyUtilitiesClass} from "../service/ServiceCrappyUtilities";
 import {ReactNode} from "react";
+import {DataBoundClass} from "./DataBoundClass";
 
 type TJobWorked = {
     title: string
@@ -22,6 +23,33 @@ type TProject = {
     title: string
     date: Date
     description: string | ReactNode
+}
+
+class MProject extends DataBoundClass<TProject> {
+
+    public static renderTProject(p: TProject) {
+        return <>
+            <Card>
+                <Card.Header>
+                    <LeftRightText
+                        left={
+                            <h3>{p.title}</h3>
+                        }
+                        right={
+                            SomeCrappyUtilitiesClass.yearMMMonthFmt(p.date)
+                        }
+                    />
+
+                </Card.Header>
+                <Card.Body>
+                        <span>
+                            {p.description}
+                        </span>
+                </Card.Body>
+            </Card>
+        </>
+    }
+
 }
 
 type TEducation = {
@@ -70,12 +98,7 @@ const LeftRightText = (props: { left: any, right: any }) => {
 }
 
 
-class MSkill {
-    data: TSkill
-
-    constructor(data: TSkill) {
-        this.data = data;
-    }
+class MSkill extends DataBoundClass<TSkill> {
 
     static parseStringToMSKillList(rawData: string): MSkill[] {
         var split: string[] = rawData.split(',')
@@ -132,13 +155,7 @@ class MSkill {
     }
 }
 
-export class MResume {
-
-    data: TResume
-
-    constructor(data: TResume) {
-        this.data = data
-    }
+export class MResume extends DataBoundClass<TResume> {
 
     public static henryResumeData(): TResume {
         return {
@@ -505,26 +522,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
         for (const idx in projects) {
             var project = projects[idx]
 
-            eltsProjects.push(<>
-                <Card>
-                    <Card.Header>
-                        <LeftRightText
-                            left={
-                                <h3>{project.title}</h3>
-                            }
-                            right={
-                                SomeCrappyUtilitiesClass.yearMMMonthFmt(project.date)
-                            }
-                        />
-
-                    </Card.Header>
-                    <Card.Body>
-                        <span>
-                            {project.description}
-                        </span>
-                    </Card.Body>
-                </Card>
-            </>)
+            eltsProjects.push(MProject.renderTProject(project))
 
             eltsProjects.push(<br/>)
         }
@@ -543,7 +541,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
     private renderPersonalTraits() {
         return <Container>
             <ul>
-                {this.data.personalTraits.map((it)=>{
+                {this.data.personalTraits.map((it) => {
                     return <li><p>{it}</p></li>
                 })}
             </ul>
