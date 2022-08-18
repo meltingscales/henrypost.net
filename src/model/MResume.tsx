@@ -188,6 +188,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
                 <h1 style={{textAlign: "center"}}>{this.data.name}</h1>
             </Container>
             {this.renderContactMe()}
+            <h2>Education</h2>
             {this.renderEducation()}
             {this.renderProjects()}
             {this.renderSkills()}
@@ -234,7 +235,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
             <Card.Text style={{textAlign: 'center'}}>
                 <a href={'http://henrypost.net'}>henrypost.net</a> ◈ <a
                 href={'https://github.com/HenryFBP'}>github.com/HenryFBP</a> <br/>
-                Chicago, IL || Martha's Vineyard, MA<br/>
+                Chicago, IL ◈ Martha's Vineyard, MA<br/>
                 resplendent • falconeer ﹫ gmail • com
             </Card.Text>
         </Card>
@@ -244,50 +245,53 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
 
         var eduElts = [];
 
-        for (const i in this.data.education) {
-            const eduData: TEducation = this.data.education[i];
+        //sort by startDate
+        var educations = this.data.education.sort(
+            (x, y) => {
+                return (-1) * (x.startDate.getTime() - y.startDate.getTime())
+            }
+        )
+
+        for (const i in educations) {
+            const education: TEducation = educations[i];
 
 
-            let sdate = eduData.startDate
-            let edate = eduData.endDate
+            let sdate = education.startDate
+            let edate = education.endDate
             let dateRangeStr = SomeCrappyUtilitiesClass.yearMonthFmt(sdate)
 
 
             if (!edate) {
                 dateRangeStr += ' - In Progress'
             } else {
-                dateRangeStr += ' - ' +SomeCrappyUtilitiesClass.yearMonthFmt(edate)
+                dateRangeStr += ' - ' + SomeCrappyUtilitiesClass.yearMonthFmt(edate)
             }
 
             eduElts.push(
                 <Card>
                     <Card.Header>
-
-
                         <LeftRightText
-                            left={
-                                <b>{eduData.institutionName}, {eduData.institutionLocation}</b>
-                            }
+                            left={<b>{education.institutionName}, {education.institutionLocation}</b>}
                             right={<i>{dateRangeStr}</i>}/>
-                        <p>{eduData.degreeName}</p>
+                        <p>{education.degreeName}</p>
                     </Card.Header>
 
                     {
-                        eduData.description ?
+                        education.description ?
                             <Card.Body>
-                                <p><i>{eduData.description}</i></p>
+                                <p><i>{education.description}</i></p>
                             </Card.Body>
                             :
                             null
                     }
+
                     {/*<Card.Footer>*/}
                     {/*    wowie :3c*/}
                     {/*</Card.Footer>*/}
-
-
                 </Card>
             )
 
+            eduElts.push(<br/>)
         }
 
         return <>
