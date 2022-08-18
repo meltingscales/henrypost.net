@@ -339,10 +339,23 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
         for (const idx in jobs) {
             var job = jobs[idx]
 
+            let sdate = job.startDate
+            let edate = job.endDate
+            let dateRangeStr = SomeCrappyUtilitiesClass.dateRangeYearMMMonthFmt(sdate, edate)
+
+            if (!edate) {
+                dateRangeStr += ' - Currently working'
+            }
+
+
             jobElts.push(
                 <Card>
                     <Card.Header>
-                        {job.title} {SomeCrappyUtilitiesClass.yearMMMonthFmt(job.startDate)} for {job.employerName}
+                        <LeftRightText
+                            left={<h3>{job.title}</h3>}
+                            right={<i>{dateRangeStr}</i>}
+                        />
+                        <i>{job.employerName}</i>
                     </Card.Header>
                     <Card.Body>
                         <ul>
@@ -394,7 +407,7 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
 
             let sdate = education.startDate
             let edate = education.endDate
-            let dateRangeStr = SomeCrappyUtilitiesClass.dateRangeYearMMMonthFmt(sdate,edate)
+            let dateRangeStr = SomeCrappyUtilitiesClass.dateRangeYearMMMonthFmt(sdate, edate)
 
             if (!edate) {
                 dateRangeStr += ' - In Progress'
