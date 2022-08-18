@@ -50,6 +50,8 @@ type TResume = {
     skills: TSkill[]
     education: TEducation[]
     certifications: TCertification[]
+    whyChooseMe?: string | ReactNode
+    personalTraits?: string[],
 }
 
 const LeftRightText = (props: { left: any, right: any }) => {
@@ -265,6 +267,41 @@ Kubernetes (1y), Helm (1y), Groovy (2y), Programming (10y), Linux (4y), IT Admin
 Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
             `,
             ),
+            personalTraits: [
+                'Constant desire to acquire new skills.',
+                'Strong motivational and leadership skills.',
+                'Loves working in group settings with diverse team members.',
+                'Skilled in writing concise and descriptive documentation that stands the test of time.'
+            ],
+            whyChooseMe: (
+                <Container>
+                    <p>
+                        I have an intense drive to explain, document, and teach programming and technology concepts. I
+                        am comprehensive and concise in my work, and I enjoy creating examples, demonstrations, and
+                        diagrams with the purpose of teaching.
+                    </p>
+                    <p>
+                        When creating code, I strive to create reusable, clean, and well-documented code. I often find
+                        myself
+                        re-using code techniques such as programming by contract, using factory functions, and using
+                        inner
+                        functions or subroutines to keep my code DRY, to name a few. I use techniques that work well for
+                        me, are reusable, and that provide overarching structure and patterns to my code.
+                    </p>
+                    <p>
+                        I enjoy creating reusable coding examples with the purpose of teaching things to people, and
+                        ensuring
+                        that everyone is given the chance to try them out.
+                    </p>
+                    <p>
+                        I have a wide and deep history of programming projects, all under version control and most on <a
+                        href={'https://github.com/HenryFBP/'}>my
+                        GitHub</a> that are all well-documented and meant to be reused by anyone.
+                        In short, I love to program, teach, and document my work; and I would say that I’m very good at
+                        it.
+                    </p>
+                </Container>
+            ),
         };
     }
 
@@ -355,7 +392,10 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
                             left={<h3>{job.title}</h3>}
                             right={<i>{dateRangeStr}</i>}
                         />
-                        <i>{job.employerName}</i>
+                        <LeftRightText
+                            left={<i>{job.employerName}</i>}
+                            right={<i>{job.location}</i>}
+                        />
                     </Card.Header>
                     <Card.Body>
                         <ul>
@@ -382,11 +422,13 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
     private renderContactMe() {
         return <>
             <div className="col d-flex justify-content-center">
-                <Card style={{padding:'1em'}}>
+                <Card style={{padding: '1em'}}>
                     <Card.Text style={{textAlign: 'center'}}>
                         <a href={'http://henrypost.net'}>henrypost.net</a> ◈ <a
-                        href={'https://github.com/HenryFBP'}>github.com/HenryFBP</a> <hr/>
-                        Chicago, IL ◈ Martha's Vineyard, MA<hr/>
+                        href={'https://github.com/HenryFBP'}>github.com/HenryFBP</a>
+                        <hr/>
+                        Chicago, IL ◈ Martha's Vineyard, MA
+                        <hr/>
                         resplendent • falconeer ﹫ gmail • com
                     </Card.Text>
                 </Card></div>
@@ -499,10 +541,16 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
     }
 
     private renderPersonalTraits() {
-
+        return <Container>
+            <ul>
+                {this.data.personalTraits.map((it)=>{
+                    return <li><p>{it}</p></li>
+                })}
+            </ul>
+        </Container>
     }
 
     private renderWhyChooseMe() {
-
+        return this.data.whyChooseMe
     }
 }
