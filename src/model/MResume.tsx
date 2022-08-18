@@ -1,5 +1,6 @@
 import {Card, Container} from "react-bootstrap";
 import {SomeCrappyUtilitiesClass} from "../service/ServiceCrappyUtilities";
+import {ReactNode} from "react";
 
 type TJobWorked = {
     title: string
@@ -20,7 +21,7 @@ type TSkill = {
 type TProject = {
     title: string
     date: Date
-    description: string
+    description: string | ReactNode
 }
 
 type TEducation = {
@@ -29,8 +30,8 @@ type TEducation = {
     startDate: Date
     endDate?: Date
     degreeName: string
-    description?: string
-    extraDescription?: string
+    description?: string | ReactNode
+    extraDescription?: string | ReactNode
 }
 
 type TCertification = {
@@ -38,8 +39,8 @@ type TCertification = {
     startDate: Date
     endDate?: Date
     certificationName: string
-    description?: string
-    extraDescription?: string
+    description?: string | ReactNode
+    extraDescription?: string | ReactNode
 }
 
 type TResume = {
@@ -172,7 +173,28 @@ export class MResume {
                     ],
                 },
             ],
-            projects: [],
+            projects: [
+                {
+                    title: 'Twitter Disaster Data Analysis',
+                    description: <p>Co-author and co-maintainer of <a
+                        href="https://pypi.org/project/twitter-fire-scraper/">a Python package</a> that allows
+                        developers and data scientists to gather thousands of tweets from Twitter for sentiment and
+                        regression analysis. <a
+                            href="https://henryfbp.github.io/files/IPRO%20-%20Improving%20Incident%20Response%20of%20the%20American%20Red%20Cross%20in%20the%20Greater%20Chicago%20Area%20by%20Using%20Text%20Classification%20of%20Posts%20From%20Twitter.pdf">Our
+                            research whitepaper is available at this link.</a></p>,
+                    date: new Date('March 2019')
+                },
+                {
+                    title: 'Replacement of library reference computers',
+                    date: new Date('August 2018'),
+                    description: `Designed a custom linux-based microcomputer (Raspberry Pi) solution for aging Windows PCs at the Oak Bluffs Public Library of Massachusetts that saved thousands of dollars of the cost of new Windows Desktop PCs and was much safer.`
+                },
+                {
+                    title: 'ASCII compression algorithm',
+                    date: new Date('June 2015'),
+                    description: 'Over the summer, I enrolled in an Illinois Institute of Technology summer Wolfram Mathematica course where I coded an ASCII compression algorithm that took 256 of the most common 2-tuples of characters in an ASCII file and compressed them into a file containing a dictionary followed by compressed data.'
+                }
+            ],
             skills: MSkill.parseStringToTSKillList(`
 Kubernetes (1y), Helm (1y), Groovy (2y), Programming (10y), Linux (4y), IT Administration (3y), Software Design (5y), 
 Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
@@ -188,13 +210,26 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
                 <h1 style={{textAlign: "center"}}>{this.data.name}</h1>
             </Container>
             {this.renderContactMe()}
+
             <h2>Education</h2>
             {this.renderEducation()}
+
+            <h2>Projects</h2>
             {this.renderProjects()}
+
+            <h2>Technical Strengths</h2>
             {this.renderSkills()}
+
+            <h2>Work Experience</h2>
             {this.renderJobs()}
+
+            <h2>Extra-curricular</h2>
             {this.renderExtracurricular()}
+
+            <h2>Personal Traits</h2>
             {this.renderPersonalTraits()}
+
+            <h2>Why should you choose me?</h2>
             {this.renderWhyChooseMe()}
         </>;
     }
@@ -302,6 +337,46 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
     }
 
     private renderProjects() {
+
+        const someList = []
+
+        //sort proj by date
+        var projects = this.data.projects
+        projects.sort((a, b) => {
+            return -1 * (a.date.getTime() - b.date.getTime())
+        })
+
+        for (const idx in projects) {
+            var project = projects[idx]
+
+            someList.push(<>
+                <Card>
+                    <Card.Header>
+                        <LeftRightText
+                            left={
+                                <h3>{project.title}</h3>
+                            }
+                            right={
+                                SomeCrappyUtilitiesClass.yearMonthFmt(project.date)
+                            }
+                        />
+
+                    </Card.Header>
+                    <Card.Body>
+                        <span>
+                            {project.description}
+                        </span>
+                    </Card.Body>
+                </Card>
+            </>)
+
+            someList.push(<br/>)
+        }
+
+
+        return <Container>
+            {someList}
+        </Container>
 
     }
 
