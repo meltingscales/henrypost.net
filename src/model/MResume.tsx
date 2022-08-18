@@ -1,12 +1,13 @@
-import {Container} from "react-bootstrap";
+import {Card, Container} from "react-bootstrap";
 
 type TJobWorked = {
     title: string
+    companyName?: string
     startDate: Date
-    endDate: Date | undefined
-    description: string
-    responsibilities: string[]
-    location: string
+    endDate?: Date
+    description?: string
+    responsibilities?: string[]
+    location?: string
 }
 
 type TSkill = {
@@ -23,20 +24,21 @@ type TProject = {
 
 type TEducation = {
     institutionName: string
+    institutionLocation?: string
     startDate: Date
-    endDate: Date | undefined
+    endDate?: Date
     degreeName: string
-    description: string
-    extraDescription: string
+    description?: string
+    extraDescription?: string
 }
 
 type TCertification = {
     institutionName: string
     startDate: Date
-    endDate: Date | undefined
+    endDate?: Date
     certificationName: string
-    description: string
-    extraDescription: string
+    description?: string
+    extraDescription?: string
 }
 
 type TResume = {
@@ -47,6 +49,22 @@ type TResume = {
     education: TEducation[]
     certifications: TCertification[]
 }
+
+const LeftRightText = (props: { left: any, right: any }) => {
+    return <>
+        <table width={'100%'}>
+            <tr>
+                <td>
+                    {props.left}
+                </td>
+                <td style={{textAlign: 'right'}}>
+                    {props.right}
+                </td>
+            </tr>
+        </table>
+    </>
+}
+
 
 class MSkill {
     data: TSkill
@@ -122,22 +140,60 @@ export class MResume {
         return {
             name: "Henry Post",
             certifications: [],
-            education: [],
-            jobsWorked: [],
+            education: [
+                {
+                    institutionName: 'Illinois Institute of Technology',
+                    institutionLocation: 'Chicago',
+                    degreeName: `Bachelor's in Information Technology Management`,
+                    startDate: new Date('September 2015'),
+                    endDate: new Date('December 2019'),
+                    description: "Dean's list: Spring 2016, Fall 2018, Fall 2019"
+                },
+                {
+                    institutionName: 'New York University',
+                    institutionLocation: 'New York',
+                    degreeName: `Master's in Cybersecurity`,
+                    startDate: new Date('October 2021'),
+                },
+            ],
+            jobsWorked: [
+                {
+                    title: "Tutor",
+                    location: "Chicago",
+                    companyName: "Illinois Institute of Chicago",
+                    startDate: new Date('February 2017'),
+                    endDate: new Date('September 2017'),
+                    responsibilities: [
+                        'Explaining basic programming concepts such as OOP, lists, control flow, compilation vs interpretation, etc.',
+                        'Teaching data structures such as linked lists, binary trees, heaps, skip lists, etc.',
+                        'Responsible for managing multiple tutees at once, often switching rapidly between different languages and subjects.',
+                        'Drawing diagrams, creating pieces of example code to illustrate a point, aiding in test prep by quizzing students.'
+                    ],
+                },
+            ],
             projects: [],
             skills: MSkill.parseStringToTSKillList(`
-Kubernetes (1y), Helm (1y), Groovy (2y), Programming (10y), Linux (4y), IT Administration (3y), Software Design (5y), Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
-            `),
+Kubernetes (1y), Helm (1y), Groovy (2y), Programming (10y), Linux (4y), IT Administration (3y), Software Design (5y), 
+Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
+            `,
+            ),
         };
     }
+
 
     renderResume() {
         return <>
             <Container>
-                <h1>{this.data.name}</h1>
+                <h1 style={{textAlign: "center"}}>{this.data.name}</h1>
             </Container>
-            {this.renderJobs()}
+            {this.renderContactMe()}
+            {this.renderEducation()}
+            {this.renderProjects()}
             {this.renderSkills()}
+            {this.renderJobs()}
+            {this.renderExtracurricular()}
+            {this.renderPersonalTraits()}
+            {this.renderWhyChooseMe()}
         </>;
     }
 
@@ -170,5 +226,84 @@ Kubernetes (1y), Helm (1y), Groovy (2y), Programming (10y), Linux (4y), IT Admin
             <h2>Employment History</h2>
             TODO
         </Container>
+    }
+
+    private renderContactMe() {
+        return <Card>
+            <Card.Text style={{textAlign: 'center'}}>
+                <a href={'http://henrypost.net'}>henrypost.net</a> ◈ <a
+                href={'https://github.com/HenryFBP'}>github.com/HenryFBP</a> <br/>
+                Chicago, IL || Martha's Vineyard, MA<br/>
+                resplendent • falconeer ﹫ gmail • com
+            </Card.Text>
+        </Card>
+    }
+
+    private renderEducation() {
+
+        var eduElts = [];
+
+        for (const i in this.data.education) {
+            const eduData: TEducation = this.data.education[i];
+
+            var dateRangeStr: string = eduData.startDate
+                .toLocaleDateString()
+
+            if (!eduData.endDate) {
+                dateRangeStr += ' - In Progress'
+            }
+
+            eduElts.push(
+                <Card>
+                    <Card.Header>
+
+
+                        <LeftRightText
+                            left={
+                                <b>{eduData.institutionName}, {eduData.institutionLocation}</b>
+                            }
+                            right={dateRangeStr}/>
+                        <p>{eduData.degreeName}</p>
+                    </Card.Header>
+
+                    {
+                        eduData.description ?
+                            <Card.Body>
+                                <p><i>{eduData.description}</i></p>
+                            </Card.Body>
+                            :
+                            null
+                    }
+                    {/*<Card.Footer>*/}
+                    {/*    wowie :3c*/}
+                    {/*</Card.Footer>*/}
+
+
+                </Card>
+            )
+
+        }
+
+        return <>
+            <Container>
+                {eduElts}
+            </Container>
+        </>
+    }
+
+    private renderProjects() {
+
+    }
+
+    private renderExtracurricular() {
+
+    }
+
+    private renderPersonalTraits() {
+
+    }
+
+    private renderWhyChooseMe() {
+
     }
 }

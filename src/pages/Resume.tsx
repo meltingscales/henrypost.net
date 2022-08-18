@@ -8,9 +8,9 @@ const Resume = () => {
     return <>
         <h1>Resume</h1>
         <Container>
-            <p>todo resumes</p>
-
-            {new MResume(MResume.henryResumeData()).renderResume()}
+            {new MResume(
+                MResume.henryResumeData())
+                .renderResume()}
         </Container>
     </>;
 }
