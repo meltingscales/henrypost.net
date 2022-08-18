@@ -2,6 +2,10 @@
   "name": "henryfbp-personal-website-react",
   "version": "111",
   "private": true,
+  "homepage": "/",
+  "author": "Henry Post",
+  "description": "https://github.com/HenryFBP",
+  "license": "idk lol",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
