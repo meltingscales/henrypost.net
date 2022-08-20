@@ -7,7 +7,7 @@ export interface EltBookReviewProps {
     bookReview: MBookReview
 }
 
-const Books = () => {
+const PageBooks = () => {
 
     let bookData: MBookReview[] = MBookReview.loadExampleObjects()
 
@@ -17,5 +17,5 @@ const Books = () => {
     </>;
 }
 
-export default Books
+export default PageBooks
 

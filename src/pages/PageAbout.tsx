@@ -2,7 +2,7 @@ import React from 'react';
 import {Container} from "react-bootstrap";
 import {Config} from "../Config";
 
-function About() {
+function PageAbout() {
     return <>
         <h1>About Website</h1>
         <Container>
@@ -15,4 +15,4 @@ function About() {
     </>;
 }
 
-export default About
+export default PageAbout

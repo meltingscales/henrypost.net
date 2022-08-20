@@ -1,10 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
-const Music = () => {
+const PageVideogames = () => {
 
     return <>
-        <h1>music</h1>
-        <div>some music list
+        <h1>videogames</h1>
+        <div>some game list
             1
             2
             3
@@ -14,5 +14,5 @@ const Music = () => {
     </>;
 }
 
-export default Music
+export default PageVideogames
 

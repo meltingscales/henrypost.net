@@ -1,6 +1,8 @@
 export let OWNER_NAME = "Henry Post";
 export let OWNER_NAME_NO_SPACE = OWNER_NAME.replace(' ', '')
 export let OWNER_GH_USERNAME = 'henryfbp'
+// noinspection HttpUrlsUsage
+export let HENRY_ORIGINAL_WEBSITE_URL = 'http://henrypost.net/'
 
 // export let GH_BLOG_INFO= {
 //     ''

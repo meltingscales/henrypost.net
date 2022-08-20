@@ -1,5 +1,5 @@
 import {Container} from "react-bootstrap";
-import CPrettyJSON from "../component/CPrettyJSON";
+import CPrettyJSON from "../component/tidbits/CPrettyJSON";
 
 class MGithubZenResponse {
     response: Response

@@ -2,7 +2,7 @@ import {Card, Container} from "react-bootstrap";
 import {SomeCrappyUtilitiesClass} from "../service/ServiceCrappyUtilities";
 import {ReactNode} from "react";
 import {DataBoundClass} from "./DataBoundClass";
-import {LeftRightText} from "../component/LeftRightText";
+import {LeftRightText} from "../component/tidbits/LeftRightText";
 
 type TJobWorked = {
     title: string
@@ -409,5 +409,12 @@ export class MResume extends DataBoundClass<TResume> {
 
     private renderWhyChooseMe() {
         return this.data.whyChooseMe
+    }
+
+    renderCertifications() {
+        return <Container>
+
+
+        </Container>;
     }
 }

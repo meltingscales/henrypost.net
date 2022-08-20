@@ -1,15 +1,17 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "./Layout";
-import Home from "./pages/Home";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
+import PageHome from "./pages/PageHome";
+import PageBlog from "./pages/PageBlog";
+import PageContact from "./pages/PageContact";
+import PageAbout from "./pages/PageAbout";
 import GithubApp from "./pages/demoApps/GithubApp";
-import Books from "./pages/hobbies/Books";
+import PageBooks from "./pages/hobbies/PageBooks";
 import React from "react";
-import Music from "./pages/hobbies/Music";
-import Videogames from "./pages/hobbies/Videogames";
-import Resume from "./pages/Resume";
+import PageMusic from "./pages/hobbies/PageMusic";
+import PageVideogames from "./pages/hobbies/PageVideogames";
+import PageResume from "./pages/PageResume";
+import Certifications from "./pages/Certifications";
+import {FourOhFourNotFound} from "./component/tidbits/FourOhFourNotFound";
 
 function NoPage() {
     return <div>nopage!</div>;
@@ -22,31 +24,37 @@ export default function Routing() {
                    element={<Layout/>}> {/* TODO why is this needed? */}
 
                 <Route index
-                       element={<Home/>}/>
+                       element={<PageHome/>}/>
+
+                <Route path={"*"} //match all routes - for http 404
+                       element={<FourOhFourNotFound/>}/>
 
                 <Route path={"blog"}
-                       element={<Blog/>}/>
+                       element={<PageBlog/>}/>
 
                 <Route path={"contact"}
-                       element={<Contact/>}/>
+                       element={<PageContact/>}/>
 
                 <Route path={"about"}
-                       element={<About/>}/>
+                       element={<PageAbout/>}/>
 
-                <Route path={"resume"}
-                       element={<Resume/>}/>
+                <Route path={"work/resume"}
+                       element={<PageResume/>}/>
+
+                <Route path={"work/certifications"}
+                       element={<Certifications/>}/>
 
                 <Route path={"demoApps/githubApp"}
                        element={<GithubApp/>}/>
 
                 <Route path={"hobbies/books"}
-                       element={<Books/>}/>
+                       element={<PageBooks/>}/>
 
                 <Route path={"hobbies/music"}
-                       element={<Music/>}/>
+                       element={<PageMusic/>}/>
 
                 <Route path={"hobbies/videogames"}
-                       element={<Videogames/>}/>
+                       element={<PageVideogames/>}/>
 
                 <Route
                     element={<NoPage/>}/>

@@ -34,7 +34,6 @@ const NavDropdownItem = (props: any) => {
 }
 
 const Navigation = () =>
-
     (
         <>
             <Navbar bg={'light'} expand={'sm'}>
@@ -58,8 +57,22 @@ const Navigation = () =>
                             <NavigationItem href={"/"}
                                             customName={"~/"}/>
 
-                            <NavigationItem href={"/resume"}
-                                            name={"resume"}/>
+                            <NavDropdown
+                                title={TextFmtService.homeDirFmt('work')}
+                                id={'basic-nav-dropdown'}>
+
+                                <NavDropdownItem
+                                    path={'work'}
+                                    subpath={'resume'}/>
+
+                                <NavDropdownItem
+                                    path={'work'}
+                                    subpath={'certifications'}/>
+
+                            </NavDropdown>
+
+                            {/*<NavigationItem href={"/resume"}*/}
+                            {/*                name={"resume"}/>*/}
 
                             <NavigationItem href={"/contact"}
                                             name={"contact"}/>

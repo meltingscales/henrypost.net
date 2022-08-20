@@ -4,7 +4,7 @@ import {GithubService} from "../../service/ServiceGithub";
 import CGithubHealthAlert from "../../component/CGithubHealthAlert";
 import CGithubProfileApplet from "../../component/CGithubProfileApplet";
 import {Config} from "../../Config";
-import CPrettyJSON from "../../component/CPrettyJSON";
+import CPrettyJSON from "../../component/tidbits/CPrettyJSON";
 import {TextFmtService} from "../../service/ServiceTextFmt";
 import {MarkdownFmtService} from "../../service/ServiceMarkdownFmt";
 import ReactMarkdown from "react-markdown";
