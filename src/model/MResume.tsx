@@ -63,13 +63,17 @@ type TEducation = {
 }
 
 type TCertification = {
-    institutionName: string
-    startDate: Date
-    endDate?: Date
+    issuerName: string
+    issueDate: Date
+    expireDate?: Date
+    certificationURL?: string
     certificationName: string
+    certificateStandardFamily?: string
     description?: string | ReactNode
     extraDescription?: string | ReactNode
 }
+
+type TExtraCurricular = {}
 
 type TResume = {
     name: string
@@ -77,6 +81,7 @@ type TResume = {
     projects: TProject[]
     skills: TSkill[]
     education: TEducation[]
+    extraCurricular: TExtraCurricular[];
     certifications: TCertification[]
     whyChooseMe?: string | ReactNode
     personalTraits?: string[],
@@ -157,10 +162,53 @@ class MSkill extends DataBoundClass<TSkill> {
 
 export class MResume extends DataBoundClass<TResume> {
 
+    //TODO: move to a datafile format, not embedded in static class method
     public static henryResumeData(): TResume {
         return {
             name: "Henry Post",
-            certifications: [],
+            extraCurricular: [],
+            //TODO get json from credly.com
+            //      https://www.credly.com/users/henry-post/badges?sort=most_popular&page=1
+
+            //TODO get json from credential.net
+            //      https://api.accredible.com/v1/credential-net/users/henrypost/user_wallet
+            certifications: [
+                {
+                    certificationName: 'Software Security Practitioner - Defending Java',
+                    issuerName: 'Security Compass',
+                    certificateStandardFamily: 'ISC2',
+                    certificationURL: 'https://www.credly.com/badges/3f674d4f-ba60-4e3b-8412-94b8b54cf0d5/',
+                    issueDate: new Date('February 04, 2022')
+                },
+                {
+                    certificationName: 'Software Security Practitioner - General',
+                    issuerName: 'Security Compass',
+                    certificateStandardFamily: 'ISC2',
+                    certificationURL: 'https://www.credly.com/badges/1c5f7bce-fbbf-4c4b-b37d-58b346d939e0/',
+                    issueDate: new Date('February 03, 2022')
+                },
+                {
+                    certificationName: 'Software Security Practitioner - Defending C++',
+                    issuerName: 'Security Compass',
+                    certificateStandardFamily: 'ISC2',
+                    certificationURL: 'https://www.credly.com/badges/da609247-d0c8-41d5-8b3d-bf9bcb4e2be5/',
+                    issueDate: new Date('February 09, 2022')
+                },
+                {
+                    certificationName: 'Software Security Practitioner - Defending .NET',
+                    issuerName: 'Security Compass',
+                    certificateStandardFamily: 'ISC2',
+                    certificationURL: 'https://www.credly.com/badges/113e46cc-d9da-4a05-9405-6268948aef48/',
+                    issueDate: new Date('February 04, 2022')
+                },
+                {
+                    certificationName: 'Software Security Practitioner - Defending Android',
+                    issuerName: 'Security Compass',
+                    certificateStandardFamily: 'ISC2',
+                    certificationURL: 'https://www.credly.com/badges/f01208d7-b34c-4ab3-93bc-f77cc32aa65f/',
+                    issueDate: new Date('February 09, 2022')
+                },
+            ],
             education: [
                 {
                     institutionName: 'Illinois Institute of Technology',
@@ -536,6 +584,21 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
 
     private renderExtracurricular() {
 
+        var eltsExtraCurr = []
+
+        var ecs = this.data.extraCurricular;
+
+        for (const idx in ecs) {
+            var ec = ecs[idx]
+
+            eltsExtraCurr.push('lol todo :)')
+            eltsExtraCurr.push(<br/>)
+        }
+
+
+        return <Container>
+            {eltsExtraCurr}
+        </Container>
     }
 
     private renderPersonalTraits() {
