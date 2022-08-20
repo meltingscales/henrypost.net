@@ -18,6 +18,7 @@ Created to learn ReactJS.
 - https://www.codingdeft.com/posts/react-deploy-google-cloud-app-engine/#deploying-using-google-cloud-sdk
 - mocha js
 - https://www.npmjs.com/package/resume-react
+- https://github.com/stephane-monnot/react-vertical-timeline
 
 ## Angular notes (not reactjs)
 
