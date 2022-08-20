@@ -1,14 +1,70 @@
-import {Card} from "react-bootstrap";
+import {Card, Container} from "react-bootstrap";
 import {HENRY_ORIGINAL_WEBSITE_URL} from "../Config";
+import CBusinessCard from "../component/CBusinessCard";
 
 const PageContact = () => {
     return <>
         <h1>Contact</h1>
         <Card>
             <Card.Header>
-                Please visit <a href={HENRY_ORIGINAL_WEBSITE_URL}>{HENRY_ORIGINAL_WEBSITE_URL}</a>
+                Contact is WIP, Please visit <a href={HENRY_ORIGINAL_WEBSITE_URL}>{HENRY_ORIGINAL_WEBSITE_URL}</a>
             </Card.Header>
         </Card>
+
+        <hr/>
+
+        <h2>Business Card</h2>
+        <CBusinessCard
+            name={'Henry Post'}
+            cell={'xxx-xxx-xxxx'}
+            skills={[
+                'Python',
+                'Java',
+                'Kubernetes',
+                'Helm',
+                'Linux',
+                'SQL',
+                // 'Documentation',
+                // 'Backend APIs'
+            ]}
+            frontBlurb={
+                // <img //this image is not square T_T TODO: you lazy BASTARD!!! GET A PROFESSIONAL HEADSHOT! >:3c
+                //     src={'https://henryfbp.github.io/images/pictures-of-me/headshot3.jpg'}
+                //     style={{
+                //         width: '5em',
+                //         height: '5em',
+                //     }}
+                // />
+                null
+            }
+            backBlurb={
+                <Container>
+                    <p>
+                        I have an intense drive to explain, document, and teach programming and technology concepts.
+                        When creating code, I strive to create reusable, clean, and well-documented code.
+                        I have a wide and deep history of programming projects, all under version control and most on my
+                        GitHub: <br/><br/>
+
+                        <p style={{textAlign: "center"}}>https://github.com/HenryFBP/</p>
+                    </p>
+                    <p>
+                        In short, I love to program, teach, and document my work; and I would say that I’m very good at
+                        it.
+                    </p>
+                </Container>
+            }
+            headlines={[
+                'Cybersec',
+                'Automation Engineer',
+                // 'Fullstack Java',
+                'Helm & K8s',
+                'L2 Support & DevSecOps'
+            ]}
+            email={'resplendent [dot] falconeer [at] gmail [dot] com'}
+            location={'Chicago | Martha\'s Vineyard'}
+            website={'henrypost.net'}
+        />
+
     </>;
 }
 

@@ -1,0 +1,21 @@
+
+
+.business-card {
+  background: black;
+  color: white;
+  width: 35em;
+  height: 20em;
+  padding-top: 1em; //TODO: Is this correct?
+}
+
+.business-card pre code {
+  color: lightgreen;
+}
+
+.business-card-front {
+  border: 1px red;
+}
+
+.business-card-back {
+  border: 1px red;
+}
