@@ -14,6 +14,27 @@ export function yearMMMonthFmt(d: Date): string {
     return m + " " + (d.getUTCFullYear())
 }
 
+function yearFmt(d) {
+    return "" + d.getUTCFullYear()
+}
+
+export function dateRangeYearFmt(d1, d2): string {
+    if (!d1 && !d2) {
+        return ""
+    }
+
+    if (!d1) {
+        return yearFmt(d2)
+    }
+
+    if (!d2) {
+        return yearFmt(d1)
+    }
+
+    return `${yearFmt(d1)} - ${yearFmt(d2)}`
+
+}
+
 export function dateRangeYearMMMonthFmt(d1: Date, d2: Date): string {
     if (!d1 && !d2) {
         return ""

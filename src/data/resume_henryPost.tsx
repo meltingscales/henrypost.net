@@ -5,7 +5,24 @@ import {MSkill, TResume} from "../model/MResume";
 export default function HENRY_TRESUME_DATA(): TResume {
     return {
         name: "Henry Post",
-        extraCurricular: [],
+        extraCurricular: [
+            {
+                startDate: new Date('2012'),
+                endDate: new Date('2013'),
+                description: 'Part of a student-led schoolwide computer repair club at Northside College Preparatory High School.\n' +
+                    'Serviced laptops, servers, and desktops.'
+            },
+            {
+                startDate: new Date('2012'),
+                endDate: new Date('2015'),
+                description: 'Worked for “Dirt Actualizers”, a landscaping club at Northside College Preparatory High School.'
+            },
+            {
+                startDate: new Date('2016'),
+                endDate: new Date('2018'),
+                description: 'Part of “Electronic Gaming Club” at Illinois Institute of Technology.'
+            },
+        ],
         //TODO get json from credly.com
         //      https://www.credly.com/users/henry-post/badges?sort=most_popular&page=1
 

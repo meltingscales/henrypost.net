@@ -369,10 +369,25 @@ export class MResume extends DataBoundClass<TResume> {
 
         var ecs = this.data.extraCurricular;
 
+
         for (const idx in ecs) {
             var ec = ecs[idx]
+            //TODO: What if we don't want to use just YearFMT?
+            var ecDateRange:string = SomeCrappyUtilitiesClass.dateRangeYearFmt(
+                ec.startDate,ec.endDate
+            )
 
-            eltsExtraCurr.push('lol todo :)')
+            eltsExtraCurr.push(<Card>
+
+                <Card.Body>
+                    <p>
+                        {ec.description}
+                    </p>
+
+                    <i>{ecDateRange}</i>
+                </Card.Body>
+
+            </Card>)
             eltsExtraCurr.push(<br/>)
         }
 
