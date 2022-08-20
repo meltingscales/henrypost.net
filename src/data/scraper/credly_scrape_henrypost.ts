@@ -13,5 +13,3 @@ export async function getThatCredlyData() {
 
     return data
 }
-
-await getThatCredlyData()

@@ -1,8 +1,9 @@
-import {OWNER_NAME} from "../Config";
 import {Container} from "react-bootstrap";
 import React from "react";
 import {MResume} from "../model/MResume";
+// import {getThatCredentialDotNetData} from "../data/scrape/credential.net_scrape_henrypost";
 
+// getThatCredentialDotNetData()
 
 const Resume = () => {
     return <>

@@ -13,5 +13,3 @@ export async function getThatCredentialDotNetData() {
 
     return data
 }
-
-await getThatCredentialDotNetData()
