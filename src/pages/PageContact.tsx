@@ -1,6 +1,6 @@
 import {Card, Container} from "react-bootstrap";
 import {HENRY_ORIGINAL_WEBSITE_URL} from "../Config";
-import BusinessCard from "react-business-card-hfbp"
+import {BusinessCard} from "react-business-card-hfbp"
 
 const PageContact = () => {
     return <>
