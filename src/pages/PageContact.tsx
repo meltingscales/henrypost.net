@@ -1,6 +1,6 @@
 import {Card, Container} from "react-bootstrap";
 import {HENRY_ORIGINAL_WEBSITE_URL} from "../Config";
-import CBusinessCard from "../component/CBusinessCard";
+import {BusinessCard} from "react-business-card-hfbp"
 
 const PageContact = () => {
     return <>
@@ -14,7 +14,8 @@ const PageContact = () => {
         <hr/>
 
         <h2>Business Card</h2>
-        <CBusinessCard
+        <BusinessCard
+            showPrintButton={true}
             name={'Henry Post'}
             cell={'xxx-xxx-xxxx'}
             skills={[
