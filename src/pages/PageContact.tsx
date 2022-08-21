@@ -1,6 +1,6 @@
 import {Card, Container} from "react-bootstrap";
 import {HENRY_ORIGINAL_WEBSITE_URL} from "../Config";
-import {BusinessCard} from "react-business-card-hfbp"
+import BusinessCard from "react-business-card-hfbp"
 
 const PageContact = () => {
     return <>
@@ -29,14 +29,13 @@ const PageContact = () => {
                 // 'Backend APIs'
             ]}
             frontBlurb={
-                // <img //this image is not square T_T TODO: you lazy BASTARD!!! GET A PROFESSIONAL HEADSHOT! >:3c
-                //     src={'https://henryfbp.github.io/images/pictures-of-me/headshot3.jpg'}
-                //     style={{
-                //         width: '5em',
-                //         height: '5em',
-                //     }}
-                // />
-                null
+                <img
+                    src={'https://pbs.twimg.com/profile_images/1560595569730617344/yuAzEGGl_400x400.jpg'}
+                    style={{
+                        width: '7.5em',
+                        height: '7.5em',
+                    }}
+                    alt={"A picture of Henry smiling"}/>
             }
             backBlurb={
                 <Container>
