@@ -15,7 +15,7 @@ const PageContact = () => {
 
         <h2>Business Card</h2>
         <BusinessCard
-            showPrintButton={true}
+            showPrintButton={false}
             name={'Henry Post'}
             cell={'xxx-xxx-xxxx'}
             skills={[
@@ -34,6 +34,7 @@ const PageContact = () => {
                     style={{
                         width: '7.5em',
                         height: '7.5em',
+                        border: '5px solid darkgrey',
                     }}
                     alt={"A picture of Henry smiling"}/>
             }
