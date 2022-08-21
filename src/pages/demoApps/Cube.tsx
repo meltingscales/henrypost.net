@@ -36,6 +36,14 @@ export const Cube = (props: any) => {
     return <Container>
         <h2>its a cube bro</h2>
 
+
+        <p>wow! Node.js/TypeScript has WEIRD compilation issues.
+</p>
+        <p>
+            This was supposed to be a 3d rendering demo.</p>
+            <p>
+            https://lightrun.com/answers/pmndrs-drei-build-issue-expression-produces-a-union-type-that-is-too-complex-to-represent</p>
+
         <Container>
             {/*<Canvas>*/}
             {/*    <ambientLight/>*/}
