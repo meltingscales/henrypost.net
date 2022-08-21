@@ -5,7 +5,7 @@ import React, {useRef, useState} from 'react'
 
 
 // //https://github.com/pmndrs/react-three-fiber
-// function Box(props) {
+// function NotABoxREEEE(props) {
 //     // This reference gives us direct access to the THREE.Mesh object
 //     const ref = useRef()
 //     // Hold state for hovered and clicked events
@@ -17,6 +17,7 @@ import React, {useRef, useState} from 'react'
 //     // Return the view, these are regular Threejs elements expressed in JSX
 //     return (
 //         <mesh
+//             component={'div'}
 //             {...props}
 //             ref={ref}
 //             scale={clicked ? 1.5 : 1}
@@ -37,10 +38,10 @@ export const Cube = (props: any) => {
 
         <Container>
             {/*<Canvas>*/}
-            {/*    /!*<ambientLight/>*!/*/}
-            {/*    /!*<pointLight position={[10, 10, 10]}/>*!/*/}
-            {/*    /!*<Box component={'div'} position={[-1.2, 0, 0]}/>*!/*/}
-            {/*    /!*<Box component={'div'} position={[1.2, 0, 0]}/>*!/*/}
+            {/*    <ambientLight/>*/}
+            {/*    <pointLight position={[10, 10, 10]}/>*/}
+            {/*    <NotABoxREEEE component={'div'} position={[-1.2, 0, 0]}/>*/}
+            {/*    <NotABoxREEEE component={'div'} position={[1.2, 0, 0]}/>*/}
             {/*</Canvas>,*/}
 
 

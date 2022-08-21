@@ -24,7 +24,7 @@ const NavigationItem = (props: any) => {
     )
 }
 
-const NavDropdownItem = (props: { path: string, subpath: string }) => {
+const NavDDI = (props: { path: string, subpath: string }) => {
 
     const href = TextFmtService.absDirsFmt(props.path, props.subpath);
     const innerText = TextFmtService.dirFmt(props.subpath);
@@ -65,11 +65,11 @@ const Navigation = () =>
                                 title={TextFmtService.homeDirFmt('work')}
                                 id={'basic-nav-dropdown'}>
 
-                                <NavDropdownItem
+                                <NavDDI
                                     path={'work'}
                                     subpath={'resume'}/>
 
-                                <NavDropdownItem
+                                <NavDDI
                                     path={'work'}
                                     subpath={'certifications'}/>
 
@@ -91,11 +91,11 @@ const Navigation = () =>
                                 title={TextFmtService.homeDirFmt('demoApps')}
                                 id={'basic-nav-dropdown'}>
 
-                                <NavDropdownItem
+                                <NavDDI
                                     path={'demoApps'}
                                     subpath={'githubApp'}/>
 
-                                <NavDropdownItem
+                                <NavDDI
                                     path={'demoApps'}
                                     subpath={'cube'}/>
 
@@ -106,15 +106,15 @@ const Navigation = () =>
                                 title={TextFmtService.homeDirFmt('hobbies')}
                                 id={'basic-nav-dropdown'}>
 
-                                <NavDropdownItem
+                                <NavDDI
                                     path={'hobbies'}
                                     subpath={'books'}/>
 
-                                <NavDropdownItem
+                                <NavDDI
                                     path={'hobbies'}
                                     subpath={'music'}/>
 
-                                <NavDropdownItem
+                                <NavDDI
                                     path={'hobbies'}
                                     subpath={'videogames'}/>
 
