@@ -24,11 +24,15 @@ const NavigationItem = (props: any) => {
     )
 }
 
-const NavDropdownItem = (props: any) => {
+const NavDropdownItem = (props: { path: string, subpath: string }) => {
+
+    const href = TextFmtService.absDirsFmt(props.path, props.subpath);
+    const innerText = TextFmtService.dirFmt(props.subpath);
+
     return (
         <NavDropdown.Item
-            href={TextFmtService.absDirsFmt(props.path, props.subpath)}>
-            {TextFmtService.dirFmt(props.subpath)}
+            href={href}>
+            {innerText}
         </NavDropdown.Item>
     )
 }
@@ -90,6 +94,10 @@ const Navigation = () =>
                                 <NavDropdownItem
                                     path={'demoApps'}
                                     subpath={'githubApp'}/>
+
+                                <NavDropdownItem
+                                    path={'demoApps'}
+                                    subpath={'cube'}/>
 
                             </NavDropdown>
 

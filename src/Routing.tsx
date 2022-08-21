@@ -1,17 +1,18 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import React from "react";
 import Layout from "./Layout";
+import {FourOhFourNotFound} from "./component/tidbits/FourOhFourNotFound";
 import PageHome from "./pages/PageHome";
 import PageBlog from "./pages/PageBlog";
 import PageContact from "./pages/PageContact";
 import PageAbout from "./pages/PageAbout";
 import GithubApp from "./pages/demoApps/GithubApp";
 import PageBooks from "./pages/hobbies/PageBooks";
-import React from "react";
 import PageMusic from "./pages/hobbies/PageMusic";
 import PageVideogames from "./pages/hobbies/PageVideogames";
 import PageResume from "./pages/PageResume";
 import Certifications from "./pages/Certifications";
-import {FourOhFourNotFound} from "./component/tidbits/FourOhFourNotFound";
+import {Cube} from "./pages/demoApps/Cube";
 
 function NoPage() {
     return <div>nopage!</div>;
@@ -46,6 +47,9 @@ export default function Routing() {
 
                 <Route path={"demoApps/githubApp"}
                        element={<GithubApp/>}/>
+
+                <Route path={"demoApps/cube"}
+                       element={<Cube/>}/>
 
                 <Route path={"hobbies/books"}
                        element={<PageBooks/>}/>
