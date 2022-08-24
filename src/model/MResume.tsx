@@ -72,6 +72,25 @@ export class MCertification extends DataBoundClass<TCertification> {
     static parseCredentialDotNetDump(param) {
         return [];
     }
+
+    static renderCertification(cert: TCertification) {
+        return <Card>
+            <Card.Header>
+                <a href={cert.certificationURL}>{cert.certificationName} ({cert.certificateStandardFamily})</a>
+                <br/>
+                <small>Issued on {SomeCrappyUtilitiesClass.yearMMMonthFmt(cert.issueDate)} by {cert.issuerName}</small>
+            </Card.Header>
+            <Card.Body>
+                <p>
+                    {cert.description}
+                </p>
+                <p>
+                    {cert.extraDescription}
+                </p>
+                {/*{cert.*/}
+            </Card.Body>
+        </Card>
+    }
 }
 
 
@@ -424,10 +443,23 @@ export class MResume extends DataBoundClass<TResume> {
     }
 
     renderCertifications() {
+
+
+        var eltsCertifications = []
+
+        var certs = this.data.certifications;
+
+        for (const idx in certs) {
+            var cert = certs[idx]
+
+            eltsCertifications.push(
+                MCertification.renderCertification(cert)
+            )
+        }
+
+
         return <Container>
-
-            todo: Certifications
-
+            {eltsCertifications}
         </Container>;
     }
 }
