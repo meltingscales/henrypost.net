@@ -1,5 +1,5 @@
 import {Container} from "react-bootstrap";
-import {MSkill, MCertification, TResume} from "../model/MResume";
+import {MSkill, MCertification, TResume, TCertification} from "../model/MResume";
 import {CREDENTIAL_NET_DATA_HENRYPOST} from "./scraped/credential.net_data_henrypost";
 import {CREDLY_DATA_HENRYPOST} from "./scraped/credly_data_henrypost";
 
@@ -223,10 +223,17 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
     };
 
     //copy credly and credential.net dump into our default resume object
-    theResume.certifications.push(
-        ...MCertification.parseCredlyDump(CREDLY_DATA_HENRYPOST),
-        ...MCertification.parseCredentialDotNetDump(CREDENTIAL_NET_DATA_HENRYPOST)
-    )
+
+
+    MCertification.parseCredlyDump(CREDLY_DATA_HENRYPOST).map((
+        function (it: TCertification) {
+            theResume.certifications.push(it)
+        }))
+
+    // theResume.certifications.push(
+    //     ,
+    //     MCertification.parseCredentialDotNetDump(CREDENTIAL_NET_DATA_HENRYPOST)
+    // )
 
     return theResume;
 }

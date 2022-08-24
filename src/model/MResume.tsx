@@ -65,11 +65,38 @@ type TEducation = {
 
 export class MCertification extends DataBoundClass<TCertification> {
 
-    static parseCredlyDump(param) {
-        return [];
+    static parseCredlyDump(raw_credly_data: any) {
+
+        var dataWeActuallyCareAbout = raw_credly_data.data;
+        var transformed_data: TCertification[] = []
+
+        for (const idx in dataWeActuallyCareAbout) {
+
+            var datum = dataWeActuallyCareAbout[idx]
+
+            var transformed: TCertification = {
+                certificateStandardFamily: datum.badge_template.alignments[0].name,
+                certificationName: datum.badge_template.name,
+                certificationURL: datum.id,
+                description: datum.badge_template.description,
+                extraDescription: undefined,
+                issueDate: new Date(datum.issued_at_date),
+                issuerName: datum.issuer.entities[0].entity.name,
+            }
+
+            if (datum.expires_at) {
+                transformed.expireDate = datum.expires_at
+            }
+
+
+            transformed_data.push(transformed)
+        }
+
+
+        return transformed_data;
     }
 
-    static parseCredentialDotNetDump(param) {
+    static parseCredentialDotNetDump(raw_credentialDotNet_data: any) {
         return [];
     }
 
@@ -117,7 +144,7 @@ export type TResume = {
     projects: TProject[]
     skills: TSkill[]
     education: TEducation[]
-    extraCurricular: TExtraCurricular[];
+    extraCurricular: TExtraCurricular[]
     certifications: TCertification[]
     whyChooseMe?: string | ReactNode
     personalTraits?: string[],
