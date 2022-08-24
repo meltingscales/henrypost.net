@@ -70,7 +70,7 @@ export class MCertification extends DataBoundClass<TCertification> {
         var transformed: TCertification = {
             certificateStandardFamily: raw_credentialDotNet_datum.issuer.name, //TODO Technically this is incorrect but who cares lol
             certificationName: raw_credentialDotNet_datum.name,
-            certificationURL: "",
+            certificationURL: raw_credentialDotNet_datum.url,
             description: raw_credentialDotNet_datum.description,
             expireDate: undefined,
             extraDescription: undefined,
@@ -86,7 +86,7 @@ export class MCertification extends DataBoundClass<TCertification> {
         var transformed: TCertification = {
             certificateStandardFamily: raw_credly_datum.badge_template.alignments[0].name,
             certificationName: raw_credly_datum.badge_template.name,
-            certificationURL: raw_credly_datum.id,
+            certificationURL: 'https://www.credly.com/badges/' + raw_credly_datum.id,
             description: raw_credly_datum.badge_template.description,
             extraDescription: undefined,
             issueDate: new Date(raw_credly_datum.issued_at_date),
