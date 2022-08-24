@@ -63,7 +63,19 @@ type TEducation = {
     extraDescription?: string | ReactNode
 }
 
-type TCertification = {
+export class MCertification extends DataBoundClass<TCertification> {
+
+    static parseCredlyDump(param) {
+        return [];
+    }
+
+    static parseCredentialDotNetDump(param) {
+        return [];
+    }
+}
+
+
+export type TCertification = {
     issuerName: string
     issueDate: Date
     expireDate?: Date
@@ -373,8 +385,8 @@ export class MResume extends DataBoundClass<TResume> {
         for (const idx in ecs) {
             var ec = ecs[idx]
             //TODO: What if we don't want to use just YearFMT?
-            var ecDateRange:string = SomeCrappyUtilitiesClass.dateRangeYearFmt(
-                ec.startDate,ec.endDate
+            var ecDateRange: string = SomeCrappyUtilitiesClass.dateRangeYearFmt(
+                ec.startDate, ec.endDate
             )
 
             eltsExtraCurr.push(<Card>

@@ -1,9 +1,11 @@
 import {Container} from "react-bootstrap";
-import {MSkill, TResume} from "../model/MResume";
+import {MSkill, MCertification, TResume} from "../model/MResume";
+import {CREDENTIAL_NET_DATA_HENRYPOST} from "./scraped/credential.net_data_henrypost";
+import {CREDLY_DATA_HENRYPOST} from "./scraped/credly_data_henrypost";
 
 
 export default function HENRY_TRESUME_DATA(): TResume {
-    return {
+    let theResume = {
         name: "Henry Post",
         extraCurricular: [
             {
@@ -23,11 +25,6 @@ export default function HENRY_TRESUME_DATA(): TResume {
                 description: 'Part of “Electronic Gaming Club” at Illinois Institute of Technology.'
             },
         ],
-        //TODO get json from credly.com
-        //      https://www.credly.com/users/henry-post/badges?sort=most_popular&page=1
-
-        //TODO get json from credential.net
-        //      https://api.accredible.com/v1/credential-net/users/henrypost/user_wallet
         certifications: [
             {
                 certificationName: 'Software Security Practitioner - Defending Java',
@@ -224,5 +221,13 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
             </Container>
         ),
     };
+
+    //copy credly and credential.net dump into our default resume object
+    theResume.certifications.push(
+        ...MCertification.parseCredlyDump(CREDLY_DATA_HENRYPOST),
+        ...MCertification.parseCredentialDotNetDump(CREDENTIAL_NET_DATA_HENRYPOST)
+    )
+
+    return theResume;
 }
 
