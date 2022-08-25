@@ -405,7 +405,6 @@ export class MResume extends DataBoundClass<TResume> {
         for (const i in educations) {
             const education: TEducation = educations[i];
 
-
             let sdate = education.startDate
             let edate = education.endDate
             let dateRangeStr = ServiceCrappyUtilities.dateRangeYearMMMonthFmt(sdate, edate)

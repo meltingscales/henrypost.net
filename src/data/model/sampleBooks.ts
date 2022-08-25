@@ -1,5 +1,5 @@
-import {TBookReview} from "../model/MBookReview";
-import {TRatingUtil} from '../model/MGenericMediaReview'
+import {TBookReview} from "../../model/MBookReview";
+import {TRatingUtil} from '../../model/MGenericMediaReview'
 
 
 export let LAZY_BOOKLIST: string[] = `

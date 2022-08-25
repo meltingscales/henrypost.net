@@ -1,6 +1,6 @@
 import {MGenericMediaReview, TGeneralMediaReview} from "./MGenericMediaReview";
 
-import {SAMPLE_BOOKS} from "../data/sampleBooks";
+import {SAMPLE_BOOKS} from "../data/model/sampleBooks";
 import {Card, Container} from "react-bootstrap";
 import {Config} from "../Config";
 
