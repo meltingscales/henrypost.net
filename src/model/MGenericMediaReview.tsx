@@ -27,7 +27,7 @@ export class TRatingUtil {
 
 }
 
-export type TGeneralMediaReview = {
+export type TGenericMediaReview = {
     title: string
     author?: string
     url?: string
@@ -38,7 +38,7 @@ export type TGeneralMediaReview = {
     tags?: Array<string>;
 }
 
-export class MGenericMediaReview extends DataBoundClass<TGeneralMediaReview> {
+export class MGenericMediaReview extends DataBoundClass<TGenericMediaReview> {
 
     hasShortReview() {
         return !!this.data.shortReview;

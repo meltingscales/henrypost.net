@@ -1,10 +1,10 @@
-import {MGenericMediaReview, TGeneralMediaReview} from "./MGenericMediaReview";
+import {MGenericMediaReview, TGenericMediaReview} from "./MGenericMediaReview";
 
 import {SAMPLE_BOOKS} from "../data/model/sampleBooks";
 import {Card, Container} from "react-bootstrap";
 import {Config} from "../Config";
 
-export type TBookReview = TGeneralMediaReview & {
+export type TBookReview = TGenericMediaReview & {
     isbn9?: string;
     isbn13?: string;
 }
