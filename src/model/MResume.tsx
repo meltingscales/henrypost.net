@@ -65,39 +65,58 @@ type TEducation = {
 
 export class MCertification extends DataBoundClass<TCertification> {
 
-    static parseCredlyDump(raw_credly_data: any) {
+    static transform_credentialDotNet_data(raw_credentialDotNet_datum: any): TCertification {
 
-        var dataWeActuallyCareAbout = raw_credly_data.data;
-        var transformed_data: TCertification[] = []
-
-        for (const idx in dataWeActuallyCareAbout) {
-
-            var datum = dataWeActuallyCareAbout[idx]
-
-            var transformed: TCertification = {
-                certificateStandardFamily: datum.badge_template.alignments[0].name,
-                certificationName: datum.badge_template.name,
-                certificationURL: datum.id,
-                description: datum.badge_template.description,
-                extraDescription: undefined,
-                issueDate: new Date(datum.issued_at_date),
-                issuerName: datum.issuer.entities[0].entity.name,
-            }
-
-            if (datum.expires_at) {
-                transformed.expireDate = datum.expires_at
-            }
-
-
-            transformed_data.push(transformed)
+        var transformed: TCertification = {
+            certificateStandardFamily: raw_credentialDotNet_datum.issuer.name, //TODO Technically this is incorrect but who cares lol
+            certificationName: raw_credentialDotNet_datum.name,
+            certificationURL: "",
+            description: raw_credentialDotNet_datum.description,
+            expireDate: undefined,
+            extraDescription: undefined,
+            issueDate: new Date(raw_credentialDotNet_datum.issued_on),
+            issuerName: raw_credentialDotNet_datum.issuer.name
         }
 
+        return transformed
 
-        return transformed_data;
     }
 
-    static parseCredentialDotNetDump(raw_credentialDotNet_data: any) {
-        return [];
+    static transform_credly_datum(raw_credly_datum: any): TCertification {
+        var transformed: TCertification = {
+            certificateStandardFamily: raw_credly_datum.badge_template.alignments[0].name,
+            certificationName: raw_credly_datum.badge_template.name,
+            certificationURL: raw_credly_datum.id,
+            description: raw_credly_datum.badge_template.description,
+            extraDescription: undefined,
+            issueDate: new Date(raw_credly_datum.issued_at_date),
+            issuerName: raw_credly_datum.issuer.entities[0].entity.name,
+        }
+
+        if (raw_credly_datum.expires_at) {
+            transformed.expireDate = raw_credly_datum.expires_at
+        }
+
+        return transformed
+
+    }
+
+    static parse_credly_dump(raw_credly_data: any): TCertification[] {
+
+        const relevant_data = raw_credly_data.data;
+
+        return relevant_data.map((it) => {
+            return MCertification.transform_credly_datum(it)
+        });
+    }
+
+    static parse_credentialDotNet_dump(raw_credentialDotNet_data: any) {
+        const relevant_data = raw_credentialDotNet_data.data.credentials
+
+        return relevant_data.map((it) => {
+            return MCertification.transform_credentialDotNet_data(it)
+        });
+
     }
 
     static renderCertification(cert: TCertification) {
@@ -243,6 +262,27 @@ export class MResume extends DataBoundClass<TResume> {
             <h2>Why should you choose me?</h2>
             {this.renderWhyChooseMe()}
         </>;
+    }
+
+    renderCertifications() {
+
+
+        var eltsCertifications = []
+
+        var certs = this.data.certifications;
+
+        for (const idx in certs) {
+            var cert = certs[idx]
+
+            eltsCertifications.push(
+                MCertification.renderCertification(cert)
+            )
+        }
+
+
+        return <Container>
+            {eltsCertifications}
+        </Container>;
     }
 
     private renderSkills() {
@@ -467,26 +507,5 @@ export class MResume extends DataBoundClass<TResume> {
 
     private renderWhyChooseMe() {
         return this.data.whyChooseMe
-    }
-
-    renderCertifications() {
-
-
-        var eltsCertifications = []
-
-        var certs = this.data.certifications;
-
-        for (const idx in certs) {
-            var cert = certs[idx]
-
-            eltsCertifications.push(
-                MCertification.renderCertification(cert)
-            )
-        }
-
-
-        return <Container>
-            {eltsCertifications}
-        </Container>;
     }
 }

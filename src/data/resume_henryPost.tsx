@@ -225,12 +225,20 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
     //copy credly and credential.net dump into our default resume object
 
 
-    MCertification.parseCredlyDump(CREDLY_DATA_HENRYPOST).map((
+    MCertification.parse_credly_dump(CREDLY_DATA_HENRYPOST).map((
         // eslint-disable-next-line array-callback-return
         (it: TCertification) => {
             // @ts-ignore
             theResume.certifications.push(it)
         }))
+
+    MCertification.parse_credentialDotNet_dump(CREDENTIAL_NET_DATA_HENRYPOST).map(
+        // eslint-disable-next-line array-callback-return
+        (it: TCertification) => {
+            // @ts-ignore
+            theResume.certifications.push(it)
+        }
+    )
 
     // theResume.certifications.push(
     //     ,
