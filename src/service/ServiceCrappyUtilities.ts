@@ -70,4 +70,4 @@ export function dateRangeYearMonthFmt(d1: Date, d2: Date): string {
     return `${yearMonthFmt(d1)} - ${yearMonthFmt(d2)}`
 }
 
-export * as SomeCrappyUtilitiesClass from './ServiceCrappyUtilities'
+export * as ServiceCrappyUtilities from './ServiceCrappyUtilities'

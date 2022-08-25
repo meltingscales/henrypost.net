@@ -8,7 +8,7 @@ import CPrettyJSON from "../../component/tidbits/CPrettyJSON";
 import {TextFmtService} from "../../service/ServiceTextFmt";
 import {MarkdownFmtService} from "../../service/ServiceMarkdownFmt";
 import ReactMarkdown from "react-markdown";
-import {SomeCrappyUtilitiesClass} from "../../service/ServiceCrappyUtilities"
+import {ServiceCrappyUtilities} from "../../service/ServiceCrappyUtilities"
 
 
 function sleep(ms: number) {
@@ -40,7 +40,7 @@ class GithubBlogFile extends React.Component<any> {
         console.log("Loading file " + this.state.fileResponse.name + ", please wait...")
 
         this.setState(
-            SomeCrappyUtilitiesClass.mergeProperties(
+            ServiceCrappyUtilities.mergeProperties(
                 this.state,
                 {
                     fileContents: 'Loading, please wait!'
@@ -62,7 +62,7 @@ class GithubBlogFile extends React.Component<any> {
 
                 //update only fileContents
                 this.setState(
-                    SomeCrappyUtilitiesClass.mergeProperties(
+                    ServiceCrappyUtilities.mergeProperties(
                         this.state,
                         {
                             fileContents: splitFileContent[1]
@@ -82,7 +82,7 @@ class GithubBlogFile extends React.Component<any> {
         }
 
         this.setState(
-            SomeCrappyUtilitiesClass.mergeProperties(
+            ServiceCrappyUtilities.mergeProperties(
                 this.state,
                 {
                     shown: (!this.state.shown),

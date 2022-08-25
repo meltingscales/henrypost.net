@@ -1,5 +1,5 @@
 import {Card, Container} from "react-bootstrap";
-import {SomeCrappyUtilitiesClass} from "../service/ServiceCrappyUtilities";
+import {ServiceCrappyUtilities} from "../service/ServiceCrappyUtilities";
 import {ReactNode} from "react";
 import {DataBoundClass} from "./DataBoundClass";
 import {LeftRightText} from "../component/tidbits/LeftRightText";
@@ -37,7 +37,7 @@ class MProject extends DataBoundClass<TProject> {
                             <h3>{p.title}</h3>
                         }
                         right={
-                            SomeCrappyUtilitiesClass.yearMMMonthFmt(p.date)
+                            ServiceCrappyUtilities.yearMMMonthFmt(p.date)
                         }
                     />
 
@@ -65,9 +65,9 @@ type TEducation = {
 
 export class MCertification extends DataBoundClass<TCertification> {
 
-    static transform_credentialDotNet_data(raw_credentialDotNet_datum: any): TCertification {
+    static transform_credentialDotNet_datum(raw_credentialDotNet_datum: any): TCertification {
 
-        var transformed: TCertification = {
+        return {
             certificateStandardFamily: raw_credentialDotNet_datum.issuer.name, //TODO Technically this is incorrect but who cares lol
             certificationName: raw_credentialDotNet_datum.name,
             certificationURL: raw_credentialDotNet_datum.url,
@@ -77,8 +77,6 @@ export class MCertification extends DataBoundClass<TCertification> {
             issueDate: new Date(raw_credentialDotNet_datum.issued_on),
             issuerName: raw_credentialDotNet_datum.issuer.name
         }
-
-        return transformed
 
     }
 
@@ -114,7 +112,7 @@ export class MCertification extends DataBoundClass<TCertification> {
         const relevant_data = raw_credentialDotNet_data.data.credentials
 
         return relevant_data.map((it) => {
-            return MCertification.transform_credentialDotNet_data(it)
+            return MCertification.transform_credentialDotNet_datum(it)
         });
 
     }
@@ -124,7 +122,7 @@ export class MCertification extends DataBoundClass<TCertification> {
             <Card.Header>
                 <a href={cert.certificationURL}>{cert.certificationName} ({cert.certificateStandardFamily})</a>
                 <br/>
-                <small>Issued on {SomeCrappyUtilitiesClass.yearMMMonthFmt(cert.issueDate)} by {cert.issuerName}</small>
+                <small>Issued on {ServiceCrappyUtilities.yearMMMonthFmt(cert.issueDate)} by {cert.issuerName}</small>
             </Card.Header>
             <Card.Body>
                 <p>
@@ -269,7 +267,19 @@ export class MResume extends DataBoundClass<TResume> {
 
         var eltsCertifications = []
 
-        var certs = this.data.certifications;
+        var certs = this.data.certifications
+            //sort by cert family
+            .sort(
+                (x,y)=>{
+                    return x.certificateStandardFamily.localeCompare(y.certificateStandardFamily)
+                }
+            )
+        // //newest first
+        // .sort(
+        //     (x, y) => {
+        //         return -1 * (x.issueDate.getTime() - y.issueDate.getTime())
+        //     }
+        // )
 
         for (const idx in certs) {
             var cert = certs[idx]
@@ -277,6 +287,8 @@ export class MResume extends DataBoundClass<TResume> {
             eltsCertifications.push(
                 MCertification.renderCertification(cert)
             )
+
+            eltsCertifications.push(<br/>)
         }
 
 
@@ -322,7 +334,7 @@ export class MResume extends DataBoundClass<TResume> {
 
             let sdate = job.startDate
             let edate = job.endDate
-            let dateRangeStr = SomeCrappyUtilitiesClass.dateRangeYearMMMonthFmt(sdate, edate)
+            let dateRangeStr = ServiceCrappyUtilities.dateRangeYearMMMonthFmt(sdate, edate)
 
             if (!edate) {
                 dateRangeStr += ' - Currently working'
@@ -396,7 +408,7 @@ export class MResume extends DataBoundClass<TResume> {
 
             let sdate = education.startDate
             let edate = education.endDate
-            let dateRangeStr = SomeCrappyUtilitiesClass.dateRangeYearMMMonthFmt(sdate, edate)
+            let dateRangeStr = ServiceCrappyUtilities.dateRangeYearMMMonthFmt(sdate, edate)
 
             if (!edate) {
                 dateRangeStr += ' - In Progress'
@@ -471,7 +483,7 @@ export class MResume extends DataBoundClass<TResume> {
         for (const idx in ecs) {
             var ec = ecs[idx]
             //TODO: What if we don't want to use just YearFMT?
-            var ecDateRange: string = SomeCrappyUtilitiesClass.dateRangeYearFmt(
+            var ecDateRange: string = ServiceCrappyUtilities.dateRangeYearFmt(
                 ec.startDate, ec.endDate
             )
 

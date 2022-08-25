@@ -25,43 +25,7 @@ export default function HENRY_TRESUME_DATA(): TResume {
                 description: 'Part of “Electronic Gaming Club” at Illinois Institute of Technology.'
             },
         ],
-        certifications: [
-            // {
-            //     certificationName: 'Software Security Practitioner - Defending Java',
-            //     issuerName: 'Security Compass',
-            //     certificateStandardFamily: 'ISC2',
-            //     certificationURL: 'https://www.credly.com/badges/3f674d4f-ba60-4e3b-8412-94b8b54cf0d5/',
-            //     issueDate: new Date('February 04, 2022')
-            // },
-            // {
-            //     certificationName: 'Software Security Practitioner - General',
-            //     issuerName: 'Security Compass',
-            //     certificateStandardFamily: 'ISC2',
-            //     certificationURL: 'https://www.credly.com/badges/1c5f7bce-fbbf-4c4b-b37d-58b346d939e0/',
-            //     issueDate: new Date('February 03, 2022')
-            // },
-            // {
-            //     certificationName: 'Software Security Practitioner - Defending C++',
-            //     issuerName: 'Security Compass',
-            //     certificateStandardFamily: 'ISC2',
-            //     certificationURL: 'https://www.credly.com/badges/da609247-d0c8-41d5-8b3d-bf9bcb4e2be5/',
-            //     issueDate: new Date('February 09, 2022')
-            // },
-            // {
-            //     certificationName: 'Software Security Practitioner - Defending .NET',
-            //     issuerName: 'Security Compass',
-            //     certificateStandardFamily: 'ISC2',
-            //     certificationURL: 'https://www.credly.com/badges/113e46cc-d9da-4a05-9405-6268948aef48/',
-            //     issueDate: new Date('February 04, 2022')
-            // },
-            // {
-            //     certificationName: 'Software Security Practitioner - Defending Android',
-            //     issuerName: 'Security Compass',
-            //     certificateStandardFamily: 'ISC2',
-            //     certificationURL: 'https://www.credly.com/badges/f01208d7-b34c-4ab3-93bc-f77cc32aa65f/',
-            //     issueDate: new Date('February 09, 2022')
-            // },
-        ],
+        certifications: [],
         education: [
             {
                 institutionName: 'Illinois Institute of Technology',
@@ -223,8 +187,6 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
     };
 
     //copy credly and credential.net dump into our default resume object
-
-
     MCertification.parse_credly_dump(CREDLY_DATA_HENRYPOST).map((
         // eslint-disable-next-line array-callback-return
         (it: TCertification) => {
@@ -239,11 +201,6 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
             theResume.certifications.push(it)
         }
     )
-
-    // theResume.certifications.push(
-    //     ,
-    //     MCertification.parseCredentialDotNetDump(CREDENTIAL_NET_DATA_HENRYPOST)
-    // )
 
     return theResume;
 }

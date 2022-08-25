@@ -8,7 +8,7 @@ import HENRY_TRESUME_DATA from "../data/resume_henryPost";
 // getThatCredentialDotNetData()
 // getThatCredlyData()
 
-const Certifications = () => {
+const PageCertifications = () => {
     return <>
         <h1>Certifications</h1>
         <Container>
@@ -17,4 +17,4 @@ const Certifications = () => {
     </>;
 }
 
-export default Certifications;
+export default PageCertifications;

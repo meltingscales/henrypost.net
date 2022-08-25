@@ -11,7 +11,7 @@ import PageBooks from "./pages/hobbies/PageBooks";
 import PageMusic from "./pages/hobbies/PageMusic";
 import PageVideogames from "./pages/hobbies/PageVideogames";
 import PageResume from "./pages/PageResume";
-import Certifications from "./pages/Certifications";
+import PageCertifications from "./pages/PageCertifications";
 import {Cube} from "./pages/demoApps/Cube";
 
 function NoPage() {
@@ -43,7 +43,7 @@ export default function Routing() {
                        element={<PageResume/>}/>
 
                 <Route path={"work/certifications"}
-                       element={<Certifications/>}/>
+                       element={<PageCertifications/>}/>
 
                 <Route path={"demoApps/githubApp"}
                        element={<GithubApp/>}/>
