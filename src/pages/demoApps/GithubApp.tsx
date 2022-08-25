@@ -178,10 +178,10 @@ function GithubMarkdownFiles(props: any) {
 
             {fileList}
 
-            <CPrettyJSON
-                name={GithubMarkdownFiles.name}
-                data={repoContents}
-            />
+            {/*<CPrettyJSON*/}
+            {/*    name={GithubMarkdownFiles.name}*/}
+            {/*    data={repoContents}*/}
+            {/*/>*/}
 
         </Container>
     </>
