@@ -118,7 +118,11 @@ export default function HENRY_TRESUME_DATA(): TResume {
                 employerName: "U.S. Bank",
                 startDate: new Date("August 2022"),
                 responsibilities: [
-                    'TBD'
+                    'Integrating code scanning pipelines with evidence collection systems',
+                    'Collaborating with my team and other business lines drive integration to completion',
+                    // 'Designing custom integrations',
+                    'Prototyping support for new languages and tools to be scanned',
+                    //lol bro idk
                 ],
             },
         ],
