@@ -226,7 +226,9 @@ Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
 
 
     MCertification.parseCredlyDump(CREDLY_DATA_HENRYPOST).map((
-        function (it: TCertification) {
+        // eslint-disable-next-line array-callback-return
+        (it: TCertification) => {
+            // @ts-ignore
             theResume.certifications.push(it)
         }))
 
