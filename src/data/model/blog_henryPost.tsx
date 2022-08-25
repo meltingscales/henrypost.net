@@ -31,6 +31,8 @@ export default function HENRY_TBLOG_DATA(): TBlog {
     }
 
     //TODO: Collect data from old markdown blog - using Github API.
+    // @ts-ignore
+    daBlog.posts.push(...[])
 
     return daBlog
 }

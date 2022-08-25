@@ -1,6 +1,7 @@
 import {DataBoundClass} from "./DataBoundClass";
 import {ReactNode} from "react";
-import {Card, Container} from "react-bootstrap";
+import {Button, Card, Container} from "react-bootstrap";
+import {ServiceCrappyUtilities} from "../service/ServiceCrappyUtilities"
 
 export type TBlog = {
     posts: TBlogPost[]
@@ -12,12 +13,40 @@ export class MBlogPost extends DataBoundClass<TBlogPost> {
         return <Container>
             <Card>
                 <Card.Header>
-                    {somePost.title} by {somePost.author}
+                    <Card.Title>
+                        "{somePost.title}" by {somePost.author}
+                    </Card.Title>
+                    <Card.Subtitle>
+                        Posted on {ServiceCrappyUtilities.yearMonthDayFmt(somePost.date)}
+                        <Container>
+                            {MBlogPost.renderTags(somePost)}
+                        </Container>
+                    </Card.Subtitle>
                 </Card.Header>
                 <Card.Body>
                     {somePost.blogContent}
                 </Card.Body>
             </Card>
+        </Container>;
+    }
+
+    private static renderTags(somePost: TBlogPost) {
+
+        function toggleTag(tag: string) {
+            alert("TODO: toggle tag " + tag)
+        }
+
+        return <Container>
+            <span>Tags:</span>
+            <ul>
+                {somePost.tags.map((tag) => {
+                    return <>
+                        <Button onClick={() => toggleTag(tag)}>
+                            {tag}
+                        </Button>
+                    </>
+                })}
+            </ul>
         </Container>;
     }
 }

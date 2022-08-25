@@ -14,6 +14,10 @@ export function yearMMMonthFmt(d: Date): string {
     return m + " " + (d.getUTCFullYear())
 }
 
+export function yearMonthDayFmt(d: Date): string {
+    return yearMonthFmt(d) + "-" + d.getUTCDay()
+}
+
 function yearFmt(d) {
     return "" + d.getUTCFullYear()
 }
