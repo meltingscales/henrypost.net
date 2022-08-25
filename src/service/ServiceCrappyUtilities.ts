@@ -4,8 +4,28 @@ export function mergeProperties(target: any, source: any): any {
     return Object.assign(target, source);
 }
 
+export function padl(str: string, desiredSize: number, padChar: string): string {
+    var ret = str
+
+    while (ret.length < desiredSize) {
+        ret = padChar + ret
+    }
+
+    return ret
+}
+
+export function padr(str: string, desiredSize: number, padChar: string): string {
+    var ret = str
+
+    while (ret.length < desiredSize) {
+        ret = ret + padChar
+    }
+
+    return ret
+}
+
 export function yearMonthFmt(d: Date): string {
-    return (d.getUTCFullYear()) + "-" + (d.getMonth() + 1) //+ "-" + (sdate.getUTCDate());
+    return (d.getUTCFullYear()) + "-" + padl('' + (d.getMonth() + 1), 2, '0') //+ "-" + (sdate.getUTCDate());
 }
 
 export function yearMMMonthFmt(d: Date): string {
@@ -15,7 +35,7 @@ export function yearMMMonthFmt(d: Date): string {
 }
 
 export function yearMonthDayFmt(d: Date): string {
-    return yearMonthFmt(d) + "-" + d.getUTCDay()
+    return yearMonthFmt(d) + "-" + padl(('' + d.getUTCDay()), 2, '0')
 }
 
 function yearFmt(d) {
