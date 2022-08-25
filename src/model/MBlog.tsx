@@ -1,5 +1,5 @@
 import {DataBoundClass} from "./DataBoundClass";
-import {ReactNode} from "react";
+import {ReactNode, useState} from "react";
 import {Button, Card, Container} from "react-bootstrap";
 import {ServiceCrappyUtilities} from "../service/ServiceCrappyUtilities"
 
@@ -10,6 +10,10 @@ export type TBlog = {
 export class MBlogPost extends DataBoundClass<TBlogPost> {
 
     static renderBlogPost(somePost: TBlogPost) {
+
+        // const [shownTag, setShownTag] = useState<null | string>(null);
+        //TODO I can't run the above line, I need to research `useState` when I have internet.
+
         return <Container>
             <Card>
                 <Card.Header>

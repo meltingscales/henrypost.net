@@ -10,11 +10,14 @@ export default function HENRY_TBLOG_DATA(): TBlog {
                 blogContent: (
                     <Container>
                         <p>bro im on a plane!!!! wow!!!!!</p>
+                        <p>Going to see a friend from my childhood, a good friend of my late mom - Jet Dee. Can't wait. Will update this blog more after I land.</p>
                     </Container>
                 ),
                 date: new Date('2022-08-25'),
-                tags: ['casual'],
-                title: "in da sky"
+                tags: [
+                    'casual',
+                ],
+                title: "Flight to Hawaii",
             },
             {
                 author: "Henry Post",
