@@ -1,7 +1,7 @@
 import {Container} from "react-bootstrap";
 import React from "react";
 import {MResume} from "../model/MResume";
-import HENRY_TRESUME_DATA from "../data/model/resume_henryPost";
+import HENRY_TRESUME_DATA from "../data/modelbound/resume_henryPost";
 // import {getThatCredlyData} from "../data/scraper/credly_scrape_henrypost";
 // import {getThatCredentialDotNetData} from "../data/scrape/credential.net_scrape_henrypost";
 

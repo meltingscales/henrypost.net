@@ -1,5 +1,5 @@
 import {MBlog} from "../model/MBlog";
-import HENRY_TBLOG_DATA from "../data/model/blog_henryPost";
+import HENRY_TBLOG_DATA from "../data/modelbound/blog_henryPost";
 
 const PageBlog = () => {
 
