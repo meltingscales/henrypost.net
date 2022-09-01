@@ -5,7 +5,7 @@ import {CREDLY_DATA_HENRYPOST} from "../scraped/credly_data_henrypost";
 
 
 export default function HENRY_TRESUME_DATA(): TResume {
-    let theResume = {
+    let theResume: TResume = {
         name: "Henry Post",
         extraCurricular: [
             {
@@ -242,6 +242,9 @@ export default function HENRY_TRESUME_DATA(): TResume {
             theResume.certifications.push(it)
         }
     )
+
+    //test adding new skills dynamically
+    theResume.skills.push({name: "Making really wacky custom ReactJS sites :3c"})
 
     return theResume;
 }

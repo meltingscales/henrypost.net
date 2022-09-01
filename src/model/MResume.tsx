@@ -17,7 +17,7 @@ type TJobWorked = {
 type TSkill = {
     category?: string
     name: string
-    timeStudied: string
+    timeStudied?: string
 }
 
 type TProject = {
@@ -223,6 +223,33 @@ export class MSkill extends DataBoundClass<TSkill> {
 
         return tskillList
     }
+
+    static renderSkillTimeStudied(skill: TSkill) {
+
+        if (!(skill.timeStudied)) {
+            return null
+        }
+
+        return <>
+            &nbsp;
+            <i>({skill.timeStudied})</i>
+        </>
+    }
+
+    static renderSkill(skill: TSkill) {
+
+
+        return <>
+            <li>
+                <p>{skill.name}
+                    {
+                        MSkill.renderSkillTimeStudied(skill)
+                    }
+                </p>
+            </li>
+        </>
+
+    }
 }
 
 export class MResume extends DataBoundClass<TResume> {
@@ -270,7 +297,7 @@ export class MResume extends DataBoundClass<TResume> {
         var certs = this.data.certifications
             //sort by cert family
             .sort(
-                (x,y)=>{
+                (x, y) => {
                     return x.certificateStandardFamily.localeCompare(y.certificateStandardFamily)
                 }
             )
@@ -303,11 +330,7 @@ export class MResume extends DataBoundClass<TResume> {
         for (const i in this.data.skills) {
             const skill = this.data.skills[i]
             skillsElts.push(
-                <li>
-                    <p>{skill.name}&nbsp;
-                        <i>({skill.timeStudied})</i>
-                    </p>
-                </li>
+                MSkill.renderSkill(skill)
             )
         }
 
