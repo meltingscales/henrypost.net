@@ -11,7 +11,7 @@ export default function HENRY_TRESUME_DATA(): TResume {
             {
                 startDate: new Date('2012'),
                 endDate: new Date('2013'),
-                description: 'Part of a student-led schoolwide computer repair club at Northside College Preparatory High School.\n' +
+                description: 'Part of a student-led school-wide computer repair club at Northside College Preparatory High School.\n' +
                     'Serviced laptops, servers, and desktops.'
             },
             {
