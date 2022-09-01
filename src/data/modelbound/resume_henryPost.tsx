@@ -148,11 +148,48 @@ export default function HENRY_TRESUME_DATA(): TResume {
                 description: 'Over the summer, I enrolled in an Illinois Institute of Technology summer Wolfram Mathematica course where I coded an ASCII compression algorithm that took 256 of the most common 2-tuples of characters in an ASCII file and compressed them into a file containing a dictionary followed by compressed data.'
             }
         ],
-        skills: MSkill.parseStringToTSKillList(`
-Kubernetes (1y), Helm (1y), Groovy (2y), Programming (10y), Linux (4y), IT Administration (3y), Software Design (5y), 
-Technical Documentation (4y), Computer Repair (5y), Circuitry (2y)
-            `,
-        ),
+        skills: [
+            {
+                "name": "Kubernetes",
+                "timeStudied": "1y"
+            },
+            {
+                "name": "Helm",
+                "timeStudied": "1y"
+            },
+            {
+                "name": "Groovy",
+                "timeStudied": "2y"
+            },
+            {
+                "name": "Programming",
+                "timeStudied": "10y"
+            },
+            {
+                "name": "Linux",
+                "timeStudied": "4y"
+            },
+            {
+                "name": "IT Administration",
+                "timeStudied": "3y"
+            },
+            {
+                "name": "Software Design",
+                "timeStudied": "5y"
+            },
+            {
+                "name": "Technical Documentation",
+                "timeStudied": "4y"
+            },
+            {
+                "name": "Computer Repair",
+                "timeStudied": "5y"
+            },
+            {
+                "name": "Circuitry",
+                "timeStudied": "2y"
+            }
+        ],
         personalTraits: [
             'Constant desire to acquire new skills.',
             'Strong motivational and leadership skills.',
