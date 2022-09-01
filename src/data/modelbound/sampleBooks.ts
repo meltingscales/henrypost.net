@@ -1,5 +1,5 @@
 import {TBookReview} from "../../model/MBookReview";
-import {TRatingUtil} from '../../model/MGenericMediaReview'
+import {MRating} from '../../model/MGenericMediaReview'
 
 
 export let LAZY_BOOKLIST: string[] = `
@@ -117,7 +117,7 @@ export let SAMPLE_BOOKS: TBookReview[] = [
         author: "Harry J Llama",
         isbn9: '123456789',
         isbn13: '123456789012',
-        rating: TRatingUtil.toTRating('9/10'),
+        rating: MRating.toTRating('9/10'),
         shortReview: "A solid beginner book for Llama programming. Don't buy new, it's useful to have as a reference manual though.",
         tags: ['programming', 'llama', 'beginner-programming'],
     },
@@ -125,7 +125,7 @@ export let SAMPLE_BOOKS: TBookReview[] = [
         title: "Coding for Aardvarks",
         author: "Spiky J Aardvark",
         isbn13: '123456789012',
-        rating: TRatingUtil.toTRating("8/10"),
+        rating: MRating.toTRating("8/10"),
         tags: ['programming']
     },
     {

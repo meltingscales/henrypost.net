@@ -1,10 +1,10 @@
 import {TGameReview} from "../../model/MGameReview";
-import {TRatingUtil} from "../../model/MGenericMediaReview";
+import {MRating} from "../../model/MGenericMediaReview";
 
 export default function HENRY_TGAMEREVIEW_DATA(): TGameReview[] {
     return [
         {
-            rating: TRatingUtil.toTRating("10/10"),
+            rating: MRating.toTRating("10/10"),
             game: {
                 title: "Minecraft"
             },

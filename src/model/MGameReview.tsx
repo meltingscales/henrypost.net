@@ -1,4 +1,4 @@
-import {TRating} from "./MGenericMediaReview";
+import {MRating, TRating} from "./MGenericMediaReview";
 import {ReactNode} from "react";
 import {DataBoundClass} from "./DataBoundClass";
 import {Card, Container} from "react-bootstrap";
@@ -42,9 +42,14 @@ export class MGameReview extends DataBoundClass<TGameReview> {
                         {someGR.game.title}
                     </Card.Title>
                     <Card.Subtitle>
-                        potato :3c
+                        {new MRating(someGR.rating).fmtPretty()}
                     </Card.Subtitle>
                 </Card.Header>
+                <Card.Body>
+                    <Card.Text>
+                        {someGR.review}
+                    </Card.Text>
+                </Card.Body>
             </Card>
 
         </Container>

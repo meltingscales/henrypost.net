@@ -7,7 +7,7 @@ export type TRating = {
     rating: any
 }
 
-export class TRatingUtil {
+export class MRating extends DataBoundClass<TRating> {
 
     /**
      * it just returns a rating bro
@@ -23,6 +23,10 @@ export class TRatingUtil {
             upperBound: split[1],
             rating: split[0],
         }
+    }
+
+    fmtPretty() {
+        return this.data.rating + "/" + this.data.upperBound
     }
 
 }
