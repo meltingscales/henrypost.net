@@ -244,7 +244,7 @@ export default function HENRY_TRESUME_DATA(): TResume {
     )
 
     //test adding new skills dynamically
-    theResume.skills.push({name: "Making really wacky custom ReactJS sites :3c"})
+    // theResume.skills.push({name: "Making really wacky custom ReactJS sites :3c"})
 
     return theResume;
 }

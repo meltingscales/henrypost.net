@@ -73,7 +73,10 @@ export class MBlog extends DataBoundClass<TBlog> {
 
             {
                 blogData.posts.map((it) => {
-                    return MBlogPost.renderBlogPost(it);
+                    return [
+                        MBlogPost.renderBlogPost(it),
+                        <br/> //TODO: This is probably a shitty way of fixing the spacing.
+                    ];
                 })
             }
 
