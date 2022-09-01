@@ -391,6 +391,8 @@ export class MResume extends DataBoundClass<TResume> {
                 </Card>
             )
 
+            jobElts.push(<br/>)
+
         }
 
         return <Container id={'jobs'}>
