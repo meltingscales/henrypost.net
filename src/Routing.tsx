@@ -13,6 +13,7 @@ import PageVideogames from "./pages/hobbies/PageVideogames";
 import PageResume from "./pages/PageResume";
 import PageCertifications from "./pages/PageCertifications";
 import {Cube} from "./pages/demoApps/Cube";
+import PagePhotos from "./pages/hobbies/PagePhotos";
 
 function NoPage() {
     return <div>nopage!</div>;
@@ -50,6 +51,9 @@ export default function Routing() {
 
                 <Route path={"demoApps/cube"}
                        element={<Cube/>}/>
+
+                <Route path={"hobbies/photos"}
+                       element={<PagePhotos/>}/>
 
                 <Route path={"hobbies/books"}
                        element={<PageBooks/>}/>

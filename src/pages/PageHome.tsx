@@ -15,7 +15,7 @@ const PageHome = () => {
             <ul>
                 <li><a href={'mailto:resplendent.falconeer@gmail.com'}>Email</a></li>
                 <li><a href={'https://github.com/HenryFBP'}>GitHub</a></li>
-                <li><a href={'https://github.com/HenryFBP/dotfiles/'}>Dotfiles (New laptop?)</a></li>
+                <li><a href={'https://github.com/HenryFBP/dotfiles/'}>Dotfiles (Got a new laptop?)</a></li>
             </ul>
         </Container>
 
@@ -28,15 +28,19 @@ const PageHome = () => {
         </Container>
 
         <Container>
-            <p>Hello, welcome to {OWNER_NAME}'s website.</p>
-            <p>I am learning ReactJS, which this website is written in.</p>
-            <p>This is intended to replace <a href={'https://henryfbp.github.io/'}>my old website</a>, which has grown
-                very large and is somewhat hard to customize
-                as it was built with Hugo, a static Markdown to HTML templating tool.</p>
+            <Alert>
+
+                <p>Hello, welcome to {OWNER_NAME}'s website.</p>
+                <p>I am learning ReactJS, which this website is written in.</p>
+                <p>This is intended to replace <a href={'https://henryfbp.github.io/'}>my old website</a>, which has
+                    grown
+                    very large and is somewhat hard to customize
+                    as it was built with Hugo, a static Markdown to HTML templating tool.</p>
+            </Alert>
             <Alert variant={'danger'}>
                 <a href={HENRY_ORIGINAL_WEBSITE_URL}>
-                    <h2>This is an extremely in-development website. <br/><br/>
-                        If you are not expecting this, please click here to be taken to my primary website.</h2>
+                    <h3>Note: This is an extremely in-development website. <br/><br/>
+                        If you are not expecting this, please click here to be taken to my primary website.</h3>
                 </a>
             </Alert>
         </Container>
@@ -54,14 +58,46 @@ const PageHome = () => {
                 In my free time I like to bake, go cycling, play video games, and scuba dive (if I have enough time).
             </p>
             <p>
-                Check out my GitHub for code that I make, and message me if you’d like to get tutored on something or
+                <a href={'https://github.com/HenryFBP/'}>Check out my GitHub</a> for code that I make, and message me if
+                you’d like to get tutored on something or
                 have any questions.
             </p>
+        </Container>
 
+        <Container>
+            <script src="https://unpkg.com/github-card@1.2.1/dist/widget.js"></script>
+            <div className="github-widget" data-username="henryfbp"></div>
+        </Container>
+
+        <Container>
+            <p>
+
+                For more cool content, see <a
+                href={'https://github.com/HenryFBP/NYU-CS-GY-6813/blob/master/paper/final/Henry%20Post%20-%20NYU-CS-GY-6813%20-%20A%20survey%20on%20automated%20software%20vulnerability%20discovery%2C%20exploitation%2C%20and%20patching%20-%20Combined%20Paper.pdf'}>my
+                paper for NYU regarding "Automated software vulnerability discovery, exploitation, and patching"</a> and
+                related work (<a href={'https://github.com/HenryFBP/NYU-CS-GY-6813'}>extra 1</a>, <a
+                href={'https://github.com/HenryFBP/NYU-CS-GY-6813-research-paper-work'}>extra
+                2</a>, <a
+                href={'https://github.com/HenryFBP/NYU-CS-GY-6813/blob/master/paper/final/Henry%20Post%20-%20NYU-CS-GY-6813%20-%20A%20survey%20on%20automated%20software%20vulnerability%20discovery%2C%20exploitation%2C%20and%20patching%20-%20Presentation.pdf'}>powerpoint</a>)
+            </p>
+
+            <p>
+                Use <a href={'https://www.libreoffice.org/'}>LibreOffice</a> or MS Word to read my paper.
+            </p>
+            <p>
+
+                The video presentation is below.
+            </p>
+
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/BgICl-5bqbQ"
+                    title="YouTube video player" frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen={true}></iframe>
+
+        </Container>
 
     </Container>
-</Container>
-    ;
+        ;
 }
 
 export default PageHome;

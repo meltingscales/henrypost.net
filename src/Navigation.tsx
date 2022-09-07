@@ -108,6 +108,10 @@ const Navigation = () =>
 
                                 <NavDDI
                                     path={'hobbies'}
+                                    subpath={'photos'}/>
+
+                                <NavDDI
+                                    path={'hobbies'}
                                     subpath={'books'}/>
 
                                 <NavDDI
