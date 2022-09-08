@@ -136,5 +136,5 @@ export let SAMPLE_BOOKS: TBookReview[] = [
 //add LAZY_BOOKLIST to SAMPLE_BOOKS
 
 for (const bookname of LAZY_BOOKLIST) {
-    SAMPLE_BOOKS.push({title: bookname})
+    SAMPLE_BOOKS.push({title: bookname, tags: ['reading-backlog']})
 }
