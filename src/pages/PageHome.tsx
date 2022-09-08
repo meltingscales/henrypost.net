@@ -1,7 +1,7 @@
 import React from 'react';
 import {Alert, Card, Col, Container, ListGroup, Row} from "react-bootstrap";
 import {HENRY_ORIGINAL_WEBSITE_URL, OWNER_NAME} from "../Config";
-import {Github, Laptop, Mailbox} from "react-bootstrap-icons";
+import {Github, Laptop, Mailbox, Tree} from "react-bootstrap-icons";
 
 
 const ListGroupItemLink = (props: any) => {
@@ -27,6 +27,9 @@ const HenryProfileCard = () => {
             <Card.Text>
                 <ListGroup>
                     <ListGroup.Item variant={"info"}>Quick links:</ListGroup.Item>
+                    <ListGroupItemLink
+                        link={'https://linktr.ee/henryfbp'}
+                        text={<><Tree size={ICON_SIZE}/> Linktree</>}/>
                     <ListGroupItemLink
                         link={'mailto:resplendent.falconeer@gmail.com'}
                         text={<><Mailbox size={ICON_SIZE}/> Email</>}/>
