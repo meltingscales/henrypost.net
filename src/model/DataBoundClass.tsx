@@ -9,6 +9,7 @@ export class DataBoundClass<T> {
 
     constructor(data: T) {
         this.data = data;
+        // console.log(this)
     }
 }
 

@@ -13,6 +13,12 @@ export class MBookReview extends MGenericMediaReview {
 
     data: TBookReview = null;
 
+    constructor(data: TBookReview) {
+        super(data)
+        this.data = data;
+    }
+
+
     static from_json(param: TBookReview) {
         return new MBookReview(param)
     }
@@ -26,6 +32,9 @@ export class MBookReview extends MGenericMediaReview {
 
             books.push(MBookReview.from_json(samplebook))
         }
+
+        // console.log(SAMPLE_BOOKS)
+        // console.log(books)
 
         return books
     }

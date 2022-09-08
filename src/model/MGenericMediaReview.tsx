@@ -44,6 +44,11 @@ export type TGenericMediaReview = {
 
 export class MGenericMediaReview extends DataBoundClass<TGenericMediaReview> {
 
+    constructor(data: TGenericMediaReview) {
+        super(data)
+        this.data = data;
+    }
+
     hasShortReview() {
         return !!this.data.shortReview;
     }
@@ -53,6 +58,10 @@ export class MGenericMediaReview extends DataBoundClass<TGenericMediaReview> {
     }
 
     renderShortReview(): JSX.Element {
+
+        // console.log(this)
+        // console.log(this.data)
+        // console.log(this.data.shortReview)
 
         if (!this.hasShortReview()) {
             return null;
