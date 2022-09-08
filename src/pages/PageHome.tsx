@@ -1,15 +1,49 @@
 import React from 'react';
 import {Alert, Card, Col, Container, ListGroup, Row} from "react-bootstrap";
 import {HENRY_ORIGINAL_WEBSITE_URL, OWNER_NAME} from "../Config";
+import {Github, Laptop, Mailbox} from "react-bootstrap-icons";
 
 
 const ListGroupItemLink = (props: any) => {
-    return <a href={props.link}>
-        <ListGroup.Item action>
-            {props.text}
-        </ListGroup.Item>
-    </a>
+    return <ListGroup.Item href={props.link} action>
+        {props.text}
+    </ListGroup.Item>
 }
+
+const HenryProfileCard = () => {
+    return <Card
+        // style={{width: '30vw'}}
+    >
+        <Card.Img
+            src={require('../img/headshot.png')}
+            alt={'Henry Post smiling, wearing a bright orange shirt, standing in front of the sea near Hawaii.'}
+        />
+        <Card.Body>
+            <Card.Title>
+                <h1>{OWNER_NAME}</h1>
+                <h2>Senior Security Engineer</h2>
+                <h3>U.S. Bank</h3>
+            </Card.Title>
+            <Card.Text>
+                <ListGroup>
+                    <ListGroup.Item variant={"info"}>Quick links:</ListGroup.Item>
+                    <ListGroupItemLink
+                        link={'mailto:resplendent.falconeer@gmail.com'}
+                        text={<><Mailbox size={ICON_SIZE}/> Email</>}/>
+                    <ListGroupItemLink
+                        link={'https://github.com/HenryFBP'}
+                        text={<><Github size={ICON_SIZE}/> Github</>}/>
+                    <ListGroupItemLink
+                        link={'https://github.com/HenryFBP/dotfiles/'}
+                        text={<><Laptop size={ICON_SIZE}/> Dotfiles (Got a new laptop?)</>}/>
+                </ListGroup>
+            </Card.Text>
+        </Card.Body>
+
+    </Card>
+}
+
+const ICON_SIZE = '30'
 
 const PageHome = () => {
     // noinspection HttpUrlsUsage
@@ -19,35 +53,7 @@ const PageHome = () => {
 
             <Row>
                 <Col>
-                    <Card
-                        // style={{width: '30vw'}}
-                    >
-                        <Card.Img
-                            src={require('../img/headshot.png')}
-                            alt={'Henry Post smiling, wearing a bright orange shirt, standing in front of the sea near Hawaii.'}
-                        />
-                        <Card.Body>
-                            <Card.Title>
-                                <h1>{OWNER_NAME}</h1>
-                                <h2>Senior Security Engineer</h2>
-                                <h3>U.S. Bank</h3>
-                            </Card.Title>
-                            <Card.Text>
-                                <ListGroup>
-                                    <ListGroupItemLink
-                                        link={'mailto:resplendent.falconeer@gmail.com'}
-                                        text={'Email'}/>
-                                    <ListGroupItemLink
-                                        link={'https://github.com/HenryFBP'}
-                                        text={'Github'}/>
-                                    <ListGroupItemLink
-                                        link={'https://github.com/HenryFBP/dotfiles/'}
-                                        text={'Dotfiles (Got a new laptop?)'}/>
-                                </ListGroup>
-                            </Card.Text>
-                        </Card.Body>
-
-                    </Card>
+                    <HenryProfileCard/>
                 </Col>
                 <Col>
                     <Container>
@@ -105,10 +111,10 @@ const PageHome = () => {
         </Container>
 
 
-        <Container>
-            <script src="https://unpkg.com/github-card@1.2.1/dist/widget.js"></script>
-            <div className="github-widget" data-username="henryfbp"></div>
-        </Container>
+        {/*<Container>*/}
+        {/*    <script src="https://unpkg.com/github-card@1.2.1/dist/widget.js"></script>*/}
+        {/*    <div className="github-widget" data-username="henryfbp"></div>*/}
+        {/*</Container>*/}
 
         <Container>
             <p>
@@ -137,8 +143,7 @@ const PageHome = () => {
 
         </Container>
 
-    </Container>
-        ;
+    </Container>;
 }
 
 export default PageHome;
