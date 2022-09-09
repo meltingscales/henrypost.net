@@ -106,9 +106,9 @@ const PageHome = () => {
                     as it was built with Hugo, a static Markdown to HTML templating tool.</p>
             </Alert>
             <Alert variant={'danger'}>
-                <a href={HENRY_PRETTY_WEBSITE_URL}>
+                <a href={OLD_GH_SITE_URL}>
                     <h3>Note: This is an extremely in-development website. <br/><br/>
-                        If you are not expecting this, please click here to be taken to my primary website.</h3>
+                        If you are not expecting this, please click here to be taken to my old website.</h3>
                 </a>
             </Alert>
         </Container>
