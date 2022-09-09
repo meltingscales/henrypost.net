@@ -1,6 +1,6 @@
 import React from 'react';
 import {Alert, Card, Col, Container, ListGroup, Row} from "react-bootstrap";
-import {HENRY_ORIGINAL_WEBSITE_URL, OWNER_NAME} from "../Config";
+import {HENRY_PRETTY_WEBSITE_URL, OLD_GH_SITE_URL, OWNER_NAME} from "../Config";
 import {Github, Laptop, Mailbox, Tree} from "react-bootstrap-icons";
 
 
@@ -101,12 +101,12 @@ const PageHome = () => {
 
                 <p>Hello, welcome to {OWNER_NAME}'s website.</p>
                 <p>I am learning ReactJS, which this website is written in.</p>
-                <p>This is intended to replace <a href={'https://henryfbp.github.io/'}>my old website</a>, which has
+                <p>This is intended to replace <a href={OLD_GH_SITE_URL}>my old website</a>, which has
                     grown very large and is somewhat hard to customize
                     as it was built with Hugo, a static Markdown to HTML templating tool.</p>
             </Alert>
             <Alert variant={'danger'}>
-                <a href={HENRY_ORIGINAL_WEBSITE_URL}>
+                <a href={HENRY_PRETTY_WEBSITE_URL}>
                     <h3>Note: This is an extremely in-development website. <br/><br/>
                         If you are not expecting this, please click here to be taken to my primary website.</h3>
                 </a>
