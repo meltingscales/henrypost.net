@@ -49,7 +49,6 @@ const HenryProfileCard = () => {
 const ICON_SIZE = '30'
 
 const PageHome = () => {
-    // noinspection HttpUrlsUsage
     return <Container>
 
         <Container>
@@ -81,37 +80,38 @@ const PageHome = () => {
                             have any questions.
                         </p>
                     </Container>
+
+                    <Container>
+                        <Alert variant={"info"}>
+                            <i>
+                                Opinions expressed are solely my own and do not express the views or opinions of my employer.
+                            </i>
+                        </Alert>
+                    </Container>
+
+                    <Container>
+                        <Alert>
+
+                            <p>Hello, welcome to {OWNER_NAME}'s website.</p>
+                            <p>I am learning ReactJS, which this website is written in.</p>
+                            <p>This is intended to replace <a href={OLD_GH_SITE_URL}>my old website</a>, which has
+                                grown very large and is somewhat hard to customize
+                                as it was built with Hugo, a static Markdown to HTML templating tool.</p>
+                        </Alert>
+                        <Alert variant={'danger'}>
+                            <a href={OLD_GH_SITE_URL}>
+                                <h3>Note: This is an extremely in-development website. <br/><br/>
+                                    If you are not expecting this, please click here to be taken to my old website.</h3>
+                            </a>
+                        </Alert>
+                    </Container>
+
                 </Col>
             </Row>
 
         </Container>
 
         <hr/>
-
-        <Container>
-            <Alert variant={"info"}>
-                <i>
-                    Opinions expressed are solely my own and do not express the views or opinions of my employer.
-                </i>
-            </Alert>
-        </Container>
-
-        <Container>
-            <Alert>
-
-                <p>Hello, welcome to {OWNER_NAME}'s website.</p>
-                <p>I am learning ReactJS, which this website is written in.</p>
-                <p>This is intended to replace <a href={OLD_GH_SITE_URL}>my old website</a>, which has
-                    grown very large and is somewhat hard to customize
-                    as it was built with Hugo, a static Markdown to HTML templating tool.</p>
-            </Alert>
-            <Alert variant={'danger'}>
-                <a href={OLD_GH_SITE_URL}>
-                    <h3>Note: This is an extremely in-development website. <br/><br/>
-                        If you are not expecting this, please click here to be taken to my old website.</h3>
-                </a>
-            </Alert>
-        </Container>
 
 
         {/*<Container>*/}
