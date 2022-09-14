@@ -1,8 +1,9 @@
-import {Card, Container} from "react-bootstrap";
+import {Button, Card, Container} from "react-bootstrap";
 import {ServiceCrappyUtilities} from "../service/ServiceCrappyUtilities";
 import {ReactNode} from "react";
 import {DataBoundClass} from "./DataBoundClass";
 import {LeftRightText} from "../component/tidbits/LeftRightText";
+import _ from "lodash";
 
 type TJobWorked = {
     title: string
@@ -53,6 +54,11 @@ class MProject extends DataBoundClass<TProject> {
 
 }
 
+type TClass = {
+    className: string
+    classTime: string
+}
+
 type TEducation = {
     institutionName: string
     institutionLocation?: string
@@ -61,6 +67,7 @@ type TEducation = {
     degreeName: string
     description?: string | ReactNode
     extraDescription?: string | ReactNode
+    classes?: TClass[]
 }
 
 export class MCertification extends DataBoundClass<TCertification> {
@@ -416,6 +423,44 @@ export class MResume extends DataBoundClass<TResume> {
         </>
     }
 
+    private renderClassList(classes: TClass[]) {
+        if (classes) {
+
+            let groupedClasses = _.groupBy(classes, 'classTime')
+
+            console.log(groupedClasses)
+
+            // @ts-ignore
+            return (
+                <Card.Footer>
+                    {Object.keys(groupedClasses).map((classTime) => {
+
+                        let specificClass: TClass[] = groupedClasses[classTime]
+
+                        // console.log("specificClass:")
+                        // console.log(specificClass)
+
+                        return <>
+                            <Container>
+                                <h4>{classTime}:</h4>
+                                <ul>
+                                    {
+                                        specificClass.map((it) => {
+                                            return <li>{it.className}</li>
+                                        })
+                                    }
+                                </ul>
+                            </Container>
+                        </>
+                    })}
+
+                </Card.Footer>
+            )
+        } else {
+            return null
+        }
+    }
+
     private renderEducation() {
 
         var eduElts = [];
@@ -438,6 +483,17 @@ export class MResume extends DataBoundClass<TResume> {
                 dateRangeStr += ' - In Progress'
             }
 
+            let eltEduDesc = null
+            if (education.description) {
+                eltEduDesc = (
+                    <Card.Body>
+                        <p><i>{education.description}</i></p>
+                    </Card.Body>
+                )
+            }
+
+            let eltEduClasses = this.renderClassList(education.classes)
+
             eduElts.push(
                 <Card>
                     <Card.Header>
@@ -447,18 +503,9 @@ export class MResume extends DataBoundClass<TResume> {
                         <i>{education.institutionName}, {education.institutionLocation}</i>
                     </Card.Header>
 
-                    {
-                        education.description ?
-                            <Card.Body>
-                                <p><i>{education.description}</i></p>
-                            </Card.Body>
-                            :
-                            null
-                    }
+                    {eltEduDesc}
 
-                    {/*<Card.Footer>*/}
-                    {/*    wowie :3c*/}
-                    {/*</Card.Footer>*/}
+                    {eltEduClasses}
                 </Card>
             )
 

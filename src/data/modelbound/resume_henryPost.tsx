@@ -28,107 +28,6 @@ export default function HENRY_TRESUME_DATA(): TResume {
         certifications: [],
         education: [
 
-            /**
-             * TODO: Add these classes from your old site!
-             * Summer 2014
-             * SCI 111 - Computational Science
-             *
-             * Fall 2015
-             * CS 100 - Intro to the Profession
-             *
-             * CS 201 - Accelerated Intro to Cmptr Sci
-             *
-             * HUM 200 - Evolutionary Origin of Language
-             *
-             * MATH 148 - Calculus/Precalculus I
-             *
-             * PSYC 222 - Brain, Mind and Behavior
-             *
-             * Spring 2016
-             * CS 331 - Data Structures and Algorithms
-             *
-             * CS 495 - Programming Paradigms/Patterns
-             *
-             * Fall 2016
-             * CS 330 - Discrete Structures
-             *
-             * CS 350 - Cmptr Org & Asmbly Lang Prgmmg
-             *
-             * ITM 301 - Intro OS and Hardware I
-             *
-             * PSYC 301 - Industrial Psychology
-             *
-             * Spring 2017
-             * EG 225 - Eng Graphics for Non-Engineers
-             *
-             * HIST 355 - Digital Labor
-             *
-             * ITM 312 - Intro Systems Sftwr Prgmng
-             *
-             * ITMM 471 - Project Management for ITM
-             *
-             * ITMO 456 - Intro Open Source OS
-             *
-             * Fall 2017
-             * EG 325 - Adv Engg Graphics Non-Engineer
-             *
-             * ITMD 361 - Fund of Web Development
-             *
-             * ITMD 411 - Intermediate Software Devlpmnt
-             *
-             * ITMD 421 - Data Modeling and Applications
-             *
-             * ITMO 440 - Intro Data Networks & Internet
-             *
-             * Spring 2018
-             * BUS 221 - Analytics for Informed Dec-Mkg
-             *
-             * COM 380 - Digital Media & Citizenship
-             *
-             * ITMD 362 - Human-Computer Interaction
-             *
-             * ITMD 413 - Open-Source Programming
-             *
-             * ITMD 415 - Advanced Software Development
-             *
-             * Fall 2018
-             * ITMD 455 - Open-Source Intelligent Device
-             *
-             * ITMD 460 - Fundamentals of Multimedia
-             *
-             * ITMD 463 - Intermediate Web App Develop
-             *
-             * ITMS 428 - Database Security
-             *
-             * ITMS 443 - Vulnerability Analys and Ctrl
-             *
-             * Spring 2019
-             * CHEM 124 - Princ of Chemistry I with Lab
-             *
-             * IPRO 497 - Big Data & Public Safety
-             *
-             * ITMD 466 - Service-Oriented Architectures
-             *
-             * ITMT 430 - System Integration
-             *
-             * Fall 2019
-             * HIST 380 - Diversity in History of Tech
-             *
-             * IPRO 497 - Antimatter Interferometer
-             *
-             * ITMD 422 - Advanced Database Mgmt
-             *
-             * ITMO 417 - Shell Scripting for Sys Admin
-             *
-             * ITMS 448 - Cyber Security Technologies
-             *
-             * New York University: Master’s in CyberSecurity
-             * Fall 2021
-             * NYU-CS-GY-6813 - Information Security & Privacy
-             *
-             * Spring 2022
-             * In progress currently.
-             */
 
             {
                 institutionName: 'Illinois Institute of Technology',
@@ -136,7 +35,138 @@ export default function HENRY_TRESUME_DATA(): TResume {
                 degreeName: `Bachelor's in Information Technology Management`,
                 startDate: new Date('September 2015'),
                 endDate: new Date('December 2019'),
-                description: "Dean's list: Spring 2016, Fall 2018, Fall 2019"
+                description: "Dean's list: Spring 2016, Fall 2018, Fall 2019",
+                classes: [
+                    {
+                        className: 'SCI 111 - Computational Science',
+                        classTime: 'Summer 2014',
+                    },
+                    //
+                    {
+                        className: 'CS 100 - Intro to the Profession',
+                        classTime: 'Fall 2015',
+                    },
+                    {
+                        className: 'CS 201 - Accelerated Intro to Cmptr Sci',
+                        classTime: 'Fall 2015',
+                    },
+                    {
+                        className: 'HUM 200 - Evolutionary Origin of Language',
+                        classTime: 'Fall 2015',
+                    },
+                    {
+                        className: 'MATH 148 - Calculus/Precalculus I',
+                        classTime: 'Fall 2015',
+                    },
+                    {
+                        className: 'PSYC 222 - Brain, Mind and Behavior',
+                        classTime: 'Fall 2015',
+                    },
+                    //
+                    {
+                        className: 'CS 331 - Data Structures and Algorithms',
+                        classTime: 'Spring 2016',
+                    },
+                    {
+                        className: 'CS 495 - Programming Paradigms/Patterns',
+                        classTime: 'Spring 2016',
+                    },
+                    //
+                    {
+                        className: 'CS 330 - Discrete Structures',
+                        classTime: 'Fall 2016',
+                    },
+                    {
+                        className: 'CS 350 - Cmptr Org & Asmbly Lang Prgmmg',
+                        classTime: 'Fall 2016',
+                    },
+                    {
+                        className: 'ITM 301 - Intro OS and Hardware I',
+                        classTime: 'Fall 2016',
+                    },
+                    {
+                        className: 'PSYC 301 - Industrial Psychology',
+                        classTime: 'Fall 2016',
+                    },
+                    //
+                    
+                    /**
+                     * TODO: Add these classes from your old site!
+
+                     * Spring 2017
+                     * EG 225 - Eng Graphics for Non-Engineers
+                     *
+                     * HIST 355 - Digital Labor
+                     *
+                     * ITM 312 - Intro Systems Sftwr Prgmng
+                     *
+                     * ITMM 471 - Project Management for ITM
+                     *
+                     * ITMO 456 - Intro Open Source OS
+                     *
+                     * Fall 2017
+                     * EG 325 - Adv Engg Graphics Non-Engineer
+                     *
+                     * ITMD 361 - Fund of Web Development
+                     *
+                     * ITMD 411 - Intermediate Software Devlpmnt
+                     *
+                     * ITMD 421 - Data Modeling and Applications
+                     *
+                     * ITMO 440 - Intro Data Networks & Internet
+                     *
+                     * Spring 2018
+                     * BUS 221 - Analytics for Informed Dec-Mkg
+                     *
+                     * COM 380 - Digital Media & Citizenship
+                     *
+                     * ITMD 362 - Human-Computer Interaction
+                     *
+                     * ITMD 413 - Open-Source Programming
+                     *
+                     * ITMD 415 - Advanced Software Development
+                     *
+                     * Fall 2018
+                     * ITMD 455 - Open-Source Intelligent Device
+                     *
+                     * ITMD 460 - Fundamentals of Multimedia
+                     *
+                     * ITMD 463 - Intermediate Web App Develop
+                     *
+                     * ITMS 428 - Database Security
+                     *
+                     * ITMS 443 - Vulnerability Analys and Ctrl
+                     *
+                     * Spring 2019
+                     * CHEM 124 - Princ of Chemistry I with Lab
+                     *
+                     * IPRO 497 - Big Data & Public Safety
+                     *
+                     * ITMD 466 - Service-Oriented Architectures
+                     *
+                     * ITMT 430 - System Integration
+                     *
+                     * Fall 2019
+                     * HIST 380 - Diversity in History of Tech
+                     *
+                     * IPRO 497 - Antimatter Interferometer
+                     *
+                     * ITMD 422 - Advanced Database Mgmt
+                     *
+                     * ITMO 417 - Shell Scripting for Sys Admin
+                     *
+                     * ITMS 448 - Cyber Security Technologies
+                     *
+                     * New York University: Master’s in CyberSecurity
+                     * Fall 2021
+                     * NYU-CS-GY-6813 - Information Security & Privacy
+                     *
+                     * Spring 2022
+                     * In progress currently.
+                     */
+
+
+                ],
             },
             {
                 institutionName: 'New York University',
