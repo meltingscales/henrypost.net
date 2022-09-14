@@ -131,60 +131,85 @@ export default function HENRY_TRESUME_DATA(): TResume {
                         classTime: 'Fall 2017',
                     },
                     //
-                    /**
-                     * TODO: Add these classes from your old site!
-
-                     * Spring 2018
-                     * BUS 221 - Analytics for Informed Dec-Mkg
-                     *
-                     * COM 380 - Digital Media & Citizenship
-                     *
-                     * ITMD 362 - Human-Computer Interaction
-                     *
-                     * ITMD 413 - Open-Source Programming
-                     *
-                     * ITMD 415 - Advanced Software Development
-                     *
-                     * Fall 2018
-                     * ITMD 455 - Open-Source Intelligent Device
-                     *
-                     * ITMD 460 - Fundamentals of Multimedia
-                     *
-                     * ITMD 463 - Intermediate Web App Develop
-                     *
-                     * ITMS 428 - Database Security
-                     *
-                     * ITMS 443 - Vulnerability Analys and Ctrl
-                     *
-                     * Spring 2019
-                     * CHEM 124 - Princ of Chemistry I with Lab
-                     *
-                     * IPRO 497 - Big Data & Public Safety
-                     *
-                     * ITMD 466 - Service-Oriented Architectures
-                     *
-                     * ITMT 430 - System Integration
-                     *
-                     * Fall 2019
-                     * HIST 380 - Diversity in History of Tech
-                     *
-                     * IPRO 497 - Antimatter Interferometer
-                     *
-                     * ITMD 422 - Advanced Database Mgmt
-                     *
-                     * ITMO 417 - Shell Scripting for Sys Admin
-                     *
-                     * ITMS 448 - Cyber Security Technologies
-                     *
-                     * New York University: Master’s in CyberSecurity
-                     * Fall 2021
-                     * NYU-CS-GY-6813 - Information Security & Privacy
-                     *
-                     * Spring 2022
-                     * In progress currently.
-                     */
-
-
+                    {
+                        className: 'BUS 221 - Analytics for Informed Dec-Mkg',
+                        classTime: 'Spring 2018',
+                    },
+                    {
+                        className: 'COM 380 - Digital Media & Citizenship',
+                        classTime: 'Spring 2018',
+                    },
+                    {
+                        className: 'ITMD 362 - Human-Computer Interaction',
+                        classTime: 'Spring 2018',
+                    },
+                    {
+                        className: 'ITMD 413 - Open-Source Programming',
+                        classTime: 'Spring 2018',
+                    },
+                    {
+                        className: 'ITMD 415 - Advanced Software Development',
+                        classTime: 'Spring 2018',
+                    },
+                    //
+                    {
+                        className: 'ITMD 455 - Open-Source Intelligent Device',
+                        classTime: 'Fall 2018',
+                    },
+                    {
+                        className: 'ITMD 460 - Fundamentals of Multimedia',
+                        classTime: 'Fall 2018',
+                    },
+                    {
+                        className: 'ITMD 463 - Intermediate Web App Develop',
+                        classTime: 'Fall 2018',
+                    },
+                    {
+                        className: 'ITMS 428 - Database Security',
+                        classTime: 'Fall 2018',
+                    },
+                    {
+                        className: 'ITMS 443 - Vulnerability Analys and Ctrl',
+                        classTime: 'Fall 2018',
+                    },
+                    //
+                    {
+                        className: 'CHEM 124 - Princ of Chemistry I with Lab',
+                        classTime: 'Spring 2019',
+                    },
+                    {
+                        className: 'IPRO 497 - Big Data & Public Safety',
+                        classTime: 'Spring 2019',
+                    },
+                    {
+                        className: 'ITMD 466 - Service-Oriented Architectures',
+                        classTime: 'Spring 2019',
+                    },
+                    {
+                        className: 'ITMT 430 - System Integration',
+                        classTime: 'Spring 2019',
+                    },
+                    //
+                    {
+                        className: 'HIST 380 - Diversity in History of Tech',
+                        classTime: 'Fall 2019',
+                    },
+                    {
+                        className: 'IPRO 497 - Antimatter Interferometer',
+                        classTime: 'Fall 2019',
+                    },
+                    {
+                        className: 'ITMD 422 - Advanced Database Mgmt',
+                        classTime: 'Fall 2019',
+                    },
+                    {
+                        className: 'ITMO 417 - Shell Scripting for Sys Admin',
+                        classTime: 'Fall 2019',
+                    },
+                    {
+                        className: 'ITMS 448 - Cyber Security Technologies',
+                        classTime: 'Fall 2019',
+                    },
                 ],
             },
             {
@@ -192,6 +217,21 @@ export default function HENRY_TRESUME_DATA(): TResume {
                 institutionLocation: 'New York',
                 degreeName: `Master's in Cybersecurity`,
                 startDate: new Date('October 2021'),
+                classes: [
+                    {
+                        className: 'CS-GY 6813 - Information Security & Privacy',
+                        classTime: 'Fall 2021',
+                    },
+                    {
+                        className: 'CS-GY 6843 - Computer Networking',
+                        classTime: 'Spring 2022',
+                    },
+                    {
+                        className: 'CS-GY 6823 - Network Security',
+                        classTime: 'Fall 2022',
+                    },
+
+                ]
             },
         ],
         jobsWorked: [
