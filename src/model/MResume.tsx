@@ -1,4 +1,4 @@
-import {Button, Card, Container} from "react-bootstrap";
+import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {ServiceCrappyUtilities} from "../service/ServiceCrappyUtilities";
 import {ReactNode} from "react";
 import {DataBoundClass} from "./DataBoundClass";
@@ -433,6 +433,7 @@ export class MResume extends DataBoundClass<TResume> {
             // @ts-ignore
             return (
                 <Card.Footer>
+                    <h4>Classes:</h4>
                     {Object.keys(groupedClasses).map((classTime) => {
 
                         let specificClass: TClass[] = groupedClasses[classTime]
@@ -442,15 +443,18 @@ export class MResume extends DataBoundClass<TResume> {
 
                         return <>
                             <Container>
-                                <h4>{classTime}:</h4>
-                                <ul>
+                                <h5>{classTime}:</h5>
+                                <Row xs={2} md={3}>
                                     {
                                         specificClass.map((it) => {
-                                            return <li>{it.className}</li>
+                                            return <Col>
+                                                <Card>{it.className}</Card>
+                                                </Col>
                                         })
                                     }
-                                </ul>
+                                </Row>
                             </Container>
+                            <hr/>
                         </>
                     })}
 

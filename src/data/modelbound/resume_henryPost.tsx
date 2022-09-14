@@ -89,32 +89,51 @@ export default function HENRY_TRESUME_DATA(): TResume {
                         classTime: 'Fall 2016',
                     },
                     //
-                    
+                    {
+                        className: 'EG 225 - Eng Graphics for Non-Engineers',
+                        classTime: 'Spring 2017',
+                    },
+                    {
+                        className: 'HIST 355 - Digital Labor',
+                        classTime: 'Spring 2017',
+                    },
+                    {
+                        className: 'ITM 312 - Intro Systems Sftwr Prgmng',
+                        classTime: 'Spring 2017',
+                    },
+                    {
+                        className: 'ITMM 471 - Project Management for ITM',
+                        classTime: 'Spring 2017',
+                    },
+                    {
+                        className: 'ITMO 456 - Intro Open Source OS',
+                        classTime: 'Spring 2017',
+                    },
+                    //
+                    {
+                        className: 'EG 325 - Adv Engg Graphics Non-Engineer',
+                        classTime: 'Fall 2017',
+                    },
+                    {
+                        className: 'ITMD 361 - Fund of Web Development',
+                        classTime: 'Fall 2017',
+                    },
+                    {
+                        className: 'ITMD 411 - Intermediate Software Devlpmnt',
+                        classTime: 'Fall 2017',
+                    },
+                    {
+                        className: 'ITMD 421 - Data Modeling and Applications',
+                        classTime: 'Fall 2017',
+                    },
+                    {
+                        className: 'ITMO 440 - Intro Data Networks & Internet',
+                        classTime: 'Fall 2017',
+                    },
+                    //
                     /**
                      * TODO: Add these classes from your old site!
 
-                     * Spring 2017
-                     * EG 225 - Eng Graphics for Non-Engineers
-                     *
-                     * HIST 355 - Digital Labor
-                     *
-                     * ITM 312 - Intro Systems Sftwr Prgmng
-                     *
-                     * ITMM 471 - Project Management for ITM
-                     *
-                     * ITMO 456 - Intro Open Source OS
-                     *
-                     * Fall 2017
-                     * EG 325 - Adv Engg Graphics Non-Engineer
-                     *
-                     * ITMD 361 - Fund of Web Development
-                     *
-                     * ITMD 411 - Intermediate Software Devlpmnt
-                     *
-                     * ITMD 421 - Data Modeling and Applications
-                     *
-                     * ITMO 440 - Intro Data Networks & Internet
-                     *
                      * Spring 2018
                      * BUS 221 - Analytics for Informed Dec-Mkg
                      *
