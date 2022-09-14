@@ -444,7 +444,7 @@ export class MResume extends DataBoundClass<TResume> {
                         return <>
                             <Container>
                                 <h5>{classTime}:</h5>
-                                <Row xs={2} md={3}>
+                                <Row xs={2} md={3} lg={4}>
                                     {
                                         specificClass.map((it) => {
                                             return <Col>
