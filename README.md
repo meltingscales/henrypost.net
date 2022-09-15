@@ -4,7 +4,11 @@ Created to learn ReactJS.
 
 <https://henryfbp-nodejs-site.uk.r.appspot.com/>
 
-<https://goodraboy.xyz/>
+<http://henrypost.net>
+
+## deploy
+
+    powershell .\scripts\deploy-gcp.ps1
 
 ## Notes
 
