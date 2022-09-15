@@ -7,14 +7,15 @@ import PageBlog from "./pages/PageBlog";
 import PageContact from "./pages/PageContact";
 import PageAbout from "./pages/PageAbout";
 import GithubApp from "./pages/demoApps/GithubApp";
-import PageBooks from "./pages/hobbies/PageBooks";
-import PageMusic from "./pages/hobbies/PageMusic";
-import PageVideogames from "./pages/hobbies/PageVideogames";
+import PageBooks from "./pages/fun/PageBooks";
+import PageMusic from "./pages/fun/PageMusic";
+import PageVideogames from "./pages/fun/PageVideogames";
 import PageResume from "./pages/work/PageResume";
 import PageCertifications from "./pages/work/PageCertifications";
 import {Cube} from "./pages/demoApps/Cube";
-import PagePhotos from "./pages/hobbies/PagePhotos";
+import PagePhotos from "./pages/fun/PagePhotos";
 import PageWhyHireMe from "./pages/work/PageWhyHireMe";
+import PageCoolLinks from "./pages/fun/PageCoolLinks";
 
 function NoPage() {
     return <div>nopage!</div>;
@@ -56,17 +57,20 @@ export default function Routing() {
                 <Route path={"demoApps/cube"}
                        element={<Cube/>}/>
 
-                <Route path={"hobbies/photos"}
+                <Route path={"fun/photos"}
                        element={<PagePhotos/>}/>
 
-                <Route path={"hobbies/books"}
+                <Route path={"fun/books"}
                        element={<PageBooks/>}/>
 
-                <Route path={"hobbies/music"}
+                <Route path={"fun/music"}
                        element={<PageMusic/>}/>
 
-                <Route path={"hobbies/videogames"}
+                <Route path={"fun/videogames"}
                        element={<PageVideogames/>}/>
+
+                <Route path={"fun/cool-links"}
+                       element={<PageCoolLinks/>}/>
 
                 <Route
                     element={<NoPage/>}/>

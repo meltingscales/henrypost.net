@@ -78,7 +78,7 @@ const Navigation = () =>
                                 {/*    subpath={'why-hire-me'}/>*/}
 
                             </NavDropdown>
-                            
+
                             <NavigationItem href={"/contact"}
                                             name={"contact"}/>
 
@@ -104,24 +104,33 @@ const Navigation = () =>
 
 
                             <NavDropdown
-                                title={TextFmtService.homeDirFmt('hobbies')}
+                                title={TextFmtService.homeDirFmt('fun')}
                                 id={'basic-nav-dropdown'}>
 
                                 <NavDDI
-                                    path={'hobbies'}
-                                    subpath={'photos'}/>
+                                    path={'fun'}
+                                    subpath={'photos'}
+                                />
 
                                 <NavDDI
-                                    path={'hobbies'}
-                                    subpath={'books'}/>
+                                    path={'fun'}
+                                    subpath={'books'}
+                                />
 
                                 <NavDDI
-                                    path={'hobbies'}
-                                    subpath={'music'}/>
+                                    path={'fun'}
+                                    subpath={'music'}
+                                />
 
                                 <NavDDI
-                                    path={'hobbies'}
-                                    subpath={'videogames'}/>
+                                    path={'fun'}
+                                    subpath={'videogames'}
+                                />
+
+                                <NavDDI
+                                    path={'fun'}
+                                    subpath={'cool-links'}
+                                />
 
                             </NavDropdown>
 

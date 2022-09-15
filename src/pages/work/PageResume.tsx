@@ -22,11 +22,18 @@ const PageResume = () => {
                     src="/staticfiles/HenryPostResume.pdf"
                     style={{'width': '100%', 'height': '100vh'}}
             />
-
-
-
         </Container>
+
+
+        <br/>
+        <br/>
+        <hr/>
+        <br/>
+        <br/>
+
+
         <Container>
+            <h2>HTML Version of Resume</h2>
             {new MResume(HENRY_TRESUME_DATA()).renderResume()}
         </Container>
     </>;
