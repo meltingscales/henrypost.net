@@ -1,5 +1,5 @@
-import {Card, Container} from "react-bootstrap";
-import {EltBookReviewProps} from "../pages/hobbies/PageBooks";
+import {Card} from "react-bootstrap";
+import {EltBookReviewProps} from "../pages/fun/PageBooks";
 
 export const CBookReview = ({bookReview}: EltBookReviewProps) => {
 
