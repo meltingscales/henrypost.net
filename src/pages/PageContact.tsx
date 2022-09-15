@@ -1,5 +1,5 @@
 import {Card, Container} from "react-bootstrap";
-import {HENRY_PRETTY_WEBSITE_URL} from "../Config";
+import {HENRY_OLD_GH_SITE_URL} from "../Config";
 import {BusinessCard} from "react-business-card-hfbp"
 
 const PageContact = () => {
@@ -7,7 +7,7 @@ const PageContact = () => {
         <h1>Contact</h1>
         <Card>
             <Card.Header>
-                Contact is WIP, Please visit <a href={HENRY_PRETTY_WEBSITE_URL}>{HENRY_PRETTY_WEBSITE_URL}</a>
+                Contact is WIP, Please visit <a href={HENRY_OLD_GH_SITE_URL}>{HENRY_OLD_GH_SITE_URL}</a>
             </Card.Header>
         </Card>
 
