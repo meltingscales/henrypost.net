@@ -10,10 +10,11 @@ import GithubApp from "./pages/demoApps/GithubApp";
 import PageBooks from "./pages/hobbies/PageBooks";
 import PageMusic from "./pages/hobbies/PageMusic";
 import PageVideogames from "./pages/hobbies/PageVideogames";
-import PageResume from "./pages/PageResume";
-import PageCertifications from "./pages/PageCertifications";
+import PageResume from "./pages/work/PageResume";
+import PageCertifications from "./pages/work/PageCertifications";
 import {Cube} from "./pages/demoApps/Cube";
 import PagePhotos from "./pages/hobbies/PagePhotos";
+import PageWhyHireMe from "./pages/work/PageWhyHireMe";
 
 function NoPage() {
     return <div>nopage!</div>;
@@ -42,6 +43,9 @@ export default function Routing() {
 
                 <Route path={"work/resume"}
                        element={<PageResume/>}/>
+
+                <Route path={"work/why-hire-me"}
+                       element={<PageWhyHireMe/>}/>
 
                 <Route path={"work/certifications"}
                        element={<PageCertifications/>}/>

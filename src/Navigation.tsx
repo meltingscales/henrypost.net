@@ -73,11 +73,12 @@ const Navigation = () =>
                                     path={'work'}
                                     subpath={'certifications'}/>
 
+                                {/*<NavDDI*/}
+                                {/*    path={'work'}*/}
+                                {/*    subpath={'why-hire-me'}/>*/}
+
                             </NavDropdown>
-
-                            {/*<NavigationItem href={"/resume"}*/}
-                            {/*                name={"resume"}/>*/}
-
+                            
                             <NavigationItem href={"/contact"}
                                             name={"contact"}/>
 
