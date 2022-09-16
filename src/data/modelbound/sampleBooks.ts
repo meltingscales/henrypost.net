@@ -5,14 +5,6 @@ import {MRating} from '../../model/MGenericMediaReview'
 export let LAZY_BOOKLIST: string[] = `
 
 # from my website
-John Dies at the End
-The Fruitful Darkness
-Anger: Wisdom for Cooling the Flames
-Fear: Essential Wisdom for Getting Through the Storm
-God is Red
-The Martian
-Project Hail Mary
-2001 A Space Odyssey by Arthur C. Clarke
 
 
 # assorted dev/programming
@@ -113,6 +105,48 @@ Who Moved My Cheese?: An A-Mazing Way to Deal with Change in Your Work and in Yo
 
 export let SAMPLE_BOOKS: TBookReview[] = [
     {
+        title: '2001 A Space Odyssey',
+        author: 'Arthur C. Clarke',
+        shortReview: 'It\'s a lot better than the movie.'
+    },
+    {
+        title: 'Project Hail Mary',
+        author: 'Andy Weir',
+        shortReview: 'Another Andy Weir gem. It\'s even better than The Martian.',
+        rating: MRating.toTRating('12/10'),
+    },
+    {
+        title: 'The Martian',
+        author: 'Andy Weir',
+        shortReview: 'Sci-fi and fun as hell, trapped on Mars! It\'s Andy Weir baby!',
+        rating: MRating.toTRating('11/10'),
+    },
+    {
+        title: 'God is Red',
+        shortReview: 'Very well-read (and dry) book on Native Americans and their cultural interactions with the USA, specifically related to religion. Wish I had more time to read this one.',
+        rating: MRating.toTRating('8/10'),
+    },
+    {
+        title: 'Fear: Essential Wisdom for Getting Through the Storm',
+        shortReview: 'Great book on fear from a buddhist perspective. Pretty similar to the anger one. Very general advice, but compassionate and full of wisdom.',
+        rating: MRating.toTRating('8/10'),
+    },
+    {
+        title: 'Anger: Wisdom for Cooling the Flames',
+        shortReview: 'Great book on anger from a buddhist perspective. Very general advice, but compassionate and full of wisdom.',
+        rating: MRating.toTRating('8/10'),
+    },
+    {
+        title: 'The Fruitful Darkness',
+        shortReview: 'Very emotional collection of stories from a woman exploring how other cultures deal with Life and Death. This book touched me and helped me process my own experiences with family death, in a very positive way.',
+        rating: MRating.toTRating('10/10'),
+    },
+    {
+        title: 'John Dies at the End',
+        shortReview: 'Fantastic and bizarre novel. Extremely engaging. Read this blind, you will love it.',
+        rating: MRating.toTRating('10/10'),
+    },
+    {
         title: "Coding for Llamas",
         author: "Harry J Llama",
         isbn9: '123456789',
@@ -126,7 +160,7 @@ export let SAMPLE_BOOKS: TBookReview[] = [
         author: "Spiky J Aardvark",
         isbn13: '123456789012',
         rating: MRating.toTRating("8/10"),
-        tags: ['programming']
+        tags: ['programming'],
     },
     {
         title: "Coding for Iguanas",
