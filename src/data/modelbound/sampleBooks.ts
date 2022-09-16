@@ -6,7 +6,6 @@ export let LAZY_BOOKLIST: string[] = `
 
 # from my website
 
-
 # assorted dev/programming
 Cracking the coding interview
 
