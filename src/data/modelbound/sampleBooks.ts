@@ -142,7 +142,7 @@ export let SAMPLE_BOOKS: TBookReview[] = [
     },
     {
         title: 'John Dies at the End',
-        shortReview: 'Fantastic and bizarre novel. Extremely engaging. Read this blind, you will love it.',
+        shortReview: 'Fantastic and bizarre fiction novel. Extremely engaging. Read this blind, you will love it.',
         rating: MRating.toTRating('10/10'),
     },
     // {
