@@ -47,8 +47,9 @@ export default function HENRY_TBLOG_DATA(): TBlog {
                         <p>
                             I think, mainly because, I never really realized that this was part of my job. I was hired
                             to be a Security Analyst, then 1.5 years later, I'm a Security Engineer. I did Kubernetes
-                            and Helm, did infra upgrades, etc. Then, only 4 months into that, I get promoted to a new
-                            role, and 2 months into that role, I don't realize what my new roles are.</p>
+                            and Helm, did infra upgrades, Java APIs, database stuff, Security Pipeline stuff, etc. Then,
+                            only 4 months into that, I get promoted to a new role, and 2 months into that role, I don't
+                            really realize what my new roles are.</p>
 
                         <p>
                             But realizing it late is better than having my manager's manager realize it and have to take
@@ -57,7 +58,7 @@ export default function HENRY_TBLOG_DATA(): TBlog {
 
                         <p>
                             Because I'll try to do my best to be a Product Owner and learn what I need to fulfil my
-                            role! :)
+                            role!
                         </p>
                     </Container>
                 )
