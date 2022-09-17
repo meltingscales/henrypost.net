@@ -43,6 +43,10 @@ export class MBlogPost extends DataBoundClass<TBlogPost> {
             //      use "useEffect" or something...idk
         }
 
+        if (!somePost.tags) {
+            return null
+        }
+
         return <Container>
             <span>Tags:</span>
             <ul>
@@ -62,8 +66,8 @@ export type TBlogPost = {
     date: Date,
     blogContent: string | ReactNode
     title: string
-    author: string
-    tags: string[]
+    author?: string
+    tags?: string[]
 }
 
 export class MBlog extends DataBoundClass<TBlog> {
