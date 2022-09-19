@@ -11,6 +11,9 @@ export default function HENRY_TBLOG_DATA(): TBlog {
                 title: 'Like a Product Owner in the headlights',
                 blogContent: (
                     <Container>
+
+                        <p>EDIT: I'm not a Product Owner. 😂😂😂 It was a miscommunication. My boss meant "Expert of the product I work with".</p>
+
                         <p>Short version: I need to teach myself to be a Product Owner and not just focus on technical
                             work.</p>
 
