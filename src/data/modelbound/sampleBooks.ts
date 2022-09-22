@@ -98,6 +98,11 @@ Who Moved My Cheese?: An A-Mazing Way to Deal with Change in Your Work and in Yo
 "The Sprint Book" https://www.thesprintbook.com/
 
 
+# from L. A.
+The Velveteen Rabbit
+The Miraculous Journey of Edward Tulane
+
+
 `.split('\n') //split by newline
     .filter((it) => it.length > 0) //ignore empty strings
     .filter((it) => it.trim()[0] != '#') //ignore comments (start with #)
