@@ -70,7 +70,7 @@ jim c hines - goblin tales
 Jon Hollins - The Dragon Lords 1 - Fool's Gold
 
 # Agile “A”
-The Unicorn Project
+
 
 The Fifth Discipline (Peter Senjay)
 #“Systems Thinking”
@@ -108,6 +108,10 @@ The Miraculous Journey of Edward Tulane
     .filter((it) => it.trim()[0] != '#') //ignore comments (start with #)
 
 export let SAMPLE_BOOKS: TBookReview[] = [
+    {
+        title: 'The Unicorn Project',
+        shortReview: "Only read 1/3rd of it, but this is a MUST READ for any software devs or adjacent fields. It is extremely relevant to the field and talks about how 'Agile Transformation' is basically the key to improving any software project."
+    },
     {
         title: '2001 A Space Odyssey',
         author: 'Arthur C. Clarke',
