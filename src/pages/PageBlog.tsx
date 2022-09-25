@@ -1,13 +1,32 @@
-import {MBlog} from "../model/MBlog";
-import HENRY_TBLOG_DATA from "../data/modelbound/blog_henryPost";
+import CBlogPostMarkdownFile from "../component/CBlogPostMarkdownFile";
+
+const POSTS = [
+    <CBlogPostMarkdownFile filename={'like-a-product-owner-in-the-headlights.md'}/>,
+    <CBlogPostMarkdownFile filename={'flight-to-hawaii.md'}/>,
+    <CBlogPostMarkdownFile filename={'test-post.md'}/>,
+]
 
 const PageBlog = () => {
 
     return <>
         <h1>Blog</h1>
-        {/*<div>dear diary, today I went on a walk and had some coffee. it was really nice. I saw a slug</div>*/}
 
-        {MBlog.renderBlog(HENRY_TBLOG_DATA())}
+        <aside>
+            <a href={'https://henryfbp.github.io/posts/'}>Please click here for my old blog.</a>
+
+            <p>Also...yes, this is currently one big ugly page. Adding other pages will come later, hehe.</p>
+        </aside>
+
+        <hr/>
+
+        {POSTS.map(it => {
+            return (
+                <>
+                    {it}
+                    <hr/>
+                </>
+            )
+        })}
 
     </>;
 }
