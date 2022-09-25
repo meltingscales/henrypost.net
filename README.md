@@ -24,6 +24,13 @@ Old site: <http://henrypost.net>
 - https://www.npmjs.com/package/resume-react
 - https://github.com/stephane-monnot/react-vertical-timeline
 
+### markdown blog
+
+- https://frontmatter.codes/docs/markdown
+- https://www.npmjs.com/package/front-matter
+- https://www.youtube.com/watch?v=qdTisPssu24
+- https://medium.com/geekculture/make-the-next-react-blog-site-you-code-easier-use-markdown-files-8e2d3b684dfe
+
 ## Angular notes (not reactjs)
 
 - https://www.primefaces.org/primeng/
