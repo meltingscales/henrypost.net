@@ -1,7 +1,7 @@
 import CBlogPostMarkdownFile from "../component/CBlogPostMarkdownFile";
 
 const POSTS = [
-    <CBlogPostMarkdownFile filename={'like-a-product-owner-in-the-headlights.md'}/>,
+    // <CBlogPostMarkdownFile filename={'like-a-product-owner-in-the-headlights.md'}/>,
     <CBlogPostMarkdownFile filename={'flight-to-hawaii.md'}/>,
     <CBlogPostMarkdownFile filename={'test-post.md'}/>,
 ]
