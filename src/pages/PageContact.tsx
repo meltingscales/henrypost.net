@@ -30,7 +30,7 @@ const PageContact = () => {
             ]}
             frontBlurb={
                 <img
-                    src={'https://pbs.twimg.com/profile_images/1560595569730617344/yuAzEGGl_400x400.jpg'}
+                    src={'https://henryfbp-nodejs-site.uk.r.appspot.com/staticfiles/headshot.png'}
                     style={{
                         width: '7.5em',
                         height: '7.5em',
