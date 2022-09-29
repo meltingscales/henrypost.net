@@ -5,11 +5,16 @@ import {BusinessCard} from "react-business-card-hfbp"
 const PageContact = () => {
     return <>
         <h1>Contact</h1>
-        <Card>
-            <Card.Header>
-                Contact is WIP, Please visit <a href={HENRY_OLD_GH_SITE_URL}>{HENRY_OLD_GH_SITE_URL}</a>
-            </Card.Header>
-        </Card>
+        {/*<Card>*/}
+        {/*    <Card.Header>*/}
+        {/*        /!*Contact is WIP, Please visit <a href={HENRY_OLD_GH_SITE_URL}>{HENRY_OLD_GH_SITE_URL}</a>*!/*/}
+        {/*    </Card.Header>*/}
+        {/*</Card>*/}
+
+        <ul>
+            <li><a href={'https://www.linkedin.com/in/henryfbp/'}>LinkedIn</a></li>
+            <li><a href={'https://github.com/henryfbp/'}>Github</a></li>
+        </ul>
 
         <hr/>
 
