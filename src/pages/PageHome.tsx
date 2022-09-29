@@ -2,13 +2,9 @@ import React from 'react';
 import {Alert, Card, Col, Container, ListGroup, Row} from "react-bootstrap";
 import {HENRY_PRETTY_WEBSITE_URL, HENRY_OLD_GH_SITE_URL, OWNER_NAME} from "../Config";
 import {Github, Laptop, Mailbox, Tree} from "react-bootstrap-icons";
+import ListGroupItemLink from "../component/tidbits/ListGroupItemLink";
+import ContactListGroup from "../component/tidbits/ContactListGroup";
 
-
-const ListGroupItemLink = (props: any) => {
-    return <ListGroup.Item href={props.link} action>
-        {props.text}
-    </ListGroup.Item>
-}
 
 const HenryProfileCard = () => {
     return <Card
@@ -25,24 +21,9 @@ const HenryProfileCard = () => {
                 <h3>U.S. Bank</h3>
             </Card.Title>
             <Card.Text>
-                <ListGroup>
-                    <ListGroup.Item variant={"info"}>Quick links:</ListGroup.Item>
-                    <ListGroupItemLink
-                        link={'https://linktr.ee/henryfbp'}
-                        text={<><Tree size={ICON_SIZE}/> Linktree</>}/>
-                    <ListGroupItemLink
-                        link={'mailto:resplendent.falconeer@gmail.com'}
-                        text={<><Mailbox size={ICON_SIZE}/> Email</>}/>
-                    <ListGroupItemLink
-                        link={'https://github.com/HenryFBP'}
-                        text={<><Github size={ICON_SIZE}/> Github</>}/>
-                    <ListGroupItemLink
-                        link={'https://github.com/HenryFBP/dotfiles/'}
-                        text={<><Laptop size={ICON_SIZE}/> Dotfiles (Got a new laptop?)</>}/>
-                </ListGroup>
+                <ContactListGroup/>
             </Card.Text>
         </Card.Body>
-
     </Card>
 }
 

@@ -1,20 +1,17 @@
-import {Card, Container} from "react-bootstrap";
-import {HENRY_OLD_GH_SITE_URL} from "../Config";
+import {Card, Container, ListGroup} from "react-bootstrap";
+import {HENRY_OLD_GH_SITE_URL, OWNER_NAME} from "../Config";
 import {BusinessCard} from "react-business-card-hfbp"
+import ListGroupItemLink from "../component/tidbits/ListGroupItemLink";
+import {Github, Laptop, Mailbox, Person, Tree} from "react-bootstrap-icons";
+import React from "react";
+import ContactListGroup from "../component/tidbits/ContactListGroup";
+
 
 const PageContact = () => {
     return <>
         <h1>Contact</h1>
-        {/*<Card>*/}
-        {/*    <Card.Header>*/}
-        {/*        /!*Contact is WIP, Please visit <a href={HENRY_OLD_GH_SITE_URL}>{HENRY_OLD_GH_SITE_URL}</a>*!/*/}
-        {/*    </Card.Header>*/}
-        {/*</Card>*/}
 
-        <ul>
-            <li><a href={'https://www.linkedin.com/in/henryfbp/'}>LinkedIn</a></li>
-            <li><a href={'https://github.com/henryfbp/'}>Github</a></li>
-        </ul>
+        <ContactListGroup/>
 
         <hr/>
 
