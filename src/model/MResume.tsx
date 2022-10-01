@@ -12,6 +12,7 @@ type TJobWorked = {
     endDate?: Date
     description?: string
     responsibilities: string[]
+    skillsUsed?: string[]
     location?: string
 }
 
@@ -351,6 +352,7 @@ export class MResume extends DataBoundClass<TResume> {
             ;
     }
 
+    //TODO split this big ass render function into multiple smaller render functions
     private renderJobs() {
         const jobElts = []
 
@@ -393,6 +395,26 @@ export class MResume extends DataBoundClass<TResume> {
                                 })
                             )}
                         </ul>
+                        {
+                            (!!job.skillsUsed)
+                                ?
+                                (
+                                    <aside>
+                                        <span>Skills Used: &nbsp;</span>
+                                        {job.skillsUsed?.map(
+                                            (s => {
+
+                                                    return <span>
+                                        {<i>{s}</i>}{" | "}
+                                    </span>
+                                                }
+                                            )
+                                        )}
+                                    </aside>
+                                )
+                                :
+                                null
+                        }
                     </Card.Body>
 
                 </Card>
@@ -449,7 +471,7 @@ export class MResume extends DataBoundClass<TResume> {
                                         specificClass.map((it) => {
                                             return <Col>
                                                 <Card>{it.className}</Card>
-                                                </Col>
+                                            </Col>
                                         })
                                     }
                                 </Row>

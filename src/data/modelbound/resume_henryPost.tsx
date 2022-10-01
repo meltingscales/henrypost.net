@@ -303,6 +303,14 @@ export default function HENRY_TRESUME_DATA(): TResume {
                     'Writing high-quality documentation for deployed systems for L1 support',
                     'Maintaining and diagnosing infrastructure integration issues and challenges'
                 ],
+                skillsUsed: [
+                    'Powershell',
+                    'Python (Programming Language)',
+                    'Java',
+                    'Kubernetes',
+                    'Helm (Software)',
+                    'Jenkins',
+                ]
             },
             {
                 title: 'Assistant Vice President - Info Security Engineer',
@@ -316,6 +324,19 @@ export default function HENRY_TRESUME_DATA(): TResume {
                     'Prototyping support for new languages and tools to be scanned',
                     //lol bro idk
                 ],
+                skillsUsed: [
+                    'REST APIs',
+                    'Docker',
+                    'Java EE',
+                    'SAST',
+                    'SCA',
+                    'DAST',
+                    'IAST',
+                    'Kubernetes',
+                    'Helm (Software)',
+                    'Groovy'
+
+                ]
             },
         ],
         projects: [
