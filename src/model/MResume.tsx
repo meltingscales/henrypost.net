@@ -260,6 +260,48 @@ export class MSkill extends DataBoundClass<TSkill> {
     }
 }
 
+export class MJobWorked extends DataBoundClass<TJobWorked> {
+
+
+    public renderTest() {
+        return <p>wow, I can return a &lt;p&gt;</p>
+    }
+
+
+    public renderSkillsUsed() {
+
+        if (!this.data.skillsUsed) {
+            return null;
+        }
+
+        return <aside>
+            <span>Skills Used: &nbsp;</span>
+            {this.data.skillsUsed?.map(
+                (skill => {
+                        return <span>{<i>{skill}</i>}{" | "}</span>
+                    }
+                )
+            )}
+        </aside>
+
+
+    }
+
+    public renderResponsibilities() {
+        return <ul>
+            {this.data.responsibilities.map(
+                (resp => {
+                    return <li>
+                        {resp}
+                    </li>
+                })
+            )}
+        </ul>
+
+    }
+
+}
+
 export class MResume extends DataBoundClass<TResume> {
 
     renderResume() {
@@ -363,6 +405,7 @@ export class MResume extends DataBoundClass<TResume> {
 
         for (const idx in jobs) {
             var job = jobs[idx]
+            var mJob = new MJobWorked(job)
 
             let sdate = job.startDate
             let edate = job.endDate
@@ -386,35 +429,8 @@ export class MResume extends DataBoundClass<TResume> {
                         />
                     </Card.Header>
                     <Card.Body>
-                        <ul>
-                            {job.responsibilities.map(
-                                (resp => {
-                                    return <li>
-                                        {resp}
-                                    </li>
-                                })
-                            )}
-                        </ul>
-                        {
-                            (!!job.skillsUsed)
-                                ?
-                                (
-                                    <aside>
-                                        <span>Skills Used: &nbsp;</span>
-                                        {job.skillsUsed?.map(
-                                            (s => {
-
-                                                    return <span>
-                                        {<i>{s}</i>}{" | "}
-                                    </span>
-                                                }
-                                            )
-                                        )}
-                                    </aside>
-                                )
-                                :
-                                null
-                        }
+                        {mJob.renderResponsibilities()}
+                        {mJob.renderSkillsUsed()}
                     </Card.Body>
 
                 </Card>
