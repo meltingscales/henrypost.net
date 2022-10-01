@@ -268,6 +268,40 @@ export class MJobWorked extends DataBoundClass<TJobWorked> {
     }
 
 
+    public renderJobCard() {
+        return <Card>
+            <Card.Header>
+                <LeftRightText
+                    left={<h3>{this.data.title}</h3>}
+                    right={<i>{this.renderDateRangeString()}</i>}
+                />
+                <LeftRightText
+                    left={<i>{this.data.employerName}</i>}
+                    right={<i>{this.data.location}</i>}
+                />
+            </Card.Header>
+            <Card.Body>
+                {this.renderResponsibilities()}
+                {this.renderSkillsUsed()}
+            </Card.Body>
+
+        </Card>
+
+    }
+
+    public renderDateRangeString() {
+        let sdate = this.data.startDate
+        let edate = this.data.endDate
+        let dateRangeStr = ServiceCrappyUtilities.dateRangeYearMMMonthFmt(sdate, edate)
+
+        if (!edate) {
+            dateRangeStr += ' - Currently working'
+        }
+
+        return dateRangeStr
+
+    }
+
     public renderSkillsUsed() {
 
         if (!this.data.skillsUsed) {
@@ -407,33 +441,9 @@ export class MResume extends DataBoundClass<TResume> {
             var job = jobs[idx]
             var mJob = new MJobWorked(job)
 
-            let sdate = job.startDate
-            let edate = job.endDate
-            let dateRangeStr = ServiceCrappyUtilities.dateRangeYearMMMonthFmt(sdate, edate)
-
-            if (!edate) {
-                dateRangeStr += ' - Currently working'
-            }
-
 
             jobElts.push(
-                <Card>
-                    <Card.Header>
-                        <LeftRightText
-                            left={<h3>{job.title}</h3>}
-                            right={<i>{dateRangeStr}</i>}
-                        />
-                        <LeftRightText
-                            left={<i>{job.employerName}</i>}
-                            right={<i>{job.location}</i>}
-                        />
-                    </Card.Header>
-                    <Card.Body>
-                        {mJob.renderResponsibilities()}
-                        {mJob.renderSkillsUsed()}
-                    </Card.Body>
-
-                </Card>
+                mJob.renderJobCard()
             )
 
             jobElts.push(<br/>)
@@ -445,6 +455,7 @@ export class MResume extends DataBoundClass<TResume> {
         </Container>
     }
 
+    //TODO remove hard-coded data
     private renderContactMe() {
         return <>
             <div className="col d-flex justify-content-center">
