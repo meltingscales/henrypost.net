@@ -102,6 +102,14 @@ Who Moved My Cheese?: An A-Mazing Way to Deal with Change in Your Work and in Yo
 The Velveteen Rabbit
 The Miraculous Journey of Edward Tulane
 
+# my own list
+https://sre.google/books/
+Building Secure and Reliable Systems
+The Site Reliability Workbook
+Site Reliability Engineering
+
+# more ideas
+Lean Six Sigma for Engineers and Managers: With Applied Case Studies
 
 `.split('\n') //split by newline
     .filter((it) => it.length > 0) //ignore empty strings
