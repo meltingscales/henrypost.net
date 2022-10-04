@@ -110,6 +110,7 @@ Site Reliability Engineering
 
 # more ideas
 Lean Six Sigma for Engineers and Managers: With Applied Case Studies
+Generation Z Developers
 
 `.split('\n') //split by newline
     .filter((it) => it.length > 0) //ignore empty strings
