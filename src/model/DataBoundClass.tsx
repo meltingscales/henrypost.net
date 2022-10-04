@@ -1,7 +1,6 @@
 /**
  * I will probably regret this later, but for now, who cares :3c
  */
-import {Component} from "react";
 
 export class DataBoundClass<T> {
 

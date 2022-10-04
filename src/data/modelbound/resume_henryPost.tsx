@@ -1,5 +1,5 @@
 import {Container} from "react-bootstrap";
-import {MSkill, MCertification, TResume, TCertification} from "../../model/MResume";
+import {MCertification, TResume, TCertification} from "../../model/MResume";
 import {CREDENTIAL_NET_DATA_HENRYPOST} from "../scraped/credential.net_data_henrypost";
 import {CREDLY_DATA_HENRYPOST} from "../scraped/credly_data_henrypost";
 

@@ -1,4 +1,4 @@
-import {Card, ListGroup} from "react-bootstrap";
+import {ListGroup} from "react-bootstrap";
 import ListGroupItemLink from "./ListGroupItemLink";
 import {Github, Laptop, Mailbox, Person, Tree} from "react-bootstrap-icons";
 import React from "react";

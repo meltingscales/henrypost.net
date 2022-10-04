@@ -1,8 +1,6 @@
 import React from 'react';
-import {Alert, Card, Col, Container, ListGroup, Row} from "react-bootstrap";
-import {HENRY_PRETTY_WEBSITE_URL, HENRY_OLD_GH_SITE_URL, OWNER_NAME} from "../Config";
-import {Github, Laptop, Mailbox, Tree} from "react-bootstrap-icons";
-import ListGroupItemLink from "../component/tidbits/ListGroupItemLink";
+import {Alert, Card, Col, Container, Row} from "react-bootstrap";
+import {OWNER_NAME} from "../Config";
 import ContactListGroup from "../component/tidbits/ContactListGroup";
 
 

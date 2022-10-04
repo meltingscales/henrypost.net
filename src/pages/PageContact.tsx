@@ -1,8 +1,5 @@
-import {Card, Container, ListGroup} from "react-bootstrap";
-import {HENRY_OLD_GH_SITE_URL, OWNER_NAME} from "../Config";
+import {Container} from "react-bootstrap";
 import {BusinessCard} from "react-business-card-hfbp"
-import ListGroupItemLink from "../component/tidbits/ListGroupItemLink";
-import {Github, Laptop, Mailbox, Person, Tree} from "react-bootstrap-icons";
 import React from "react";
 import ContactListGroup from "../component/tidbits/ContactListGroup";
 
