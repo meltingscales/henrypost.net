@@ -1,14 +1,20 @@
 import React from 'react';
 import {Container} from "react-bootstrap";
 
-var photo_links = [
+type PhotoLink = {
+    link: string
+    title: string
+}
+
+
+var photo_links: Array<PhotoLink> = [
     {
-        'title': '2016 - IIT Sophomore Leadership Retreat',
-        'link': 'https://imgur.com/a/isjpRde'
+        title: '2016 - IIT Sophomore Leadership Retreat',
+        link: 'https://imgur.com/a/isjpRde'
     },
     {
-        'title': '2018 - MV',
-        'link': 'https://imgur.com/a/fJBNEbT'
+        title: '2018 - MV',
+        link: 'https://imgur.com/a/fJBNEbT'
     },
     {
         link: 'https://imgur.com/a/v0c9Nea',
@@ -52,7 +58,8 @@ var photo_links = [
     },
 ]
 
-function renderPhotoLink(it) {
+
+function renderPhotoLink(it: PhotoLink) {
     return <li><a href={it.link}><p>{it.title}</p></a></li>
 }
 

@@ -63,7 +63,8 @@ const PageHome = () => {
                     <Container>
                         <Alert variant={"info"}>
                             <i>
-                                Opinions expressed are solely my own and do not express the views or opinions of my employer.
+                                Opinions expressed are solely my own and do not express the views or opinions of my
+                                employer.
                             </i>
                         </Alert>
                     </Container>
