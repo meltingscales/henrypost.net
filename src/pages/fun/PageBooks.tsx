@@ -8,24 +8,24 @@ export interface EltBookReviewProps {
     bookReview: MBookReview
 }
 
-const someTestState = atom({
-    key: 'someTestState',
+const stateHideNoReview = atom({
+    key: 'stateHideNoReview',
     default: false,
 });
 
 
 const PageBooks = () => {
-    const [testState, setTestState] = useRecoilState(someTestState);
+    const [hideNoReview, setHideNoReview] = useRecoilState(stateHideNoReview);
 
     let bookData: MBookReview[] = MBookReview.loadExampleObjects()
 
     return <>
         <h1>books</h1>
-        <button onClick={x => setTestState(!testState)}>
-            click me to test state :)
+        <button onClick={() => setHideNoReview(!hideNoReview)}>
+            Toggle hiding book with no reviews [={hideNoReview.toString()}]
         </button>
         <CBookReviewLibrary
-            someTestState={testState}
+            shouldHideNoReview={hideNoReview}
             books={bookData}
         />
     </>;

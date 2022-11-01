@@ -106,4 +106,8 @@ export class MBookReview extends MGenericMediaReview {
     hasTags() {
         return !!this.data.tags;
     }
+
+    hasNoReview() {
+        return !(this.data.shortReview) && !(this.data.longReview)
+    }
 }

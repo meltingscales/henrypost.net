@@ -4,33 +4,33 @@ import {Component} from "react";
 import {CBookReview} from "./CBookReview";
 
 
-export class CBookReviewLibrary extends Component<{ books: Array<MBookReview>, someTestState: boolean }> {
+export class CBookReviewLibrary extends Component<{ books: Array<MBookReview>, shouldHideNoReview: boolean }> {
     render() {
 
         //TODO: Fix the "unique key prop" error. I forget how to do this.
 
         return <>
-            <Container>
-                <Row>
-                    {
-                        this.props.books.map((bookReview, index, array) => {
+            <Container><Row>
+                {
+                    this.props.books.map((bookReview, index, array) => {
 
-                            if(this.props.someTestState){
-                                if(index === 1){
-                                    return <Col>not rendering index==1 as someTestState is truthy!</Col>
+                            if (this.props.shouldHideNoReview) {
+                                if (bookReview.hasNoReview()) {
+                                    return <Col hidden={true}>
+                                        Not rendering as {bookReview.data.title} has no review description :)
+                                    </Col>
                                 }
                             }
 
-                                return <>
-                                    <Col>
-                                        <CBookReview bookReview={bookReview}/>
-                                    </Col>
-                                </>
-                            }
-                        )
-                    }
-                </Row>
-            </Container>
+                            return <>
+                                <Col>
+                                    <CBookReview bookReview={bookReview}/>
+                                </Col>
+                            </>
+                        }
+                    )
+                }
+            </Row></Container>
         </>
     }
 }
