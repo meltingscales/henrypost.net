@@ -4,7 +4,7 @@ import {Component} from "react";
 import {CBookReview} from "./CBookReview";
 
 
-export class CBookReviewLibrary extends Component<{ books: Array<MBookReview> }> {
+export class CBookReviewLibrary extends Component<{ books: Array<MBookReview>, someTestState: boolean }> {
     render() {
 
         //TODO: Fix the "unique key prop" error. I forget how to do this.
@@ -14,6 +14,13 @@ export class CBookReviewLibrary extends Component<{ books: Array<MBookReview> }>
                 <Row>
                     {
                         this.props.books.map((bookReview, index, array) => {
+
+                            if(this.props.someTestState){
+                                if(index === 1){
+                                    return <Col>not rendering index==1 as someTestState is truthy!</Col>
+                                }
+                            }
+
                                 return <>
                                     <Col>
                                         <CBookReview bookReview={bookReview}/>
