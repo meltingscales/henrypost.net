@@ -4,7 +4,7 @@ const PageCoolLinks = () => {
 
     return <>
         <h1>cool links</h1>
-        <div>some link list :)
+        <div>some link list :) TODO make it pretty like the other pages
         </div>
         <p>old site - https://henryfbp.github.io/</p>
         <p>https://github.com/lynn/lynn.github.io</p>
