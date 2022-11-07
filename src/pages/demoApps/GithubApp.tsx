@@ -189,7 +189,7 @@ function GithubMarkdownFiles(props: any) {
 class GithubApp extends React.Component {
     render() {
         return <>
-            <h1>{GithubApp.name}</h1>
+            <h1>{'GithubApp'}</h1>
 
             <Container>
                 <h2>Github Health Alert</h2>
