@@ -96,9 +96,9 @@ const Navigation = () =>
                                     path={'demoApps'}
                                     subpath={'githubApp'}/>
 
-                                <NavDDI
-                                    path={'demoApps'}
-                                    subpath={'cube'}/>
+                                {/*<NavDDI*/}
+                                {/*    path={'demoApps'}*/}
+                                {/*    subpath={'cube'}/>*/}
 
                             </NavDropdown>
 
