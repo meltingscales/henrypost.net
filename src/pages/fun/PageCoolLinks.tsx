@@ -23,6 +23,8 @@ const PageCoolLinks = () => {
         </p>
         <p>https://www.creepcattoyco.com/</p>
         <p>https://nomadcomplex.com/</p>
+        {/*https://clammyheart.shop/*/}
+        {/*https://sparklecats2009art.square.site/?utm_source=sqmktg_email*/}
     </>;
 }
 
