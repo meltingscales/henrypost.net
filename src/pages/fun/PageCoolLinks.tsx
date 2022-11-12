@@ -1,11 +1,22 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
+
+const OneLink = (props: any) => {
+    return <>
+        <p><a href={props.link}>{props.title}</a></p>
+    </>
+}
+
 const PageCoolLinks = () => {
 
     return <>
         <h1>cool links</h1>
         <div>some link list :) TODO make it pretty like the other pages
         </div>
+
+        <OneLink link={'https://en.wikipedia.org/wiki/Bret_Weinstein'} title={'Bret Weinstein, Evolutionary Biologist'}/>
+        {/*TODO add more links from todd*/}
+
         <p>old site - https://henryfbp.github.io/</p>
         <p>https://github.com/lynn/lynn.github.io</p>
         <p>https://metaphorician.substack.com/p/in-the-belly-of-a-beast</p>
