@@ -73,6 +73,10 @@ type TEducation = {
 
 export class MCertification extends DataBoundClass<TCertification> {
 
+    static is_security_compass(cert: TCertification): Boolean {
+        return cert.issuerName.includes('Security Compass')
+    }
+
     static transform_credentialDotNet_datum(raw_credentialDotNet_datum: any): TCertification {
 
         return {
@@ -376,7 +380,8 @@ export class MResume extends DataBoundClass<TResume> {
     renderCertifications() {
 
 
-        var eltsCertifications = []
+        var eltsCertificationsSecurityCompass = []
+        var eltsCertificationsOthers = []
 
         var certs = this.data.certifications
             //sort by cert family
@@ -385,26 +390,34 @@ export class MResume extends DataBoundClass<TResume> {
                     return x.certificateStandardFamily.localeCompare(y.certificateStandardFamily)
                 }
             )
-        // //newest first
-        // .sort(
-        //     (x, y) => {
-        //         return -1 * (x.issueDate.getTime() - y.issueDate.getTime())
-        //     }
-        // )
+        //newest first
+        .sort(
+            (x, y) => {
+                return -1 * (x.issueDate.getTime() - y.issueDate.getTime())
+            }
+        )
 
         for (const idx in certs) {
-            var cert = certs[idx]
+            var cert: TCertification = certs[idx]
+            var renderedCert: JSX.Element = MCertification.renderCertification(cert)
 
-            eltsCertifications.push(
-                MCertification.renderCertification(cert)
-            )
+            if (MCertification.is_security_compass(cert)) {
+                eltsCertificationsSecurityCompass.push(renderedCert)
+                eltsCertificationsSecurityCompass.push(<br/>)
+            } else {
+                eltsCertificationsOthers.push(renderedCert)
+                eltsCertificationsOthers.push(<br/>)
+            }
 
-            eltsCertifications.push(<br/>)
         }
 
 
         return <Container>
-            {eltsCertifications}
+            <h2>Security Compass Certs</h2>
+            {eltsCertificationsSecurityCompass}
+            <br/>
+            <h2>Other Certs/Training</h2>
+            {eltsCertificationsOthers}
         </Container>;
     }
 
