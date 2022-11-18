@@ -1,41 +1,47 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {MLinkDatum, TLinkDatum} from "../../model/MLinkData";
 
-
-const OneLink = (props: any) => {
-    return <>
-        <p><a href={props.link}>{props.title}</a></p>
-    </>
-}
+const LINK_DATA: TLinkDatum[] = [
+    {
+        text: 'Bret Weinstein, Evolutionary Biologist',
+        url: 'https://en.wikipedia.org/wiki/Bret_Weinstein',
+        category: 'Science'
+    },
+    {
+        text: "Old links list",
+        url: 'https://github.com/HenryFBP/henryfbp.github.io/blob/master/content/cool-links/_index.md',
+        category: 'Uncategorized',
+    },
+    {
+        text: "Old personal website",
+        url: 'https://henryfbp.github.io/',
+        category: 'Uncategorized',
+    },
+]
 
 const PageCoolLinks = () => {
 
     return <>
         <h1>cool links</h1>
-        <div>some link list :) TODO make it pretty like the other pages
-        </div>
+        <div>some link list :) TODO make it pretty like the other pages</div>
 
-        <OneLink link={'https://en.wikipedia.org/wiki/Bret_Weinstein'} title={'Bret Weinstein, Evolutionary Biologist'}/>
+        {MLinkDatum.render_link_data_by_category(LINK_DATA)}
         {/*TODO add more links from todd*/}
 
-        <p>old site - https://henryfbp.github.io/</p>
-        <p>https://github.com/lynn/lynn.github.io</p>
-        <p>https://metaphorician.substack.com/p/in-the-belly-of-a-beast</p>
-        <p>Everything Everywhere all at Once</p>
-        <p>TODO copy stuff from
-            https://github.com/HenryFBP/henryfbp.github.io/blob/master/content/cool-links/_index.md</p>
-        <p>https://hackaday.io/project/187525-qaz-personal-terminal</p>
-        <p>https://howl-out.com/</p>
-        <p>
-            https://www.beautifulnerdy.com/</p>
-        <p>
-            https://hyena-agenda.com/</p>
-        <p>
-            https://fluffnest.com/
-        </p>
-        <p>https://www.creepcattoyco.com/</p>
-        <p>https://nomadcomplex.com/</p>
-        {/*https://clammyheart.shop/*/}
-        {/*https://sparklecats2009art.square.site/?utm_source=sqmktg_email*/}
+        <h2>Uncategorized:</h2>
+
+        https://github.com/lynn/lynn.github.io
+        https://metaphorician.substack.com/p/in-the-belly-of-a-beast
+        https://github.com/HenryFBP/henryfbp.github.io/blob/master/content/cool-links/_index.md
+        https://hackaday.io/project/187525-qaz-personal-terminal
+        https://howl-out.com/
+        Everything Everywhere all at Once
+        https://www.beautifulnerdy.com/
+        https://hyena-agenda.com/
+        https://fluffnest.com/
+        https://www.creepcattoyco.com/
+        https://nomadcomplex.com/
+        https://clammyheart.shop/
+        https://sparklecats2009art.square.site/?utm_source=sqmktg_email
     </>;
 }
 
