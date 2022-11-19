@@ -12,6 +12,7 @@ export type TLinkDatum = {
     text: string,
     url: string,
     category: string,
+    comment?: string,
 }
 
 export class MLinkDatum extends DataBoundClass<TLinkDatum> {
@@ -25,7 +26,20 @@ export class MLinkDatum extends DataBoundClass<TLinkDatum> {
 
 
     static render_link_datum = (link_datum: TLinkDatum) => {
-        return <OneLink link={link_datum.url} title={link_datum.text}/>
+
+        var eltComment = null
+        if(link_datum.comment){
+            eltComment = <span>{link_datum.comment}</span>
+        }
+
+        return (
+            <>
+                <div>
+                    <p><a href={link_datum.url}>{link_datum.text}</a></p>
+                    {eltComment}
+                </div>
+            </>
+        )
     }
 
     static render_link_data = (link_data: TLinkDatum[]) => {
@@ -36,8 +50,19 @@ export class MLinkDatum extends DataBoundClass<TLinkDatum> {
         </ul>
     }
 
-    static render_link_data_by_category = (link_data: TLinkDatum[]) => {
+    static get_all_categories(link_data: TLinkDatum[]): string[] {
+        var sorted = MLinkDatum.sort_link_data_by_category(link_data)
 
+        var categories: string[] = []
+
+        for (const category in sorted) {
+            categories.push(category)
+        }
+
+        return categories
+    }
+
+    static sort_link_data_by_category(link_data: TLinkDatum[]): { [key: string]: TLinkDatum[] } {
         var link_data_by_category: { [key: string]: TLinkDatum[] } = {}
 
         //sort by category
@@ -53,6 +78,12 @@ export class MLinkDatum extends DataBoundClass<TLinkDatum> {
             link_data_by_category[link_datum.category].push(link_datum)
         }
 
+        return link_data_by_category
+    }
+
+    static render_link_data_by_category = (link_data: TLinkDatum[]) => {
+
+        var link_data_by_category: { [key: string]: TLinkDatum[] } = MLinkDatum.sort_link_data_by_category(link_data)
         console.log(link_data_by_category)
 
         var elements = []
