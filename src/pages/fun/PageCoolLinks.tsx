@@ -32,11 +32,17 @@ const LINK_DATA: TLinkDatum[] = [
     {
         text: "In the Belly of a Beast - Metaphorician",
         url: 'https://metaphorician.substack.com/p/in-the-belly-of-a-beast',
+        comment: "This article talks about our inherently limited capacity to think. It's pretty good.",
         category: 'Philosophy',
     },
     {
         text: "Metaphorician",
         url: 'https://metaphorician.substack.com/',
+        category: 'Philosophy',
+    },
+    {
+        text: "Architect of Thought",
+        url: 'https://mindmagic.substack.com/',
         category: 'Philosophy',
     },
     {
