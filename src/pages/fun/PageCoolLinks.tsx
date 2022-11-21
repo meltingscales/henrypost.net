@@ -18,6 +18,11 @@ const LINK_DATA: TLinkDatum[] = [
         category: 'Henry',
     },
     {
+        text: "\"Stop Writing Dead Programs\" by Jack Rusher (Strange Loop 2022)\n",
+        url: 'https://www.youtube.com/watch?v=8Ab3ArE8W3s',
+        category: 'Programming',
+    },
+    {
         text: "lynn.github.io",
         url: 'https://github.com/lynn/lynn.github.io',
         comment: "A website I like the design of. https://lynn.github.io/",
