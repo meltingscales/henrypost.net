@@ -76,6 +76,11 @@ const LINK_DATA: TLinkDatum[] = [
         category: 'Clothing',
     },
     {
+        text: "Sorbet Jungle",
+        url: "https://www.sorbetjungle.com/",
+        category: 'Merch',
+    },
+    {
         text: "Hyena Agenda",
         url: 'https://hyena-agenda.com/',
         category: 'Clothing',
