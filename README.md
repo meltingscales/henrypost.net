@@ -6,7 +6,12 @@ Site url: <https://henryfbp-nodejs-site.uk.r.appspot.com/>
 
 Old site: <http://henrypost.net>
 
-## deploy
+## run locally
+   
+    npm install
+    npm run start
+
+## deploy to gcp
 
     powershell .\scripts\deploy-gcp.ps1
 
