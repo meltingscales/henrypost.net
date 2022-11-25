@@ -34,6 +34,11 @@ const LINK_DATA: TLinkDatum[] = [
         category: 'Cool Programming Sites',
     },
     {
+        text: "patricklipinski.de",
+        url: 'https://patricklipinski.de/',
+        'category': "Cool Sites"
+    },
+    {
         text: "ffmpeg.guide",
         url: "https://ffmpeg.guide/",
         category: "Tech Tools",
