@@ -8,28 +8,28 @@ const LINK_DATA: TLinkDatum[] = [
     },
     {
         text: "Henry's Gamedev Playlist",
-        url:'https://www.youtube.com/playlist?list=PLxhBPQszJILskIGS7YuiwRMLpvGdzI9Ka',
+        url: 'https://www.youtube.com/playlist?list=PLxhBPQszJILskIGS7YuiwRMLpvGdzI9Ka',
         category: "Youtube Playlist",
     },
     {
         text: "Henry's Fitness Playlist",
-        url:'https://www.youtube.com/playlist?list=PLxhBPQszJILtkiZ9bLhiP-gbesaYN4ZCU',
+        url: 'https://www.youtube.com/playlist?list=PLxhBPQszJILtkiZ9bLhiP-gbesaYN4ZCU',
         category: "Youtube Playlist",
     },
     {
         text: "Henry's Philosophy Playlist",
-        url:'https://www.youtube.com/playlist?list=PLxhBPQszJILuzBcrLaQayWvqIIXeb8rT7',
+        url: 'https://www.youtube.com/playlist?list=PLxhBPQszJILuzBcrLaQayWvqIIXeb8rT7',
         category: "Youtube Playlist",
     },
     {
         text: "Henry's Music Playlist",
-        url:'https://www.youtube.com/playlist?list=PLxhBPQszJILvItaUcMHNLrnSh-SkbWvlm',
+        url: 'https://www.youtube.com/playlist?list=PLxhBPQszJILvItaUcMHNLrnSh-SkbWvlm',
         category: "Youtube Playlist",
     },
     //TODO add more links from todd
     {
         text: "Qualia Research Institute",
-        url:'https://qri.org/',
+        url: 'https://qri.org/',
         category: 'Science',
     },
     {
@@ -52,6 +52,12 @@ const LINK_DATA: TLinkDatum[] = [
         url: 'https://github.com/lynn/lynn.github.io',
         comment: "A website I like the design of. https://lynn.github.io/",
         category: 'Cool Programming Sites',
+    },
+    {
+        text: "B3AGZ",
+        url: "https://b3agz.com/",
+        category: "Cool Programming Sites",
+        comment: "A cool gamedev person.",
     },
     {
         text: "patricklipinski.de",
