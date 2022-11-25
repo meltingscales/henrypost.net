@@ -6,6 +6,26 @@ const LINK_DATA: TLinkDatum[] = [
         url: 'https://en.wikipedia.org/wiki/Bret_Weinstein',
         category: 'Science'
     },
+    {
+        text: "Henry's Gamedev Playlist",
+        url:'https://www.youtube.com/playlist?list=PLxhBPQszJILskIGS7YuiwRMLpvGdzI9Ka',
+        category: "Youtube Playlist",
+    },
+    {
+        text: "Henry's Fitness Playlist",
+        url:'https://www.youtube.com/playlist?list=PLxhBPQszJILtkiZ9bLhiP-gbesaYN4ZCU',
+        category: "Youtube Playlist",
+    },
+    {
+        text: "Henry's Philosophy Playlist",
+        url:'https://www.youtube.com/playlist?list=PLxhBPQszJILuzBcrLaQayWvqIIXeb8rT7',
+        category: "Youtube Playlist",
+    },
+    {
+        text: "Henry's Music Playlist",
+        url:'https://www.youtube.com/playlist?list=PLxhBPQszJILvItaUcMHNLrnSh-SkbWvlm',
+        category: "Youtube Playlist",
+    },
     //TODO add more links from todd
     {
         text: "Qualia Research Institute",

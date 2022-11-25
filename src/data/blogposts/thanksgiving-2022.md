@@ -27,7 +27,7 @@ And this is why it (my obsession with being regarded highly/workaholicism) is ri
 
 Despite all of that AWESOME work, I still feel so compelled to work overtime and do things that take an extremely large amount of energy from me. It's affecting the way that I talk to my family because I'm impatient and everything is rushed. I don't know if they notice it but I definitely notice it. It's just terrible to work so hard that it starts to mess with your personal life. This is a personal flaw that I have.
 
-I don't know how to relax, I have Focus issues, and I get distracted easily. I really think that I have issues planning and sometimes it feels like there's a hole in my ability to think...
+I don't know how to relax, I have focus issues, and I get distracted easily. I really think that I have issues planning and sometimes it feels like there's a hole in my ability to think...
 
 I sometimes wonder if I should get back on ADHD medicine. I can function okay at my job but I really need help focusing and with executive function. It's gotten to the point where I usually don't know what month it is and certainly not the calendar year. I never really cared about dates anyways, and I might be making it sound a little worse than it is.
 
@@ -35,7 +35,7 @@ It's all of these little things though. If I get stuck on something at work and 
 
 I'm so used to just getting stuck on something very small at work, stimming or distracting myself like tapping my foot or sweeping stuff off my desk, and then doing something even more distracting like getting a coffee or making a piece of toast. It's harmless to take short breaks but I genuinely don't feel like I'm in control of my attention span. I didn't even know today was Thanksgiving until 3:00 p.m. yesterday when I looked at my calendar and realized that all of the meetings were canceled.
 
-Maybe I should get on a low dose of Methylphenidate. I think it could help me Focus at work.
+Maybe I should get on a low dose of Methylphenidate. I think it could help me focus at work.
 
 Or maybe I shouldn't. 
 
