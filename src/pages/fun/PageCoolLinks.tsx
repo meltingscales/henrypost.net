@@ -8,6 +8,11 @@ const LINK_DATA: TLinkDatum[] = [
     },
     //TODO add more links from todd
     {
+        text: "Qualia Research Institute",
+        url:'https://qri.org/',
+        category: 'Science',
+    },
+    {
         text: "Old links list",
         url: 'https://github.com/HenryFBP/henryfbp.github.io/blob/master/content/cool-links/_index.md',
         category: 'Henry',
