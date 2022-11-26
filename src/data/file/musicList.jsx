@@ -69,7 +69,7 @@ I highly recommend the 2 hyphyskazerbox albums as a first listen, even though th
 - <https://halleylabs.com/album/time-tripper-circuit01-abyssal>
 
 
-# ??? (Breakcore that is debatably listenable)
+# Breakcore that is EXTREMELY GOOD, play this at my funeral
 
 - <https://hyphyskazerbox.bandcamp.com/album/skin-addict>
 - <https://hyphyskazerbox.bandcamp.com/album/headache-bait>
@@ -77,6 +77,19 @@ I highly recommend the 2 hyphyskazerbox albums as a first listen, even though th
 - <https://nanoray.bandcamp.com/album/nurse>
 - <https://nanoray.bandcamp.com/album/nurse-2>
 - <https://machinegirl.bandcamp.com/album/mrk90-mix-vol-1>
+- <https://halleylabs.com/album/the-music-and-sound>
+- <https://rawrdcore.bandcamp.com/album/stimulacrum>
+- <https://rawrdcore.bandcamp.com/album/odds-ends-for-autumn>
+- <https://rawrdcore.bandcamp.com/album/the-new-4lung-album>
+- <https://halleylabs.com/album/washed-out>
+- <https://floorbaba.bandcamp.com/album/prehistory>
+- <https://nanoray.bandcamp.com/album/toybox>
+- <https://dismissyourself.bandcamp.com/album/miracle-in-transit>
+- <https://rawrdcore.bandcamp.com/album/dead-boiz-summer-ravewarz-xii>
+- <https://rawrdcore.bandcamp.com/album/famitory-fourlung-live-action-park>
+- <https://rawrdcore.bandcamp.com/album/below-the-bering-strait>
+- <https://rawrdcore.bandcamp.com/album/unkillable-fevermancer>
+- <https://golemm.bandcamp.com/album/coral-fresh>
 
 # Screamo
 
