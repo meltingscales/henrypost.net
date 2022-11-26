@@ -60,6 +60,12 @@ const LINK_DATA: TLinkDatum[] = [
         comment: "A cool gamedev person.",
     },
     {
+        text: "michaelwalczyk.com",
+        url: "https://michaelwalczyk.com/",
+        category: "Cool Programming Sites",
+        comment: "Fractals!!",
+    },
+    {
         text: "patricklipinski.de",
         url: 'https://patricklipinski.de/',
         'category': "Cool Sites"
