@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {Container} from "react-bootstrap";
 import Markdown from "markdown-to-jsx";
 
-var frontmattermarkdownbaybeh = require('front-matter')
+var frontmatter = require('front-matter')
 
 function CBlogPostMarkdownFile(props: any) {
 
@@ -12,6 +12,7 @@ function CBlogPostMarkdownFile(props: any) {
         attributes: {
             title: "empty title",
             date: undefined,
+            tags: undefined,
         },
         body: "empty body",
     })
@@ -29,7 +30,7 @@ function CBlogPostMarkdownFile(props: any) {
                 fetch(res.default)
                     .then(res => res.text())
                     .then(res => setPost(
-                        frontmattermarkdownbaybeh(res)
+                        frontmatter(res)
                     ))
                     .catch(err => console.log(err));
             })
@@ -45,6 +46,14 @@ function CBlogPostMarkdownFile(props: any) {
                 post.attributes.date
                     ?
                     <i>Posted on {post.attributes.date}</i>
+                    :
+                    null
+            }
+
+            {
+                post.attributes.tags
+                    ?
+                    <p>Tags: <i>{(post.attributes.tags).join(', ')}</i></p>
                     :
                     null
             }

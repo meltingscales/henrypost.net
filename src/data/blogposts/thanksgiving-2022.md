@@ -1,7 +1,7 @@
 ---
 title: Thanksgiving, burnout, ADHD, being "terminally online"
 date: '2022-11-24'
-tags: [rant]
+tags: [rant, adhd]
 ---
 
 
