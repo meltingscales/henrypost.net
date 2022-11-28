@@ -28,15 +28,18 @@ export class MLinkDatum extends DataBoundClass<TLinkDatum> {
     static render_link_datum = (link_datum: TLinkDatum) => {
 
         var eltComment = null
-        if(link_datum.comment){
+        if (link_datum.comment) {
             eltComment = <span>{link_datum.comment}</span>
         }
 
         return (
             <>
                 <div>
-                    <p><a href={link_datum.url}>{link_datum.text}</a></p>
-                    {eltComment}
+                    <p>
+                        <a href={link_datum.url}>{link_datum.text}</a>
+                        <br/>
+                        {eltComment}
+                    </p>
                 </div>
             </>
         )
