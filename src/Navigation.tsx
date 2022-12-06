@@ -85,8 +85,8 @@ const Navigation = () =>
                             <NavigationItem href={"/about"}
                                             name={"about"}/>
 
-                            <NavigationItem href={"/blog"}
-                                            name={"blog"}/>
+                            {/*<NavigationItem href={"/blog"}*/}
+                            {/*                name={"blog"}/>*/}
 
                             <NavDropdown
                                 title={TextFmtService.homeDirFmt('demoApps')}
@@ -103,36 +103,36 @@ const Navigation = () =>
                             </NavDropdown>
 
 
-                            <NavDropdown
-                                title={TextFmtService.homeDirFmt('fun')}
-                                id={'basic-nav-dropdown'}>
+                            {/*<NavDropdown*/}
+                            {/*    title={TextFmtService.homeDirFmt('fun')}*/}
+                            {/*    id={'basic-nav-dropdown'}>*/}
 
-                                <NavDDI
-                                    path={'fun'}
-                                    subpath={'photos'}
-                                />
+                            {/*    <NavDDI*/}
+                            {/*        path={'fun'}*/}
+                            {/*        subpath={'photos'}*/}
+                            {/*    />*/}
 
-                                <NavDDI
-                                    path={'fun'}
-                                    subpath={'books'}
-                                />
+                            {/*    <NavDDI*/}
+                            {/*        path={'fun'}*/}
+                            {/*        subpath={'books'}*/}
+                            {/*    />*/}
 
-                                <NavDDI
-                                    path={'fun'}
-                                    subpath={'music'}
-                                />
+                            {/*    <NavDDI*/}
+                            {/*        path={'fun'}*/}
+                            {/*        subpath={'music'}*/}
+                            {/*    />*/}
 
-                                <NavDDI
-                                    path={'fun'}
-                                    subpath={'videogames'}
-                                />
+                            {/*    <NavDDI*/}
+                            {/*        path={'fun'}*/}
+                            {/*        subpath={'videogames'}*/}
+                            {/*    />*/}
 
-                                <NavDDI
-                                    path={'fun'}
-                                    subpath={'cool-links'}
-                                />
+                            {/*    <NavDDI*/}
+                            {/*        path={'fun'}*/}
+                            {/*        subpath={'cool-links'}*/}
+                            {/*    />*/}
 
-                            </NavDropdown>
+                            {/*</NavDropdown>*/}
 
                         </Nav>
                     </Navbar.Collapse>
