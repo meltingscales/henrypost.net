@@ -103,19 +103,19 @@ const Navigation = () =>
                             </NavDropdown>
 
 
-                            {/*<NavDropdown*/}
-                            {/*    title={TextFmtService.homeDirFmt('fun')}*/}
-                            {/*    id={'basic-nav-dropdown'}>*/}
+                            <NavDropdown
+                                title={TextFmtService.homeDirFmt('fun')}
+                                id={'basic-nav-dropdown'}>
 
                             {/*    <NavDDI*/}
                             {/*        path={'fun'}*/}
                             {/*        subpath={'photos'}*/}
                             {/*    />*/}
 
-                            {/*    <NavDDI*/}
-                            {/*        path={'fun'}*/}
-                            {/*        subpath={'books'}*/}
-                            {/*    />*/}
+                                <NavDDI
+                                    path={'fun'}
+                                    subpath={'books'}
+                                />
 
                             {/*    <NavDDI*/}
                             {/*        path={'fun'}*/}
@@ -132,7 +132,7 @@ const Navigation = () =>
                             {/*        subpath={'cool-links'}*/}
                             {/*    />*/}
 
-                            {/*</NavDropdown>*/}
+                            </NavDropdown>
 
                         </Nav>
                     </Navbar.Collapse>

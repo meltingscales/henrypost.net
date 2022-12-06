@@ -33,8 +33,8 @@ export default function Routing() {
                 <Route path={"*"} //match all routes - for http 404
                        element={<FourOhFourNotFound/>}/>
 
-                <Route path={"blog"}
-                       element={<PageBlog/>}/>
+                {/*<Route path={"blog"}*/}
+                {/*       element={<PageBlog/>}/>*/}
 
                 <Route path={"contact"}
                        element={<PageContact/>}/>
@@ -54,20 +54,20 @@ export default function Routing() {
                 <Route path={"demoApps/githubApp"}
                        element={<GithubApp/>}/>
 
-                <Route path={"demoApps/cube"}
-                       element={<Cube/>}/>
+                {/*<Route path={"demoApps/cube"}*/}
+                {/*       element={<Cube/>}/>*/}
 
-                <Route path={"fun/photos"}
-                       element={<PagePhotos/>}/>
+                {/*<Route path={"fun/photos"}*/}
+                {/*       element={<PagePhotos/>}/>*/}
 
                 <Route path={"fun/books"}
                        element={<PageBooks/>}/>
 
-                <Route path={"fun/music"}
-                       element={<PageMusic/>}/>
+                {/*<Route path={"fun/music"}*/}
+                {/*       element={<PageMusic/>}/>*/}
 
-                <Route path={"fun/videogames"}
-                       element={<PageVideogames/>}/>
+                {/*<Route path={"fun/videogames"}*/}
+                {/*       element={<PageVideogames/>}/>*/}
 
                 <Route path={"fun/cool-links"}
                        element={<PageCoolLinks/>}/>
