@@ -109,6 +109,18 @@ const LINK_DATA: TLinkDatum[] = [
         category: 'Hardware',
     },
     {
+        text: "defcad",
+        comment: "Cool plastic",
+        url: "http://defcad.com/",
+        category: 'Hardware',
+    },
+    {
+        text: "Liberator 12k",
+        comment: "More cool plastic",
+        url: "https://liberator12k.com/",
+        category: 'Hardware',
+    },
+    {
         text: "Creep Cat Toy Company",
         url: 'https://www.creepcattoyco.com/',
         category: 'Plushies',
