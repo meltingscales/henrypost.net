@@ -107,30 +107,15 @@ const Navigation = () =>
                                 title={TextFmtService.homeDirFmt('fun')}
                                 id={'basic-nav-dropdown'}>
 
-                            {/*    <NavDDI*/}
-                            {/*        path={'fun'}*/}
-                            {/*        subpath={'photos'}*/}
-                            {/*    />*/}
-
                                 <NavDDI
                                     path={'fun'}
                                     subpath={'books'}
                                 />
 
-                            {/*    <NavDDI*/}
-                            {/*        path={'fun'}*/}
-                            {/*        subpath={'music'}*/}
-                            {/*    />*/}
-
-                            {/*    <NavDDI*/}
-                            {/*        path={'fun'}*/}
-                            {/*        subpath={'videogames'}*/}
-                            {/*    />*/}
-
-                            {/*    <NavDDI*/}
-                            {/*        path={'fun'}*/}
-                            {/*        subpath={'cool-links'}*/}
-                            {/*    />*/}
+                                <NavDDI
+                                    path={'fun'}
+                                    subpath={'cool-links'}
+                                />
 
                             </NavDropdown>
 

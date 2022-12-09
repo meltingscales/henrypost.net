@@ -8,12 +8,8 @@ import PageContact from "./pages/PageContact";
 import PageAbout from "./pages/PageAbout";
 import GithubApp from "./pages/demoApps/GithubApp";
 import PageBooks from "./pages/fun/PageBooks";
-import PageMusic from "./pages/fun/PageMusic";
-import PageVideogames from "./pages/fun/PageVideogames";
 import PageResume from "./pages/work/PageResume";
 import PageCertifications from "./pages/work/PageCertifications";
-import {Cube} from "./pages/demoApps/Cube";
-import PagePhotos from "./pages/fun/PagePhotos";
 import PageWhyHireMe from "./pages/work/PageWhyHireMe";
 import PageCoolLinks from "./pages/fun/PageCoolLinks";
 
@@ -33,8 +29,8 @@ export default function Routing() {
                 <Route path={"*"} //match all routes - for http 404
                        element={<FourOhFourNotFound/>}/>
 
-                {/*<Route path={"blog"}*/}
-                {/*       element={<PageBlog/>}/>*/}
+                <Route path={"blog"}
+                       element={<PageBlog/>}/>
 
                 <Route path={"contact"}
                        element={<PageContact/>}/>
@@ -54,20 +50,8 @@ export default function Routing() {
                 <Route path={"demoApps/githubApp"}
                        element={<GithubApp/>}/>
 
-                {/*<Route path={"demoApps/cube"}*/}
-                {/*       element={<Cube/>}/>*/}
-
-                {/*<Route path={"fun/photos"}*/}
-                {/*       element={<PagePhotos/>}/>*/}
-
                 <Route path={"fun/books"}
                        element={<PageBooks/>}/>
-
-                {/*<Route path={"fun/music"}*/}
-                {/*       element={<PageMusic/>}/>*/}
-
-                {/*<Route path={"fun/videogames"}*/}
-                {/*       element={<PageVideogames/>}/>*/}
 
                 <Route path={"fun/cool-links"}
                        element={<PageCoolLinks/>}/>

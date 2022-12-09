@@ -2,56 +2,9 @@ import {MLinkDatum, TLinkDatum} from "../../model/MLinkData";
 
 const LINK_DATA: TLinkDatum[] = [
     {
-        text: 'Bret Weinstein, Evolutionary Biologist',
-        url: 'https://en.wikipedia.org/wiki/Bret_Weinstein',
-        category: 'Science'
-    },
-    {
-        text: "Henry's Gamedev Playlist",
-        url: 'https://www.youtube.com/playlist?list=PLxhBPQszJILskIGS7YuiwRMLpvGdzI9Ka',
-        category: "Youtube Playlist",
-    },
-    {
-        text: "Henry's Fitness Playlist",
-        url: 'https://www.youtube.com/playlist?list=PLxhBPQszJILtkiZ9bLhiP-gbesaYN4ZCU',
-        category: "Youtube Playlist",
-    },
-    {
-        text: "Henry's Philosophy Playlist",
-        url: 'https://www.youtube.com/playlist?list=PLxhBPQszJILuzBcrLaQayWvqIIXeb8rT7',
-        category: "Youtube Playlist",
-    },
-    {
-        text: "Henry's Music Playlist",
-        url: 'https://www.youtube.com/playlist?list=PLxhBPQszJILvItaUcMHNLrnSh-SkbWvlm',
-        category: "Youtube Playlist",
-    },
-    //TODO add more links from todd
-    {
-        text: "Qualia Research Institute",
-        url: 'https://qri.org/',
-        category: 'Science',
-    },
-    {
-        text: "Old links list",
-        url: 'https://github.com/HenryFBP/henryfbp.github.io/blob/master/content/cool-links/_index.md',
-        category: 'Henry',
-    },
-    {
-        text: "Old personal website",
-        url: 'https://henryfbp.github.io/',
-        category: 'Henry',
-    },
-    {
         text: "\"Stop Writing Dead Programs\" by Jack Rusher (Strange Loop 2022)\n",
         url: 'https://www.youtube.com/watch?v=8Ab3ArE8W3s',
         category: 'Programming',
-    },
-    {
-        text: "lynn.github.io",
-        url: 'https://github.com/lynn/lynn.github.io',
-        comment: "A website I like the design of. https://lynn.github.io/",
-        category: 'Cool Programming Sites',
     },
     {
         text: "B3AGZ",
@@ -60,16 +13,10 @@ const LINK_DATA: TLinkDatum[] = [
         comment: "A cool gamedev person.",
     },
     {
-        text: "kokoscript.com",
-        url: 'https://kokoscript.com/',
-        category: 'Cool Programming Sites',
-        comment: "Another cool website."
-    },
-    {
         text: "michaelwalczyk.com",
         url: "https://michaelwalczyk.com/",
         category: "Cool Programming Sites",
-        comment: "Fractals!!",
+        comment: "Fractals!",
     },
     {
         text: "patricklipinski.de",
@@ -99,71 +46,9 @@ const LINK_DATA: TLinkDatum[] = [
         category: 'Philosophy',
     },
     {
-        text: "JettProof (Sensory/Autism clothing)",
-        url: 'https://www.jettproof.com.au/',
-        category: 'Clothing',
-    },
-    {
         text: "Hackaday QAZ Personal Terminal",
         url: 'https://hackaday.io/project/187525-qaz-personal-terminal',
         category: 'Hardware',
-    },
-    {
-        text: "defcad",
-        comment: "Cool plastic",
-        url: "http://defcad.com/",
-        category: 'Hardware',
-    },
-    {
-        text: "Liberator 12k",
-        comment: "More cool plastic",
-        url: "https://liberator12k.com/",
-        category: 'Hardware',
-    },
-    {
-        text: "Creep Cat Toy Company",
-        url: 'https://www.creepcattoyco.com/',
-        category: 'Plushies',
-    },
-    {
-        text: "Fluff Nest",
-        url: 'https://fluffnest.com/',
-        category: 'Plushies',
-    },
-    {
-        text: "Nomad Complex",
-        url: 'https://nomadcomplex.com/',
-        category: 'Clothing',
-    },
-    {
-        text: "Sorbet Jungle",
-        url: "https://www.sorbetjungle.com/",
-        category: 'Merch',
-    },
-    {
-        text: "Hyena Agenda",
-        url: 'https://hyena-agenda.com/',
-        category: 'Clothing',
-    },
-    {
-        text: "Beautiful Nerdy",
-        url: 'https://www.beautifulnerdy.com/',
-        category: 'Clothing',
-    },
-    {
-        text: "HOWL OUT",
-        url: 'https://howl-out.com/',
-        category: 'Clothing',
-    },
-    {
-        text: "Clammy Heart",
-        url: 'https://clammyheart.shop/',
-        category: 'Clothing',
-    },
-    {
-        text: "Sparklecats 2009 Art",
-        url: 'https://sparklecats2009art.square.site/',
-        category: 'Merch',
     },
 ]
 
