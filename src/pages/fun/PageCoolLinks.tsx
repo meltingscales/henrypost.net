@@ -1,5 +1,14 @@
 import {MLinkDatum, TLinkDatum} from "../../model/MLinkData";
 
+var LAZYURLLIST = `https://www.sigstore.dev/
+https://in-toto.io/
+https://slsa.dev/
+https://www.dropwizard.io/en/latest/#
+https://go.dev/doc/tutorial/getting-started
+https://puppet.com/
+https://www.chef.io/
+https://www.openstack.org/`
+
 const LINK_DATA: TLinkDatum[] = [
     {
         text: "\"Stop Writing Dead Programs\" by Jack Rusher (Strange Loop 2022)\n",
@@ -51,6 +60,15 @@ const LINK_DATA: TLinkDatum[] = [
         category: 'Hardware',
     },
 ]
+
+LAZYURLLIST
+    .split('\n')
+    .forEach((it) => {
+            return LINK_DATA.push({
+                category: "Lazy, uncategorized URL list", text: it, url: it
+            });
+        }
+    )
 
 console.log("LINK_DATA:")
 console.log(LINK_DATA)
