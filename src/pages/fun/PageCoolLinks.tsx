@@ -7,7 +7,16 @@ https://www.dropwizard.io/en/latest/#
 https://go.dev/doc/tutorial/getting-started
 https://puppet.com/
 https://www.chef.io/
-https://www.openstack.org/`
+https://www.openstack.org/
+https://www.exploit-db.com/docs/english/44457-polymorph-a-real-time-network-packet-manipulation-framework.pdf
+https://vincent.bernat.ch/en
+https://github.com/akvorado/akvorado
+Golang videogame framework
+golang ui framework
+clojure lang
+https://www.parrotsec.org/
+https://youtu.be/OyLFPGRzSEs
+https://ebitengine.org/`
 
 const LINK_DATA: TLinkDatum[] = [
     {
