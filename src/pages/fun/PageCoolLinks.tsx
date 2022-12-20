@@ -14,6 +14,11 @@ https://github.com/akvorado/akvorado
 Golang videogame framework
 golang ui framework
 clojure lang
+https://kondukto.io/
+https://github.com/paragonie/awesome-appsec
+https://github.com/analysis-tools-dev/static-analysis
+https://analysis-tools.dev/
+https://github.com/analysis-tools-dev/
 https://www.parrotsec.org/
 https://youtu.be/OyLFPGRzSEs
 https://ebitengine.org/`
