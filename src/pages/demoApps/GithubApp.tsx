@@ -225,7 +225,7 @@ class GithubApp extends React.Component {
 
                 <GithubMarkdownFiles
                     username={'henryfbp'}
-                    repo={'henryfbp.github.io'}
+                    repo={'henryfbp.github.io-old2022'}
                     branch={'master'}
                     path={'content/posts'}
                 />
