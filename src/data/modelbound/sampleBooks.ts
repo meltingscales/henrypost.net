@@ -112,11 +112,21 @@ Site Reliability Engineering
 Lean Six Sigma for Engineers and Managers: With Applied Case Studies
 Generation Z Developers
 
+# from gil yehuda
+Find your Red Thread
+Without Bullshit
+
 `.split('\n') //split by newline
     .filter((it) => it.length > 0) //ignore empty strings
     .filter((it) => it.trim()[0] != '#') //ignore comments (start with #)
 
 export let SAMPLE_BOOKS: TBookReview[] = [
+    {
+        title: 'Start with Why: How Great Leaders Inspire Everyone to Take Action',
+        author: "Simon Sinek",
+        shortReview: "Started reading about 1/5th of it. So far, this is a very engaging book that talks about how there are short-term and long-term ways to lead and inspire others, teams, and organizations, and the benefits and downfalls of different ways of leading and solving problems. It is a relevant book that so far, can explain why certain businesses see systemic problems in some areas, and some businesses see great success, and /why/ that happens as well."
+    },
+
     {
         title: 'The Unicorn Project',
         shortReview: "Only read 1/3rd of it, but this is a MUST READ for any software devs or adjacent fields. It is extremely relevant to the field and talks about how 'Agile Transformation' is basically the key to improving any software project."
