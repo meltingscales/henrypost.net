@@ -85,8 +85,8 @@ const Navigation = () =>
                             <NavigationItem href={"/about"}
                                             name={"about"}/>
 
-                            {/*<NavigationItem href={"/blog"}*/}
-                            {/*                name={"blog"}/>*/}
+                            <NavigationItem href={"/blog"}
+                                            name={"blog"}/>
 
                             <NavDropdown
                                 title={TextFmtService.homeDirFmt('demoApps')}
