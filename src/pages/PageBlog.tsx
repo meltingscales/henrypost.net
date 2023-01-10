@@ -1,6 +1,7 @@
 import CBlogPostMarkdownFile from "../component/CBlogPostMarkdownFile";
 
 const postFilenames = [
+    'thoughts-on-pipeline-design.md',
     'thoughts-on-vulnerability-scanning.md',
     'flight-to-hawaii.md',
     'test-post.md',
