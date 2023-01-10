@@ -48,7 +48,7 @@ reason...Baking in security raises the bar for a lot of these things.
 
 "Security" isn't even a good word for it. Hell, malware isn't even a good term, and most people misunderstand it. It's
 just gaps in processes, lapses in thought. Software and data are just logical structures, and "security bugs" are
-literally the same as "this organization of bits in memory is not expected".
+literally the same as "this organization of bits in memory is not expected". Instead of the word "security", now my thoughts are morphing into "Automation, repeatability, open-source design, normalization, sharing knowledge, etc."
 
 I have a gut feeling. The more things that we can automate, normalize, track, and govern in an automated and extensible
 manner, the better that security will get. 
