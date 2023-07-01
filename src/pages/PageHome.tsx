@@ -38,6 +38,19 @@ const PageHome = () => {
                 </Col>
                 <Col>
                     <Container>
+                        <h1>Resources for homeless people living in Chicago, near Edgewater/Evanston:</h1>
+
+                        <ul>
+                            <li>
+                                <a href='//connect2home.org'><p>connect2home.org</p></a>
+                                <p>Evanston: Connections for the Homeless: Hilda's Place</p>
+                                <p>847-475-7070</p>
+                                <p>(Shelter: 1458 Chicago Ave, Evanston, IL 60201)</p>
+                                <p>(Main Office: 2121 Dewey Ave, Evanston, IL)</p>
+                            </li>
+                        </ul>
+                    </Container>
+                    <Container>
                         <h1>Self Introduction</h1>
                         <p>I’m a Senior Security Engineer at U.S. Bank, Illinois Institute of Technology alumni, and
                             used to work as
